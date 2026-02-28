@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can It Nugget? - McDonald's Nugget Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .input-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        input[type="number"] {
+            font-size: 1.5em;
+            padding: 15px 20px;
+            border: 3px solid #e0e0e0;
+            border-radius: 15px;
+            width: 150px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+        }
+
+        button {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .result {
+            text-align: center;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 15px;
+            font-size: 1.3em;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .result.yes {
+            background: linear-gradient(135deg, #a8e6cf, #88d8c0);
+            color: #2d5a3d;
+            border: 3px solid #4caf50;
+        }
+
+        .result.no {
+            background: linear-gradient(135deg, #ffb3ba, #ff8a95);
+            color: #d32f2f;
+            border: 3px solid #f44336;
+        }
+
+        .result.pending {
+            background: #f5f5f5;
+            color: #666;
+            border: 3px solid #ddd;
+        }
+
+        .packages {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .packages h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .package {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .package:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .package-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        .package-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .package-price {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .examples {
+            background: #e3f2fd;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .examples h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1976d2;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .example {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 5px solid #4caf50;
+        }
+
+        .example.impossible {
+            border-left-color: #f44336;
+        }
+
+        .example-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .example-text {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .price-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        .price-info a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .price-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .input-group {
+                flex-direction: column;
+            }
+            
+            input[type="number"] {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍗 Can It Nugget?</h1>
+            <p>Check of je favoriete aantal nuggets te bestellen is bij McDonald's!</p>
+        </div>
+
+        <div class="content">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="nuggetCount">Ik wil</label>
+                    <input type="number" id="nuggetCount" placeholder="0" min="0" max="1000">
+                    <label for="nuggetCount">nuggets bestellen</label>
+                </div>
+                <button onclick="checkNuggets()">Check of het kan! 🍗</button>
+            </div>
+
+            <div id="result" class="result pending">
+                Voer een aantal in om te controleren of het mogelijk is!
+            </div>
+
+            <div class="packages">
+                <h3>📦 Beschikbare verpakkingen</h3>
+                <div class="package-grid">
+                    <div class="package">
+                        <div class="package-number">6</div>
+                        <div class="package-label">nuggets</div>
+                        <div class="package-price" id="price-6">€--</div>
+                    </div>
+                    <div class="package">
+                        <div class="package-number">9</div>
+                        <div class="package-label">nuggets</div>
+                        <div class="package-price" id="price-9">€--</div>
+                    </div>
+                    <div class="package">
+                        <div class="package-number">20</div>
+                        <div class="package-label">nuggets</div>
+                        <div class="package-price" id="price-20">€--</div>
+                    </div>
+                </div>
+                <div class="price-info">
+                    <small>💰 Prijzen worden elke 8 uur bijgewerkt van <a href="https://mcdonaldsmenu.nl/#mcdonalds-prijzen" target="_blank">mcdonaldsmenu.nl</a></small>
+                </div>
+            </div>
+
+            <div class="examples">
+                <h3>💡 Voorbeelden</h3>
+                <div class="example-grid">
+                    <div class="example">
+                        <div class="example-number">12 nuggets</div>
+                        <div class="example-text">✅ Kan! (6 + 6)</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-number">15 nuggets</div>
+                        <div class="example-text">✅ Kan! (6 + 9)</div>
+                    </div>
+                    <div class="example impossible">
+                        <div class="example-number">14 nuggets</div>
+                        <div class="example-text">❌ Kan niet!</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-number">26 nuggets</div>
+                        <div class="example-text">✅ Kan! (20 + 6)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkNuggets() {
+            const input = document.getElementById('nuggetCount');
+            const count = parseInt(input.value);
+            const resultDiv = document.getElementById('result');
+            
+            if (isNaN(count) || count < 0) {
+                resultDiv.className = 'result pending';
+                resultDiv.innerHTML = 'Voer een geldig aantal in!';
+                return;
+            }
+
+            if (count === 0) {
+                resultDiv.className = 'result yes';
+                resultDiv.innerHTML = '🍗 0 nuggets? Dat is makkelijk - bestel gewoon niets! 😄';
+                return;
+            }
+
+            const result = findCheapestCombination(count);
+            
+            if (result.possible) {
+                resultDiv.className = 'result yes';
+                const packages = result.packages.map(pkg => `${pkg.count}x ${pkg.size} nuggets`).join(' + ');
+                resultDiv.innerHTML = `🎉 <strong>JA!</strong> Je kunt ${count} nuggets bestellen!<br><small>Goedkoopste combinatie: ${packages}<br>💰 Totaalprijs: €${result.totalPrice.toFixed(2)}</small>`;
+            } else {
+                resultDiv.className = 'result no';
+                resultDiv.innerHTML = `😔 <strong>NEE!</strong> ${count} nuggets is helaas niet mogelijk.<br><small>Geen combinatie van verpakkingen maakt dit aantal.</small>`;
+            }
+        }
+
+        function canMakeNuggets(target) {
+            const packages = [6, 9, 20];
+            
+            // Dynamische programmering om te controleren of het aantal mogelijk is
+            const dp = new Array(target + 1).fill(false);
+            dp[0] = true; // 0 nuggets is altijd mogelijk
+            
+            for (let i = 1; i <= target; i++) {
+                for (const pkg of packages) {
+                    if (i >= pkg && dp[i - pkg]) {
+                        dp[i] = true;
+                        break;
+                    }
+                }
+            }
+            
+            return dp[target];
+        }
+
+        function findCheapestCombination(target) {
+            const packages = [6, 9, 20];
+            const prices = getPrices();
+            
+            // Dynamische programmering om de goedkoopste combinatie te vinden
+            const dp = new Array(target + 1).fill(null);
+            dp[0] = { packages: [], totalPrice: 0 };
+            
+            for (let i = 1; i <= target; i++) {
+                let bestCombination = null;
+                let bestPrice = Infinity;
+                
+                for (const pkg of packages) {
+                    if (i >= pkg && dp[i - pkg] !== null) {
+                        const newPrice = dp[i - pkg].totalPrice + prices[pkg];
+                        if (newPrice < bestPrice) {
+                            bestPrice = newPrice;
+                            bestCombination = {
+                                packages: [...dp[i - pkg].packages, { size: pkg, count: 1 }],
+                                totalPrice: newPrice
+                            };
+                        }
+                    }
+                }
+                
+                dp[i] = bestCombination;
+            }
+            
+            if (dp[target] === null) {
+                return { possible: false, packages: [], totalPrice: 0 };
+            }
+            
+            // Tel gelijke pakketten bij elkaar op
+            const packageCounts = {};
+            dp[target].packages.forEach(pkg => {
+                if (packageCounts[pkg.size]) {
+                    packageCounts[pkg.size] += pkg.count;
+                } else {
+                    packageCounts[pkg.size] = pkg.count;
+                }
+            });
+            
+            const optimizedPackages = Object.entries(packageCounts).map(([size, count]) => ({
+                size: parseInt(size),
+                count: count
+            }));
+            
+            return {
+                possible: true,
+                packages: optimizedPackages,
+                totalPrice: dp[target].totalPrice
+            };
+        }
+
+        function getPrices() {
+            // Probeer prijzen uit localStorage te laden, anders gebruik standaard prijzen
+            try {
+                const storedPrices = localStorage.getItem('nuggetPrices');
+                if (storedPrices) {
+                    return JSON.parse(storedPrices);
+                }
+            } catch (e) {
+                console.log('Kon prijzen niet laden uit localStorage');
+            }
+            
+            // Standaard prijzen als fallback
+            return {
+                6: 3.55,
+                9: 4.80,
+                20: 9.50
+            };
+        }
+
+        function loadPrices() {
+            // Laad prijzen van de server
+            fetch('/prices.json')
+                .then(response => response.json())
+                .then(data => {
+                    const prices = data.prices;
+                    
+                    // Update de prijzen in de UI
+                    Object.keys(prices).forEach(size => {
+                        const priceElement = document.getElementById(`price-${size}`);
+                        if (priceElement) {
+                            priceElement.textContent = `€${prices[size].toFixed(2)}`;
+                        }
+                    });
+                    
+                    // Sla prijzen op in localStorage
+                    localStorage.setItem('nuggetPrices', JSON.stringify(prices));
+                    
+                    // Toon laatste update tijd
+                    const lastUpdate = new Date(data.timestamp);
+                    console.log(`Prijzen bijgewerkt op: ${lastUpdate.toLocaleString('nl-NL')}`);
+                })
+                .catch(error => {
+                    console.log('Kon prijzen niet laden van server, gebruik standaard prijzen');
+                    // Gebruik standaard prijzen
+                    const defaultPrices = {
+                        4: 3.50,
+                        6: 4.50,
+                        9: 6.50,
+                        20: 12.00
+                    };
+                    
+                    Object.keys(defaultPrices).forEach(size => {
+                        const priceElement = document.getElementById(`price-${size}`);
+                        if (priceElement) {
+                            priceElement.textContent = `€${defaultPrices[size].toFixed(2)}`;
+                        }
+                    });
+                    
+                    localStorage.setItem('nuggetPrices', JSON.stringify(defaultPrices));
+                });
+        }
+
+        // Enter toets ondersteuning
+        document.getElementById('nuggetCount').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkNuggets();
+            }
+        });
+
+        // Focus op input veld bij laden en laad prijzen
+        window.addEventListener('load', function() {
+            document.getElementById('nuggetCount').focus();
+            loadPrices(); // Laad de actuele prijzen
+        });
+    </script>
+</body>
+</html>
