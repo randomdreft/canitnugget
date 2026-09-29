@@ -58,6 +58,35 @@ python3 price_scraper.py
 - **Prijzen**: Python scraper met BeautifulSoup, fallback naar hardcoded prijzen
 - **Responsive**: werkt op desktop en mobiel
 
+## Bijdragen
+
+Hulp is welkom! Je hoeft geen programmeur te zijn om mee te doen.
+
+### Een idee of een fout gevonden?
+
+Maak een [issue](https://github.com/randomdreft/canitnugget/issues/new) aan. Beschrijf wat je zag of wat je zou willen, bijvoorbeeld:
+
+- een prijs die niet klopt;
+- een aantal waarvoor de site een verkeerde combinatie geeft;
+- iets dat er raar uitziet op je telefoon;
+- een leuk idee voor de site.
+
+Een schermafbeelding en het aantal nuggets dat je invoerde helpen enorm.
+
+### Zelf iets aanpassen?
+
+1. **Fork** deze repository (knop rechtsboven op GitHub).
+2. Maak je wijziging in je eigen kopie. Test het door `index.html` in je browser te openen.
+3. Open een **pull request** met een korte uitleg van wat je veranderd hebt en waarom.
+
+Houd een pull request klein en gericht op één ding; dat bekijkt en verwerkt het snelst. Twijfel je of iets gewenst is? Open dan eerst een issue om het te bespreken.
+
+Een paar uitgangspunten:
+
+- De site blijft **vanilla HTML, CSS en JavaScript** zonder dependencies of buildstap.
+- Teksten op de site en in de repository zijn **Nederlands**.
+- Het moet blijven werken op **mobiel**.
+
 ## Licentie
 
 Public domain — gebruik het, fork het, bestel nuggets.
