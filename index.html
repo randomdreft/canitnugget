@@ -97,6 +97,14 @@
             --chart-hover: #999999;
             --tip-bg: #333333;
             --tip-text: #ffffff;
+            /* Prijsgeschiedenis: één kleur per doosje (+ vorm van de markering),
+               gecontroleerd op kleurenblindheid en >= 3:1 tegen --chart-bg */
+            --chart-s6: #2a78d6;
+            --chart-s9: #e05a26;
+            --chart-s20: #12936a;
+            --chart-filler: #767676;
+            --seg-on-bg: #333333;
+            --seg-on-text: #ffffff;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -156,6 +164,12 @@
                 --chart-hover: #8a8994;
                 --tip-bg: #f0f0f3;
                 --tip-text: #111111;
+                --chart-s6: #3987e5;
+                --chart-s9: #d95926;
+                --chart-s20: #199e70;
+                --chart-filler: #9a99a3;
+                --seg-on-bg: #ececf0;
+                --seg-on-text: #1d1c22;
             }
         }
 
@@ -1186,6 +1200,234 @@
             font-size: 0.9em;
         }
 
+        /* ===== Prijsbron (ⓘ), filialen en prijsgeschiedenis ===== */
+        /* Het ⓘ-teken zelf ontbreekt in sommige lettertypes: dus een getekend rondje met een i */
+        .price-info .info-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.35em;
+            height: 1.35em;
+            margin-left: 3px;
+            border: 1.5px solid currentColor;
+            border-radius: 50%;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            line-height: 1;
+            vertical-align: -0.2em;
+        }
+
+        .price-info .info-link:hover {
+            text-decoration: none;
+            background: var(--link);
+            color: var(--surface);
+        }
+
+        .price-info .nowrap {
+            white-space: nowrap;
+        }
+
+        .price-info .age-note {
+            white-space: nowrap;
+        }
+
+        .package-rate {
+            font-size: 0.75em;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .package-rate.best {
+            font-weight: bold;
+            color: var(--text);
+        }
+
+        .info-fold {
+            background: var(--panel);
+        }
+
+        .info-body {
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.55;
+        }
+
+        .info-body p,
+        .info-body ul {
+            margin-bottom: 10px;
+        }
+
+        .info-body ul {
+            padding-left: 1.2em;
+        }
+
+        .info-body a {
+            color: var(--link);
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 8px 0 12px;
+        }
+
+        .table-wrap.tall {
+            max-height: 340px;
+            overflow-y: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85em;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .data-table caption {
+            text-align: left;
+            font-size: 0.95em;
+            color: var(--text-muted);
+            padding-bottom: 4px;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 5px 6px;
+            text-align: right;
+            border-bottom: 1px solid var(--divider);
+            vertical-align: top;
+        }
+
+        .data-table th:first-child,
+        .data-table td:first-child {
+            text-align: left;
+        }
+
+        .data-table thead th {
+            position: sticky;
+            top: 0;
+            background: var(--tile);
+        }
+
+        .data-table tfoot td,
+        .data-table tfoot th {
+            font-weight: bold;
+            border-bottom: none;
+        }
+
+        .data-table .sub {
+            display: block;
+            font-size: 0.85em;
+            color: var(--text-muted);
+        }
+
+        .data-table a {
+            color: var(--link);
+        }
+
+        .hist-h {
+            text-align: center;
+            color: var(--heading);
+            margin: 6px 0 10px;
+        }
+
+        .hist-h + .chart-intro {
+            margin-top: -4px;
+        }
+
+        .hist-section + .hist-section {
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--divider);
+        }
+
+        .hist-controls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px 18px;
+            margin-bottom: 12px;
+        }
+
+        .seg {
+            display: inline-flex;
+            border: 2px solid var(--input-border);
+            border-radius: 999px;
+            overflow: hidden;
+            background: var(--tile);
+        }
+
+        .seg label {
+            cursor: pointer;
+        }
+
+        .seg input {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+        }
+
+        .seg span {
+            display: block;
+            padding: 6px 14px;
+            font-size: 0.9em;
+            color: var(--text);
+        }
+
+        .seg input:checked + span {
+            background: var(--seg-on-bg);
+            color: var(--seg-on-text);
+            font-weight: bold;
+        }
+
+        .seg input:focus-visible + span {
+            outline: 3px solid var(--accent);
+            outline-offset: -3px;
+        }
+
+        .hist-check {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+
+        .hist-check input {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--switch-on);
+        }
+
+        .hist-insight {
+            font-size: 0.95em;
+            max-width: 620px;
+            margin: 12px auto 0;
+            line-height: 1.55;
+            text-align: center;
+        }
+
+        .hist-status {
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .hist-status:empty {
+            display: none;
+        }
+
+        .chart-tip .tip-line {
+            display: block;
+        }
+
+        .chart-tip.compact {
+            font-size: 0.78em;
+            padding: 6px 8px;
+        }
+
         /* ===== Telefoon: compact, zodat het antwoord zonder scrollen in beeld is ===== */
         @media (max-width: 600px) {
             body {
@@ -1339,6 +1581,15 @@
             .stepper-row {
                 gap: 8px 12px;
             }
+
+            .seg span {
+                padding: 6px 10px;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 4px 3px;
+            }
         }
     </style>
 </head>
@@ -1487,6 +1738,61 @@
                     <p class="visually-hidden" id="chartSummary"></p>
                     <p class="visually-hidden" id="chartLive" aria-live="polite"></p>
                 </div>
+            </details>
+
+            <!-- Ingeklapt: prijsgeschiedenis. history.json wordt pas bij openen opgehaald (loadHistory) -->
+            <details class="fold chart-section" id="historyFold">
+                <summary>
+                    <span class="fold-title">📉 Prijsgeschiedenis</span>
+                    <span class="fold-note">(nuggets sinds 2021, Big Mac sinds 1987)</span>
+                </summary>
+                <div class="fold-body">
+                    <p class="hist-status" id="historyStatus" role="status"></p>
+                    <div id="historyBody" hidden>
+                        <section class="hist-section" aria-labelledby="nugHistTitle">
+                            <h4 class="hist-h" id="nugHistTitle">🍗 Nuggets per kwartaal</h4>
+                            <div class="hist-controls">
+                                <div class="seg" role="radiogroup" aria-label="Wat wil je zien?">
+                                    <label><input type="radio" name="histMode" value="doos" checked><span>Prijs per doos</span></label>
+                                    <label><input type="radio" name="histMode" value="nugget"><span>Prijs per nugget</span></label>
+                                </div>
+                                <label class="hist-check"><input type="checkbox" id="histVeggie"><span>Toon veggie <span class="fold-note">(niet meer op het menu sinds 2025)</span></span></label>
+                            </div>
+                            <ul class="chart-legend" id="nugLegend"></ul>
+                            <div class="chart-wrap" id="nugChart" tabindex="0" aria-describedby="nugSummary"></div>
+                            <p class="hist-insight" id="nugInsight"></p>
+                            <p class="chart-hint">Elk punt = mediaan van n gearchiveerde bezorgmenu's uit dat kwartaal. Open markering: minder dan 5 menu's, dus met een korrel zout. Wijs of tik een punt aan; met het toetsenbord: pijltjes.</p>
+                            <p class="visually-hidden" id="nugSummary"></p>
+                            <details class="mini-fold">
+                                <summary>Toon als tabel</summary>
+                                <div class="table-wrap tall" id="nugTable"></div>
+                            </details>
+                            <p class="footnote" id="veggieNote"></p>
+                        </section>
+                        <section class="hist-section" aria-labelledby="bmHistTitle">
+                            <h4 class="hist-h" id="bmHistTitle">🍔 De Big Mac sinds 1987</h4>
+                            <p class="chart-intro">Winkelprijs in Nederland volgens The Economist, plus wat je nu bezorgd betaalt.</p>
+                            <ul class="chart-legend" id="bmLegend"></ul>
+                            <div class="chart-wrap" id="bmChart" tabindex="0" aria-describedby="bmSummary"></div>
+                            <p class="hist-insight" id="bmInsight"></p>
+                            <p class="visually-hidden" id="bmSummary"></p>
+                            <details class="mini-fold">
+                                <summary>Toon als tabel</summary>
+                                <div class="table-wrap tall" id="bmTable"></div>
+                            </details>
+                            <p class="footnote" id="historySources"></p>
+                        </section>
+                    </div>
+                    <p class="visually-hidden" id="histLive" aria-live="polite"></p>
+                </div>
+            </details>
+
+            <!-- Ingeklapt: waar de prijzen vandaan komen, per filiaal (renderStores). Het ⓘ bij de prijsregel springt hierheen. -->
+            <details class="fold info-fold" id="storesFold">
+                <summary>
+                    <span class="fold-title">🏪 Waar komen de prijzen vandaan?</span>
+                </summary>
+                <div class="fold-body info-body" id="storesOut"></div>
             </details>
 
             <!-- Ingeklapt, en BEWUST dicht: zelf ontdekken welke aantallen niet kunnen is de lol.
@@ -2814,7 +3120,7 @@
             });
             // Telefoon gedraaid: ander aantal vakjes
             const narrow = window.matchMedia && window.matchMedia(GRID_NARROW);
-            if (narrow && narrow.addEventListener) narrow.addEventListener('change', renderGrid);
+            if (narrow && narrow.addEventListener) narrow.addEventListener('change', () => { renderGrid(); if (priceState) renderPriceInfo(); });
         }
 
         // Nieuwe prijzen: alles wat open staat opnieuw uitrekenen
@@ -2825,6 +3131,8 @@
             renderExtras();
             renderChallenge();
             renderPlayground();
+            renderStores();
+            renderHistory(); // het inzicht "wat is nu het voordeligst" hangt van de actuele prijzen af
         }
 
         // Getal in Nederlandse notatie met hooguit `dec` decimalen: 1234,5 -> "1.234,5"
@@ -2923,7 +3231,7 @@
             const bm = state && state.bigmac;
             if (typeof bm === 'number' && bm > 0 && bm < 100) {
                 const d = parsePriceDate(state.timestamp);
-                return { price: bm, label: `mediaan uit onze prijzen${d ? ` van ${formatPriceDate(d)}` : ''}`, own: true };
+                return { price: bm, label: `bezorgprijs, mediaan uit onze meting${d ? ` van ${formatPriceDate(d)}` : ''}`, own: true };
             }
             return { ...BIGMAC_FALLBACK, own: false };
         }
@@ -3292,20 +3600,785 @@
             return h('div', { className: verdict.correct ? 'tool-card' : 'tool-card impossible' }, lines);
         }
 
+        // ===== Prijsgeschiedenis (history.json) =====
+        // Wordt pas opgehaald als iemand de sectie openklapt: 150 kB die de
+        // meeste bezoekers niet nodig hebben. Nuggets, veggie en bigmac_bezorg zijn
+        // bezorgprijzen; bigmac_nl en bigmac_eurozone zijn winkelprijzen (The Economist).
+        const HISTORY_URL = '/history.json';
+        const HIST_SIZES = [6, 9, 20];
+        const GULDEN_PER_EURO = 2.20371;     // vaste omrekenkoers gulden -> euro
+        const LOW_N = 5;                     // minder menu's dan dit: open markering
+        const HIST_MARKERS = { 6: 'circle', 9: 'square', 20: 'triangle' };
+        const HIST_GLYPHS = { circle: '●', square: '■', triangle: '▲' };
+        const QUARTER_MONTHS = ['jan–mrt', 'apr–jun', 'jul–sep', 'okt–dec'];
+        const MONTHS = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
+        const SCRAPER_URL = 'https://github.com/randomdreft/canitnugget/tree/main/scraper';
+        const ISSUE_URL = 'https://github.com/randomdreft/canitnugget/issues/new';
+
+        // "2023-Q3" -> 8094 (jaar × 4 + kwartaal − 1), anders null
+        function quarterIndex(periode) {
+            const m = /^(\d{4})-Q([1-4])$/.exec(typeof periode === 'string' ? periode : '');
+            return m ? Number(m[1]) * 4 + Number(m[2]) - 1 : null;
+        }
+
+        // "2023-Q3" -> "jul–sep 2023"
+        function quarterLabel(periode) {
+            const q = quarterIndex(periode);
+            return q === null ? String(periode) : `${QUARTER_MONTHS[q % 4]} ${Math.floor(q / 4)}`;
+        }
+
+        // "2023-08-15" -> 2023,62: jaar als kommagetal, voor de x-as
+        function yearFraction(date) {
+            const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(typeof date === 'string' ? date.slice(0, 10) : '');
+            if (!m || m[2] < 1 || m[2] > 12 || m[3] < 1 || m[3] > 31) return null;
+            const y = Number(m[1]);
+            const start = Date.UTC(y, 0, 1);
+            const t = y + (Date.UTC(y, m[2] - 1, Number(m[3])) - start) / (Date.UTC(y + 1, 0, 1) - start);
+            return Number.isFinite(t) ? t : null;
+        }
+
+        // "2026-07-01" -> "juli 2026"
+        function monthLabel(date) {
+            const m = /^(\d{4})-(\d{2})/.exec(date || '');
+            return m ? `${MONTHS[Number(m[2]) - 1] || ''} ${m[1]}`.trim() : String(date);
+        }
+
+        function positivePrice(v) {
+            return typeof v === 'number' && Number.isFinite(v) && v > 0 && v < 1000 ? v : null;
+        }
+
+        // history.json schoonmaken: alleen wat we kennen, oplopend op datum. null als er niets bruikbaars in staat.
+        function normalizeHistory(data) {
+            if (!data || typeof data !== 'object' || !data.series || typeof data.series !== 'object') return null;
+            const s = data.series;
+            const list = (arr, fn) => (Array.isArray(arr) ? arr : []).map(r => (r && typeof r === 'object' ? fn(r) : null))
+                .filter(Boolean).sort((a, b) => a.t - b.t);
+            const quarter = r => {
+                const t = yearFraction(r.date);
+                const q = quarterIndex(r.periode);
+                if (t === null || q === null) return null;
+                return { t, q, periode: r.periode, n: Number.isInteger(r.n) && r.n > 0 ? r.n : null, 6: positivePrice(r[6]), 9: positivePrice(r[9]), 20: positivePrice(r[20]) };
+            };
+            const economist = r => {
+                const t = yearFraction(r.date);
+                const eur = positivePrice(r.eur);
+                return t === null || eur === null ? null : { t, date: String(r.date).slice(0, 10), eur, nlg: positivePrice(r.nlg) };
+            };
+            const out = {
+                nuggets: list(s.nuggets, quarter),
+                veggie: list(s.veggie, quarter),
+                bigmacBezorg: list(s.bigmac_bezorg, r => {
+                    const q = quarter(r);
+                    const eur = positivePrice(r.eur);
+                    return q && eur !== null ? { t: q.t, q: q.q, periode: q.periode, n: q.n, eur } : null;
+                }),
+                bigmacNl: list(s.bigmac_nl, economist),
+                bigmacEurozone: list(s.bigmac_eurozone, economist),
+                sources: (Array.isArray(data.sources) ? data.sources : [])
+                    .filter(x => x && typeof x.naam === 'string')
+                    .slice(0, 10)
+                    .map(x => ({ naam: x.naam.slice(0, 120), url: safeUrl(x.url), wat: typeof x.wat === 'string' ? x.wat.slice(0, 300) : '' }))
+            };
+            return out.nuggets.length || out.bigmacNl.length ? out : null;
+        }
+
+        // Punten voor één lijn; null = de pen gaat omhoog (linePath onderbreekt daar).
+        // Onderbreekt bij een ontbrekende waarde en bij een gat in de tijd: een
+        // overgeslagen kwartaal (q), of zonder kwartalen meer dan maxGapYears. Nooit interpoleren.
+        function seriesPoints(rows, valueOf, maxGapYears = Infinity) {
+            const out = [];
+            let prev = null;
+            const lift = () => { if (out.length && out[out.length - 1] !== null) out.push(null); };
+            for (const r of rows) {
+                const v = valueOf(r);
+                if (v === null || v === undefined || !Number.isFinite(v)) { lift(); prev = null; continue; }
+                if (prev) {
+                    const gap = Number.isInteger(r.q) && Number.isInteger(prev.q) ? r.q - prev.q > 1 : r.t - prev.t > maxGapYears;
+                    if (gap) lift();
+                }
+                out.push({ t: r.t, v, row: r });
+                prev = r;
+            }
+            if (out.length && out[out.length - 1] === null) out.pop();
+            return out;
+        }
+
+        // Prijs van een doos, of per nugget ("nugget"-weergave). null als die maat ontbreekt.
+        function histValue(row, size, mode) {
+            const p = row[size];
+            if (typeof p !== 'number') return null;
+            return mode === 'nugget' ? p / size : p;
+        }
+
+        // De lijnen voor de nuggetgrafiek, zonder kleuren (die komen bij het tekenen)
+        function nuggetHistorySeries(data, mode, withVeggie) {
+            const make = (rows, veggie) => HIST_SIZES.map(size => ({
+                size, veggie,
+                points: seriesPoints(rows, r => histValue(r, size, mode))
+                    .map(p => p && { ...p, hollow: p.row.n !== null && p.row.n < LOW_N })
+            }));
+            return [...make(data.nuggets, false), ...(withVeggie ? make(data.veggie, true) : [])];
+        }
+
+        // Welke doos is het voordeligst per nugget? { best: [maten], rates: [{size, rate}] } of null.
+        // Gelijkspel telt: dan staan er meer maten in best.
+        function cheapestPerNugget(prices, sizes = HIST_SIZES) {
+            const rates = sizes.filter(s => positivePrice(prices[s]) !== null).map(s => ({ size: s, rate: prices[s] / s }));
+            if (rates.length === 0) return null;
+            const min = Math.min(...rates.map(r => r.rate));
+            return { best: rates.filter(r => r.rate - min < 1e-9).map(r => r.size), rates };
+        }
+
+        // Per maat: in hoeveel kwartalen was die (alleen) het voordeligst per nugget?
+        function perNuggetWins(rows, sizes = HIST_SIZES) {
+            const wins = Object.fromEntries(sizes.map(s => [s, 0]));
+            let quarters = 0, ties = 0;
+            for (const r of rows) {
+                const c = cheapestPerNugget(r, sizes);
+                if (!c || c.rates.length < 2) continue;
+                quarters++;
+                if (c.best.length > 1) ties++;
+                else wins[c.best[0]]++;
+            }
+            return { wins, quarters, ties };
+        }
+
+        // Procentuele verandering, afgerond op hele procenten: (3,25 -> 6,26) = 93
+        function pctChange(from, to) {
+            return from > 0 ? Math.round((to / from - 1) * 100) : null;
+        }
+
+        const EURO_3 = new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR', minimumFractionDigits: 3, maximumFractionDigits: 3 });
+
+        // Prijs per nugget met drie decimalen: de verschillen zitten in de tienden van centen
+        function formatRate(v) {
+            return EURO_3.format(v);
+        }
+
+        function formatGuilder(v) {
+            return `ƒ ${v.toLocaleString('nl-NL', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        }
+
+        // "6, 9 en 20"
+        function joinAnd(items) {
+            return items.length < 2 ? items.join('') : `${items.slice(0, -1).join(', ')} en ${items[items.length - 1]}`;
+        }
+
+        // Tekst onder de nuggetgrafiek: welke doos is nu en vroeger het voordeligst per nugget?
+        function perNuggetInsight(rows, current) {
+            const parts = [];
+            const now = current && cheapestPerNugget(current);
+            const largest = HIST_SIZES[HIST_SIZES.length - 1];
+            if (now && now.rates.length > 1) {
+                const rate = s => formatRate(now.rates.find(r => r.size === s).rate);
+                const hasLargest = now.rates.some(r => r.size === largest);
+                if (now.best.length > 1) {
+                    parts.push(`Nu kosten de dozen van ${joinAnd(now.best)} precies evenveel per nugget (${rate(now.best[0])}).`);
+                } else if (now.best[0] === largest || !hasLargest) {
+                    parts.push(`Nu is de doos van ${now.best[0]} het voordeligst per nugget (${rate(now.best[0])}).`);
+                } else {
+                    parts.push(`Nu is de doos van ${now.best[0]} het voordeligst per nugget (${rate(now.best[0])}), níet de ${largest} (${rate(largest)}).`);
+                }
+            }
+            const w = perNuggetWins(rows);
+            if (w.quarters > 0) {
+                const ranked = HIST_SIZES.filter(s => w.wins[s] > 0).sort((a, b) => w.wins[b] - w.wins[a]);
+                const bits = ranked.map((s, i) => i === 0 ? `de ${s} het voordeligst in ${w.wins[s]} van de ${w.quarters} kwartalen` : `de ${s} in ${w.wins[s]}`);
+                let text = `Sinds ${Math.floor(rows[0].q / 4)} was per nugget ${joinAnd(bits)}${w.ties ? ` (plus ${w.ties === 1 ? 'één keer' : `${w.ties} keer`} gelijkspel)` : ''}.`;
+                if (ranked.length && ranked[0] !== largest) text += ' Groot is dus niet automatisch voordelig. 🤓';
+                parts.push(text);
+            }
+            return parts.join(' ');
+        }
+
+        const histState = { data: null, loading: null, mode: 'doos', veggie: false, charts: {} };
+
+        function histColors() {
+            const css = getComputedStyle(document.documentElement);
+            const get = (token, fallback) => css.getPropertyValue(token).trim() || fallback;
+            return {
+                ...chartColors(),
+                6: get('--chart-s6', '#2a78d6'),
+                9: get('--chart-s9', '#e05a26'),
+                20: get('--chart-s20', '#12936a'),
+                filler: get('--chart-filler', '#767676'),
+                text: get('--chart-text', '#5c5c5c')
+            };
+        }
+
+        // Markering: rondje, vierkantje of driehoekje (vorm = tweede kenmerk naast kleur)
+        function drawMarker(parent, shape, cx, cy, r, color, fill) {
+            const common = { fill, stroke: color, 'stroke-width': 1.6 };
+            if (shape === 'square') {
+                const s = r * 0.9;
+                return svgEl('rect', { x: (cx - s).toFixed(1), y: (cy - s).toFixed(1), width: (2 * s).toFixed(1), height: (2 * s).toFixed(1), ...common }, parent);
+            }
+            if (shape === 'triangle') {
+                const s = r * 1.2;
+                return svgEl('path', { d: `M${cx.toFixed(1)} ${(cy - s).toFixed(1)}L${(cx + s).toFixed(1)} ${(cy + s * 0.75).toFixed(1)}L${(cx - s).toFixed(1)} ${(cy + s * 0.75).toFixed(1)}Z`, ...common }, parent);
+            }
+            return svgEl('circle', { cx: cx.toFixed(1), cy: cy.toFixed(1), r, ...common }, parent);
+        }
+
+        // Legenda-item: stukje lijn (met streepjes) en de markering
+        function legendItem(label, color, { dash = '', marker = null, hollow = false, bg = '#fff', line = true } = {}) {
+            const svg = svgEl('svg', { width: 26, height: 12, 'aria-hidden': 'true' });
+            if (line) svgEl('path', { d: 'M1 6H25', stroke: color, 'stroke-width': 2, 'stroke-dasharray': dash, fill: 'none' }, svg);
+            if (marker) drawMarker(svg, marker, 13, 6, 3.6, color, hollow ? bg : color);
+            return h('li', {}, svg, label);
+        }
+
+        // Eindlabels rechts van de lijnen, uit elkaar geduwd als ze elkaar raken
+        function placeEndLabels(labels, minGap, top, bottom) {
+            const sorted = labels.slice().sort((a, b) => a.y - b.y);
+            for (let i = 1; i < sorted.length; i++) {
+                if (sorted[i].y - sorted[i - 1].y < minGap) sorted[i].y = sorted[i - 1].y + minGap;
+            }
+            const overflow = sorted.length ? sorted[sorted.length - 1].y - bottom : 0;
+            if (overflow > 0) for (const l of sorted) l.y -= overflow;
+            for (let i = 0; i < sorted.length; i++) {
+                if (sorted[i].y < top) sorted[i].y = top + i * minGap;
+            }
+            return sorted;
+        }
+
+        // Algemene tijdlijngrafiek op basis van svgChart.
+        // cfg: wrapId, label, summary, xDomain, xTicks, yDomain, yTicks, yFormat, margin,
+        //      series [{ color, dash, width, marker, markerR, endLabel, points: [{t, v, hollow, row} | null] }],
+        //      annotations [{ t, v, text, anchor, dx, dy }], tipNodes(t, hits)
+        function renderTimeChart(key, cfg) {
+            const wrap = document.getElementById(cfg.wrapId);
+            if (!wrap || isFoldedAway(wrap)) return;
+            const C = cfg.colors;
+            const width = Math.max(wrap.clientWidth - 8, 260);
+            const narrow = width < 480;
+            const height = narrow ? 250 : 310;
+            const chart = svgChart({
+                width, height,
+                margin: cfg.margin,
+                xDomain: cfg.xDomain, yDomain: cfg.yDomain,
+                xTicks: cfg.xTicks, yTicks: cfg.yTicks,
+                xFormat: cfg.xFormat, yFormat: cfg.yFormat,
+                label: cfg.label, title: cfg.summary,
+                colors: { grid: C.grid, axis: C.axis }
+            });
+            const { svg, plot, x, y } = chart;
+            const labels = [];
+            for (const s of cfg.series) {
+                const pts = s.points.map(p => p && [x(p.t), y(p.v)]);
+                svgEl('path', { d: linePath(pts), fill: 'none', stroke: s.color, 'stroke-width': s.width || 2, 'stroke-dasharray': s.dash || '', 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, plot);
+                if (s.marker) {
+                    for (const p of s.points) {
+                        if (p) drawMarker(plot, s.marker, x(p.t), y(p.v), s.markerR || (narrow ? 3.2 : 4), s.color, p.hollow ? C.hole : s.color);
+                    }
+                }
+                const last = s.points.filter(Boolean).pop();
+                if (s.endLabel && last) labels.push({ text: s.endLabel, x: x(last.t) + 9, y: y(last.v) + 4 });
+            }
+            for (const l of placeEndLabels(labels, 13, chart.margin.top + 4, chart.margin.top + chart.height)) {
+                svgEl('text', { x: l.x, y: l.y, style: `fill:${C.text};font-weight:600` }, plot).textContent = l.text;
+            }
+            for (const a of cfg.annotations || []) {
+                svgEl('text', { x: x(a.t) + (a.dx || 0), y: y(a.v) + (a.dy || 0), 'text-anchor': a.anchor || 'start', style: `fill:${C.text};font-weight:600` }, plot).textContent = a.text;
+            }
+
+            // Hover-laag: verticale lijn plus een ring om elk punt op die datum
+            const hover = svgEl('g', { 'aria-hidden': 'true', style: 'display:none' }, svg);
+            svgEl('line', { class: 'hl', y1: chart.margin.top, y2: chart.margin.top + chart.height, stroke: C.hover, 'stroke-width': 1 }, hover);
+            const rings = svgEl('g', {}, hover);
+            svgEl('rect', { x: chart.margin.left, y: 0, width: chart.width, height, fill: 'transparent', style: 'cursor:crosshair' }, svg);
+
+            wrap.replaceChildren(svg);
+            const tip = h('div', { className: 'chart-tip', 'aria-hidden': 'true' });
+            wrap.appendChild(tip);
+
+            const stops = [...new Set(cfg.series.flatMap(s => s.points.filter(Boolean).map(p => p.t)))].sort((a, b) => a - b);
+            const st = histState.charts[key] || (histState.charts[key] = {});
+            Object.assign(st, { cfg, chart, hover, rings, tip, stops, C });
+            if (st.activeT !== undefined && st.activeT !== null) {
+                showTimePoint(key, nearestStop(stops, st.activeT));
+            }
+        }
+
+        function nearestStop(stops, t) {
+            let best = 0;
+            for (let i = 1; i < stops.length; i++) if (Math.abs(stops[i] - t) < Math.abs(stops[best] - t)) best = i;
+            return best;
+        }
+
+        function timeChartHits(cfg, t) {
+            const hits = [];
+            for (const s of cfg.series) {
+                for (const p of s.points) if (p && Math.abs(p.t - t) < 1e-9) hits.push({ s, p });
+            }
+            return hits;
+        }
+
+        function showTimePoint(key, i) {
+            const st = histState.charts[key];
+            if (!st || !st.stops.length) return;
+            const idx = Math.min(Math.max(i, 0), st.stops.length - 1);
+            const t = st.stops[idx];
+            st.active = idx;
+            st.activeT = t;
+            const { chart, hover, rings, tip, cfg, C } = st;
+            const hits = timeChartHits(cfg, t);
+            const cx = chart.x(t);
+            hover.style.display = '';
+            const hl = hover.querySelector('.hl');
+            hl.setAttribute('x1', cx);
+            hl.setAttribute('x2', cx);
+            rings.replaceChildren();
+            for (const { s, p } of hits) {
+                svgEl('circle', { cx, cy: chart.y(p.v), r: 7, fill: 'none', stroke: C.mark, 'stroke-width': 2 }, rings);
+            }
+            tip.replaceChildren(...cfg.tipNodes(t, hits));
+            const wrapW = tip.parentNode.clientWidth;
+            tip.className = wrapW < 480 ? 'chart-tip compact' : 'chart-tip';
+            tip.style.display = 'block';
+            const cy = Math.min(...hits.map(({ p }) => chart.y(p.v)));
+            const tw = tip.offsetWidth;
+            const th = tip.offsetHeight;
+            let left, top;
+            if (wrapW < 480) {
+                // Smal: in de bovenhoek aan de andere kant dan het punt, zo min mogelijk in de weg
+                left = cx > wrapW / 2 ? 4 : wrapW - tw - 4;
+                top = 4;
+            } else {
+                // Naast de lijn in plaats van erop: rechts van het punt, of links als dat niet past
+                left = cx + 4 + 14;
+                if (left + tw > wrapW - 4) left = cx + 4 - 14 - tw;
+                top = Math.max(cy + 8 - th / 2, 4);
+            }
+            left = Math.min(Math.max(left, 4), Math.max(4, wrapW - tw - 4));
+            tip.style.left = left + 'px';
+            tip.style.top = top + 'px';
+            return tip.textContent;
+        }
+
+        function hideTimePoint(key) {
+            const st = histState.charts[key];
+            if (!st) return;
+            st.active = null;
+            st.activeT = null;
+            if (st.hover) st.hover.style.display = 'none';
+            if (st.tip) st.tip.style.display = 'none';
+        }
+
+        // Muis, aanraking, toetsenbord en breedte voor één tijdlijngrafiek (eenmalig koppelen)
+        function initTimeChart(key, wrapId, redraw) {
+            const wrap = document.getElementById(wrapId);
+            const toStop = evt => {
+                const st = histState.charts[key];
+                if (!st || !st.chart) return null;
+                const box = st.chart.svg.getBoundingClientRect();
+                const px = (evt.clientX - box.left) * (st.chart.svg.viewBox.baseVal.width / box.width);
+                return nearestStop(st.stops, st.chart.x.invert(px));
+            };
+            wrap.addEventListener('pointermove', evt => { const i = toStop(evt); if (i !== null) showTimePoint(key, i); });
+            wrap.addEventListener('click', evt => { const i = toStop(evt); if (i !== null) showTimePoint(key, i); });
+            wrap.addEventListener('pointerleave', evt => { if (evt.pointerType === 'mouse') hideTimePoint(key); });
+            wrap.addEventListener('blur', () => hideTimePoint(key));
+            wrap.addEventListener('keydown', evt => {
+                const st = histState.charts[key];
+                if (!st || !st.stops.length) return;
+                const max = st.stops.length - 1;
+                const cur = st.active === undefined ? null : st.active;
+                let i;
+                if (evt.key === 'ArrowRight' || evt.key === 'ArrowUp') i = cur === null ? 0 : Math.min(cur + 1, max);
+                else if (evt.key === 'ArrowLeft' || evt.key === 'ArrowDown') i = cur === null ? max : Math.max(cur - 1, 0);
+                else if (evt.key === 'PageUp') i = Math.min((cur === null ? 0 : cur) + 4, max);
+                else if (evt.key === 'PageDown') i = Math.max((cur === null ? max : cur) - 4, 0);
+                else if (evt.key === 'Home') i = 0;
+                else if (evt.key === 'End') i = max;
+                else if (evt.key === 'Escape') { hideTimePoint(key); return; }
+                else return;
+                evt.preventDefault();
+                document.getElementById('histLive').textContent = showTimePoint(key, i) || '';
+            });
+            let lastWidth = 0;
+            const onResize = () => {
+                if (wrap.clientWidth !== lastWidth) {
+                    lastWidth = wrap.clientWidth;
+                    redraw();
+                }
+            };
+            if (window.ResizeObserver) new ResizeObserver(onResize).observe(wrap);
+            else window.addEventListener('resize', onResize);
+        }
+
+        // Nette y-as: van `lo` tot `hi` in stappen van `step`
+        function niceTicks(lo, hi, step) {
+            const out = [];
+            const a = Math.floor(lo / step + 1e-9), b = Math.ceil(hi / step - 1e-9);
+            for (let k = a; k <= b; k++) out.push(Math.round(k * step * 1000) / 1000);
+            return out;
+        }
+
+        function yearTicks(from, to, step) {
+            const out = [];
+            for (let yr = Math.ceil(from / step) * step; yr <= to; yr += step) out.push(yr);
+            return out;
+        }
+
+        function swatch(color, glyph) {
+            return h('span', { style: `color:${color}`, 'aria-hidden': 'true' }, glyph, ' ');
+        }
+
+        function histTable(caption, head, rows) {
+            return h('table', { className: 'data-table' },
+                h('caption', {}, caption),
+                h('thead', {}, h('tr', {}, head.map(c => h('th', { scope: 'col' }, c)))),
+                h('tbody', {}, rows.map(r => h('tr', {}, r.map((c, i) => i === 0 ? h('th', { scope: 'row' }, c) : h('td', {}, c))))));
+        }
+
+        // --- Grafiek 1: nuggets per kwartaal ---
+        function renderNuggetHistory() {
+            const data = histState.data;
+            const wrap = document.getElementById('nugChart');
+            if (!data || isFoldedAway(wrap)) return;
+            const mode = histState.mode;
+            const C = histColors();
+            const narrow = wrap.clientWidth - 8 < 480;
+            const fmt = v => mode === 'nugget' ? formatRate(v) : formatEuro(v);
+            const raw = nuggetHistorySeries(data, mode, histState.veggie);
+            const series = raw.map(s => ({
+                ...s,
+                color: C[s.size],
+                marker: HIST_MARKERS[s.size],
+                dash: s.veggie ? '6 4' : '',
+                width: s.veggie ? 1.6 : 2,
+                markerR: s.veggie ? (narrow ? 2.4 : 3) : undefined,
+                endLabel: s.veggie ? null : String(s.size),
+                label: s.veggie ? `veggie ${s.size}` : `${s.size} stuks`
+            }));
+            const values = series.flatMap(s => s.points.filter(Boolean).map(p => p.v));
+            const ts = series.flatMap(s => s.points.filter(Boolean).map(p => p.t));
+            let yDomain, yTicks;
+            if (mode === 'nugget') {
+                // Per nugget niet vanaf nul: het verschil tussen de dozen zit in centen
+                const lo = Math.floor((Math.min(...values) - 0.005) * 20) / 20;
+                const hi = Math.ceil((Math.max(...values) + 0.005) * 20) / 20;
+                yDomain = [lo, hi];
+                yTicks = niceTicks(lo, hi, 0.05);
+            } else {
+                const hi = Math.ceil(Math.max(...values) / 2) * 2;
+                yDomain = [0, hi];
+                yTicks = niceTicks(0, hi, 2);
+            }
+            const x0 = Math.floor(Math.min(...ts));
+            const x1 = Math.max(...ts) + 0.15;
+            const first = data.nuggets[0], last = data.nuggets[data.nuggets.length - 1];
+            const lastVals = HIST_SIZES.filter(s => last[s] !== null).map(s => `${s} stuks ${fmt(histValue(last, s, mode))}`);
+            const insight = perNuggetInsight(data.nuggets, currentPrices());
+            const summary = `Lijngrafiek: mediane bezorgprijs ${mode === 'nugget' ? 'per nugget' : 'per doos'} per kwartaal, van ${quarterLabel(first.periode)} tot ${quarterLabel(last.periode)}. Laatste kwartaal: ${lastVals.join(', ')}. ${insight}`;
+
+            renderTimeChart('nug', {
+                wrapId: 'nugChart', colors: C, summary,
+                label: `Prijsgeschiedenis nuggets, ${mode === 'nugget' ? 'prijs per nugget' : 'prijs per doos'}`,
+                margin: { top: 12, right: 30, bottom: 30, left: mode === 'nugget' ? 58 : 46 },
+                xDomain: [x0, x1], xTicks: yearTicks(x0, x1, 1),
+                xFormat: v => narrow ? `'${String(v).slice(2)}` : String(v),
+                yDomain, yTicks, yFormat: v => mode === 'nugget' ? formatEuro(v) : formatEuro(v, true),
+                series,
+                tipNodes: (t, hits) => {
+                    const row = hits[0].p.row;
+                    const nodes = [h('strong', {}, quarterLabel(row.periode))];
+                    for (const { s, p } of hits) {
+                        const extra = mode === 'nugget' ? ` (doos ${formatEuro(p.row[s.size])})` : ` (${formatRate(p.row[s.size] / s.size)} p/st)`;
+                        nodes.push(h('span', { className: 'tip-line' }, swatch(s.color, HIST_GLYPHS[s.marker]), `${s.label}: ${fmt(p.v)}`, extra));
+                    }
+                    const ns = [...new Map(hits.map(({ s, p }) => [s.veggie, { veggie: s.veggie, n: p.row.n }])).values()];
+                    for (const { veggie, n } of ns) {
+                        if (n === null) continue;
+                        const low = n < LOW_N ? ' ⚠️ weinig, met een korrel zout' : '';
+                        nodes.push(h('small', {}, `${veggie ? 'Veggie: ' : ''}mediaan van ${n} ${n === 1 ? 'menu' : "menu's"}${low}`));
+                    }
+                    return nodes;
+                }
+            });
+
+            // Legenda
+            const legend = series.filter((s, i, arr) => arr.findIndex(o => o.size === s.size && o.veggie === s.veggie) === i)
+                .map(s => legendItem(s.label, s.color, { dash: s.dash, marker: s.marker, bg: C.hole }));
+            legend.push(legendItem(`open: minder dan ${LOW_N} menu's`, C.text, { marker: 'circle', hollow: true, bg: C.hole, line: false }));
+            document.getElementById('nugLegend').replaceChildren(...legend);
+            document.getElementById('nugSummary').textContent = summary;
+            document.getElementById('nugInsight').textContent = insight;
+
+            // Tabel (ook voor wie geen grafiek kan zien)
+            const cols = histState.veggie ? [false, true] : [false];
+            const byQ = new Map();
+            for (const v of cols) for (const r of v ? data.veggie : data.nuggets) {
+                if (!byQ.has(r.q)) byQ.set(r.q, {});
+                byQ.get(r.q)[v ? 'veggie' : 'nuggets'] = r;
+            }
+            const cell = (r, s) => r && r[s] !== null ? fmt(histValue(r, s, mode)) : '–';
+            const head = ['Kwartaal', ...cols.flatMap(v => HIST_SIZES.map(s => v ? `veggie ${s}` : `${s}`)), 'n'];
+            const rows = [...byQ.keys()].sort((a, b) => b - a).map(q => {
+                const e = byQ.get(q);
+                const any = e.nuggets || e.veggie;
+                const n = [e.nuggets && e.nuggets.n, e.veggie && e.veggie.n].filter(x => x).join(' / ');
+                return [quarterLabel(any.periode), ...cols.flatMap(v => HIST_SIZES.map(s => cell(v ? e.veggie : e.nuggets, s))), n || '–'];
+            });
+            document.getElementById('nugTable').replaceChildren(histTable(
+                `Mediane bezorgprijs ${mode === 'nugget' ? 'per nugget' : 'per doos'}, nieuwste eerst${histState.veggie ? '; n = nuggets / veggie' : ''}`, head, rows));
+            renderVeggieNote();
+        }
+
+        // Veggie hoort niet (meer) in de calculator: alleen hier, als geschiedenis
+        function renderVeggieNote() {
+            const data = histState.data;
+            const pv = priceState && priceState.veggie;
+            const lastRow = data && data.veggie.length ? data.veggie[data.veggie.length - 1] : null;
+            const lastPrices = pv && pv.last_prices ? pv.last_prices : lastRow;
+            const when = pv && pv.last_seen ? monthLabel(pv.last_seen) : lastRow ? quarterLabel(lastRow.periode) : null;
+            const list = lastPrices ? HIST_SIZES.filter(s => positivePrice(lastPrices[s]) !== null).map(s => `${s} stuks ${formatEuro(lastPrices[s])}`) : [];
+            const text = pv && pv.available
+                ? '🌱 Veggie Nuggets zijn weer gespot in ons mandje filialen! De calculator rekent (nog) alleen met de gewone.'
+                : `🌱 Veggie in de calculator? Die staan niet meer op het menu${when ? ` (laatst gezien: ${when})` : ''}, dus rekenen we er niet meer mee.${list.length ? ` Laatste bezorgprijzen: ${joinAnd(list)}.` : ''} Komen ze terug, dan zie je dat hier vanzelf.`;
+            document.getElementById('veggieNote').textContent = text;
+        }
+
+        // --- Grafiek 2: Big Mac sinds 1987 ---
+        function renderBigMacHistory() {
+            const data = histState.data;
+            const wrap = document.getElementById('bmChart');
+            if (!data || isFoldedAway(wrap)) return;
+            const C = histColors();
+            const narrow = wrap.clientWidth - 8 < 480;
+            const nl = seriesPoints(data.bigmacNl, r => r.eur, 2);
+            const ez = seriesPoints(data.bigmacEurozone, r => r.eur, 2);
+            const bz = seriesPoints(data.bigmacBezorg, r => r.eur).map(p => p && { ...p, hollow: p.row.n !== null && p.row.n < LOW_N });
+            const series = [
+                { key: 'nl', label: 'winkelprijs NL (The Economist)', color: C[6], marker: 'circle', markerR: narrow ? 2 : 2.6, endLabel: 'winkel', points: nl },
+                { key: 'ez', label: 'eurozone-gemiddelde (2000–2010, geen NL-prijs)', color: C.filler, dash: '2 4', width: 2, points: ez },
+                { key: 'bz', label: 'bezorgd (mediaan Thuisbezorgd/Uber Eats)', color: C[9], marker: 'square', markerR: narrow ? 2.4 : 3, endLabel: 'bezorgd', points: bz }
+            ];
+            const all = series.flatMap(s => s.points.filter(Boolean));
+            const yMax = Math.ceil(Math.max(...all.map(p => p.v)) / 2) * 2;
+            const x0 = Math.floor(Math.min(...all.map(p => p.t)));
+            const x1 = Math.max(...all.map(p => p.t)) + 0.3;
+            const nlPts = nl.filter(Boolean);
+            const lastNl = nlPts[nlPts.length - 1];
+            const from2011 = nlPts.find(p => p.t >= 2011);
+            const firstNl = nlPts[0];
+            const lastBz = bz.filter(Boolean).pop();
+            const annotations = [];
+            let insight = '';
+            if (from2011 && lastNl && lastNl !== from2011) {
+                const pct = pctChange(from2011.v, lastNl.v);
+                // In het lege vlak onder de lijn, rechts uitgelijnd op het laatste punt
+                annotations.push({ t: lastNl.t, v: from2011.v * 0.8, text: `winkel: ${pct >= 0 ? '+' : ''}${pct}% sinds ${Math.floor(from2011.t)}`, anchor: 'end', dx: 0, dy: 0 });
+                insight += `In de winkel ging de Big Mac van ${formatEuro(from2011.v)} (${monthLabel(from2011.row.date)}) naar ${formatEuro(lastNl.v)} (${monthLabel(lastNl.row.date)}): ${pct >= 0 ? '+' : ''}${pct}%. `;
+            }
+            if (firstNl && firstNl.row.nlg) {
+                insight += `In ${Math.floor(firstNl.t)} kostte hij nog ${formatGuilder(firstNl.row.nlg)} (≈ ${formatEuro(firstNl.v)}). `;
+            }
+            if (lastBz && lastNl) {
+                const diff = lastBz.v - lastNl.v;
+                insight += `Laten bezorgen kost nu ${formatEuro(lastBz.v)} (mediaan, ${quarterLabel(lastBz.row.periode)}): ${formatEuro(Math.abs(diff))} ${diff >= 0 ? 'meer' : 'minder'} dan de winkelprijs. `;
+            }
+            insight += 'Niet voor inflatie gecorrigeerd.';
+            const ezPts = ez.filter(Boolean);
+            if (ezPts.length) {
+                const mid = ezPts[Math.floor(ezPts.length / 2)];
+                annotations.push({ t: mid.t, v: mid.v, text: narrow ? 'eurozone-gem.' : 'eurozone-gemiddelde', anchor: 'middle', dy: -16 });
+            }
+            const summary = `Lijngrafiek: prijs van een Big Mac van ${Math.floor(x0)} tot nu. ${insight}`;
+            renderTimeChart('bm', {
+                wrapId: 'bmChart', colors: C, summary,
+                label: 'Big Mac-prijs sinds 1987: winkelprijs Nederland, eurozone-gemiddelde en bezorgprijs',
+                margin: { top: 12, right: narrow ? 58 : 64, bottom: 30, left: 40 },
+                xDomain: [x0, x1], xTicks: yearTicks(x0, x1, narrow ? 10 : 5), xFormat: v => String(v),
+                yDomain: [0, yMax], yTicks: niceTicks(0, yMax, 2), yFormat: v => formatEuro(v, true),
+                series, annotations,
+                tipNodes: (t, hits) => {
+                    const { s, p } = hits[0];
+                    const nodes = [h('strong', {}, s.key === 'bz' ? quarterLabel(p.row.periode) : monthLabel(p.row.date))];
+                    for (const hit of hits) {
+                        const r = hit.p.row;
+                        let line;
+                        if (hit.s.key === 'nl') line = r.nlg ? `Winkelprijs NL: ${formatGuilder(r.nlg)} ≈ ${formatEuro(r.eur)}` : `Winkelprijs NL: ${formatEuro(r.eur)}`;
+                        else if (hit.s.key === 'ez') line = `Eurozone-gemiddelde: ${formatEuro(r.eur)}`;
+                        else line = `Bezorgd: ${formatEuro(r.eur)}`;
+                        nodes.push(h('span', { className: 'tip-line' }, swatch(hit.s.color, hit.s.marker ? HIST_GLYPHS[hit.s.marker] : '┄'), line));
+                        if (hit.s.key === 'nl') nodes.push(h('small', {}, r.nlg ? `The Economist; guldens omgerekend tegen ${GULDEN_PER_EURO.toLocaleString('nl-NL', { maximumFractionDigits: 5 })} per euro` : 'The Economist, Big Mac Index'));
+                        if (hit.s.key === 'ez') nodes.push(h('small', {}, 'Geen Nederlandse prijs: The Economist gaf toen alleen een eurozone-gemiddelde.'));
+                        if (hit.s.key === 'bz' && r.n) nodes.push(h('small', {}, `mediaan van ${r.n} ${r.n === 1 ? 'menu' : "menu's"}${r.n < LOW_N ? ' ⚠️ weinig' : ''}`));
+                    }
+                    return nodes;
+                }
+            });
+            document.getElementById('bmLegend').replaceChildren(...series.map(s => legendItem(s.label, s.color, { dash: s.dash, marker: s.marker, bg: C.hole })));
+            document.getElementById('bmSummary').textContent = summary;
+            document.getElementById('bmInsight').textContent = insight;
+
+            const rows = [
+                ...data.bigmacNl.map(r => ({ t: r.t, cells: [monthLabel(r.date), r.nlg ? `${formatGuilder(r.nlg)} ≈ ${formatEuro(r.eur)}` : formatEuro(r.eur), 'winkel NL'] })),
+                ...data.bigmacEurozone.map(r => ({ t: r.t, cells: [monthLabel(r.date), formatEuro(r.eur), 'winkel, eurozone-gem.'] })),
+                ...data.bigmacBezorg.map(r => ({ t: r.t, cells: [quarterLabel(r.periode), formatEuro(r.eur), `bezorgd${r.n ? ` (n = ${r.n})` : ''}`] }))
+            ].sort((a, b) => b.t - a.t).map(r => r.cells);
+            document.getElementById('bmTable').replaceChildren(histTable('Big Mac-prijzen, nieuwste eerst', ['Wanneer', 'Prijs', 'Soort'], rows));
+
+            const src = data.sources.map(s => s.url ? h('a', { href: s.url, target: '_blank', rel: 'noopener' }, s.naam) : s.naam);
+            const foot = ['Bronnen: '];
+            src.forEach((s, i) => foot.push(i ? ' · ' : '', s));
+            foot.push('. Nuggets en "bezorgd" zijn bezorgprijzen (doorgaans 10–35% boven de winkelprijs); "winkel" is de winkelprijs volgens The Economist. Hoe we meten: ',
+                h('a', { href: SCRAPER_URL, target: '_blank', rel: 'noopener' }, 'de scraper op GitHub'), '.');
+            document.getElementById('historySources').replaceChildren(...foot);
+        }
+
+        function renderHistory() {
+            if (!histState.data || !document.getElementById('historyFold').open) return;
+            renderNuggetHistory();
+            renderBigMacHistory();
+        }
+
+        function setHistoryStatus(...nodes) {
+            document.getElementById('historyStatus').replaceChildren(...nodes);
+        }
+
+        // Eén keer ophalen; mislukt het, dan een knop om het opnieuw te proberen
+        function loadHistory() {
+            if (histState.data) { renderHistory(); return Promise.resolve(); }
+            if (histState.loading) return histState.loading;
+            setHistoryStatus('📼 Geschiedenis ophalen…');
+            histState.loading = fetch(HISTORY_URL, { cache: 'no-cache' })
+                .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+                .then(json => {
+                    const data = normalizeHistory(json);
+                    if (!data) throw new Error('history.json bevat geen bruikbare reeksen');
+                    histState.data = data;
+                    setHistoryStatus();
+                    document.getElementById('historyBody').hidden = false;
+                    renderHistory();
+                })
+                .catch(() => {
+                    histState.loading = null;
+                    const retry = h('button', { type: 'button', className: 'pill-btn' }, '🔁 Nog een keer');
+                    retry.addEventListener('click', loadHistory);
+                    setHistoryStatus('😬 De prijsgeschiedenis kon niet worden geladen. ', retry);
+                });
+            return histState.loading;
+        }
+
+        function initHistory() {
+            onFoldOpen('historyFold', loadHistory);
+            for (const radio of document.querySelectorAll('input[name="histMode"]')) {
+                radio.addEventListener('change', () => {
+                    if (!radio.checked) return;
+                    histState.mode = radio.value === 'nugget' ? 'nugget' : 'doos';
+                    renderNuggetHistory();
+                });
+            }
+            document.getElementById('histVeggie').addEventListener('change', evt => {
+                histState.veggie = evt.target.checked;
+                renderNuggetHistory();
+            });
+            initTimeChart('nug', 'nugChart', renderNuggetHistory);
+            initTimeChart('bm', 'bmChart', renderBigMacHistory);
+            const scheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+            if (scheme && scheme.addEventListener) scheme.addEventListener('change', renderHistory);
+        }
+
+        // ===== Waar komen de prijzen vandaan? (per filiaal) =====
+        const PLATFORM_NAMES = { thuisbezorgd: 'Thuisbezorgd', ubereats: 'Uber Eats' };
+
+        function renderStores() {
+            const fold = document.getElementById('storesFold');
+            if (!fold.open || !priceState) return;
+            const out = document.getElementById('storesOut');
+            const st = priceState;
+            const prices = st.prices;
+            const sizes = boxSizes(prices);
+            const date = parsePriceDate(st.timestamp);
+            const parts = [];
+            const eur2 = v => v === null || v === undefined ? '–' : formatEuro(v).replace('€ ', '').replace('€ ', '');
+
+            parts.push(h('p', {}, st.kind === 'bezorgprijs' ? 'De prijzen op deze site zijn ' : 'Bron van de prijzen: ',
+                st.kind === 'bezorgprijs' ? h('strong', {}, 'bezorgprijzen') : '',
+                st.kind === 'bezorgprijs' && st.source ? `: ${st.source}` : st.source || '',
+                st.sourceUrl ? h('a', { href: st.sourceUrl, target: '_blank', rel: 'noopener' }, new URL(st.sourceUrl).hostname) : '',
+                date ? `, gemeten op ${formatPriceDate(date)}.` : '.'));
+
+            const stores = st.stores || [];
+            if (stores.length) {
+                const head = ['Filiaal', ...sizes.map(s => `${s}`), 'Big Mac'];
+                const rows = stores.map(s => [
+                    [s.url ? h('a', { href: s.url, target: '_blank', rel: 'noopener' }, s.name) : s.name,
+                        h('span', { className: 'sub' }, PLATFORM_NAMES[s.platform] || s.platform || '')],
+                    ...sizes.map(size => eur2(s.prices[size])),
+                    eur2(s.bigmac)
+                ]);
+                const table = histTable(`Prijzen in euro per filiaal${date ? `, ${formatPriceDate(date)}` : ''}`, head, rows);
+                table.append(h('tfoot', {}, h('tr', {}, h('th', { scope: 'row' }, 'Mediaan (gebruiken wij)'),
+                    ...sizes.map(size => h('td', {}, eur2(prices[size]))), h('td', {}, eur2(st.bigmac)))));
+                parts.push(h('div', { className: 'table-wrap' }, table));
+
+                const largest = sizes[sizes.length - 1];
+                const range = stores.map(s => s.prices[largest]).filter(v => typeof v === 'number');
+                if (range.length > 1) {
+                    parts.push(h('p', { className: 'tool-sub' }, `Voor ${largest} stuks betaal je bij deze filialen tussen ${formatEuro(Math.min(...range))} en ${formatEuro(Math.max(...range))}. Daarom de mediaan: het middelste filiaal, zodat één uitschieter de prijs niet scheeftrekt.`));
+                }
+            } else {
+                parts.push(h('p', { className: 'tool-sub' }, st.origin === 'reserve'
+                    ? 'Dit zijn de ingebouwde reserveprijzen; een overzicht per filiaal hebben we daar niet bij.'
+                    : 'Voor deze prijzen hebben we geen overzicht per filiaal.'));
+            }
+
+            parts.push(h('ul', {},
+                h('li', {}, 'McDonald\'s Nederland publiceert zelf geen prijzen. Franchisenemers bepalen hun eigen prijs, dus die verschilt per filiaal.'),
+                h('li', {}, 'Bezorgprijzen zijn doorgaans 10–35% hoger dan aan de balie. In het restaurant ben je dus meestal goedkoper uit.'),
+                h('li', {}, 'Sites met "menuprijzen" verzinnen of kopiëren hun cijfers; die gebruiken we niet.'),
+                h('li', {}, 'De scraper die dit meet is open source: ', h('a', { href: SCRAPER_URL, target: '_blank', rel: 'noopener' }, 'bekijk hem op GitHub'), '.')));
+            const issue = `${ISSUE_URL}?${new URLSearchParams({
+                title: 'Winkelprijs gezien',
+                body: 'Filiaal (plaats + straat):\nDatum:\nPrijs 6 / 9 / 20 nuggets:\nAan de balie, via de app of op het bord?\n'
+            })}`;
+            parts.push(h('p', {}, '🧾 Zelf een prijs gezien in de winkel? ', h('a', { href: issue, target: '_blank', rel: 'noopener' }, 'Meld het via een issue'), '.'));
+            out.replaceChildren(...parts);
+        }
+
+        function openStoresFold() {
+            const fold = document.getElementById('storesFold');
+            fold.open = true;
+            renderStores();
+            fold.scrollIntoView({ block: 'start', behavior: 'smooth' });
+            fold.querySelector('summary').focus({ preventScroll: true });
+        }
+
+        function initStores() {
+            onFoldOpen('storesFold', renderStores);
+            document.getElementById('priceInfo').addEventListener('click', evt => {
+                if (!evt.target.closest('.info-link')) return;
+                evt.preventDefault();
+                openStoresFold();
+            });
+        }
+
         // ===== Prijzen =====
         // Eén bron van waarheid: /prices.json. Lukt ophalen niet, dan de laatst
         // bekende goede prijzen uit localStorage, en anders de ingebouwde reserve.
-        // (bijv. "veggie", "stores" of "history") worden genegeerd; "bigmac" en "kind" zijn optioneel.
-        // (later bijv. "veggie" of "history") worden genegeerd.
+        // Velden die we niet kennen worden genegeerd; alles behalve "prices" is optioneel.
+        // Let op: "source" is sinds september 2026 een omschrijving, geen URL.
         const PRICES_URL = '/prices.json';
         const STORAGE_KEY = 'canitnugget.prijzen.v2';
         const OLD_STORAGE_KEY = 'nuggetPrices'; // oude sleutel; kon foute reserveprijzen bevatten
-        const STALE_DAYS = 7;
-        // Reserve = de waarden uit prices.json van 7 september 2025
+        const STALE_DAYS = 7;   // daarna: "mogelijk verouderd"
+        const AGE_NOTE_DAYS = 3; // daarna al wel even noemen hoe oud (er wordt dagelijks gemeten)
+        // Reserve = de mediaan uit prices.json van 29 september 2026 (bezorgprijzen,
+        // 10 filialen). Wordt na een week vanzelf als "mogelijk verouderd" getoond.
         const BUILTIN_PRICES = Object.freeze({
-            prices: Object.freeze({ 6: 3.55, 9: 4.80, 20: 9.50 }),
-            timestamp: '2025-09-07T16:00:03',
-            source: 'https://mcdonaldsmenu.nl/#mcdonalds-prijzen'
+            prices: Object.freeze({ 6: 3.73, 9: 5.20, 20: 11.80 }),
+            timestamp: '2026-09-29T09:57:03+02:00',
+            source: 'Thuisbezorgd/Uber Eats, mediaan van 10 filialen',
+            sourceUrl: null,
+            kind: 'bezorgprijs',
+            n: 10,
+            bigmac: 8.15,
+            stores: [],
+            veggie: null
         });
 
         // { prices, timestamp, source, origin: 'laden' | 'server' | 'opslag' | 'reserve' }
@@ -3337,15 +4410,41 @@
                 }
             }
             if (Object.keys(prices).length === 0) return null;
-            // Optioneel (nieuwere prices.json): Big Mac-mediaan en soort prijs
+            // Optioneel (nieuwere prices.json): Big Mac-mediaan, soort prijs, filialen, veggie
             const bm = typeof data.bigmac === 'number' ? data.bigmac
                 : data.bigmac && typeof data.bigmac.price === 'number' ? data.bigmac.price : null;
+            const text = (v, max) => typeof v === 'string' && v.trim() ? v.trim().slice(0, max) : null;
+            const priceMap = obj => {
+                const out = {};
+                if (obj && typeof obj === 'object') {
+                    for (const [k, v] of Object.entries(obj)) if (/^\d{1,3}$/.test(k) && positivePrice(v) !== null) out[k] = v;
+                }
+                return out;
+            };
+            const stores = (Array.isArray(data.stores) ? data.stores : [])
+                .filter(s => s && typeof s === 'object' && text(s.name, 80))
+                .slice(0, 50)
+                .map(s => ({
+                    name: text(s.name, 80),
+                    platform: text(s.platform, 30),
+                    url: safeUrl(s.url),
+                    prices: priceMap(s.prices),
+                    bigmac: positivePrice(s.bigmac)
+                }));
+            const v = data.veggie;
+            const veggie = v && typeof v === 'object' && typeof v.available === 'boolean'
+                ? { available: v.available, last_seen: text(v.last_seen, 20), last_prices: priceMap(v.last_prices) }
+                : null;
+            const n = Number.isInteger(data.n) && data.n > 0 && data.n < 1000 ? data.n : null;
             return {
                 prices,
                 timestamp: typeof data.timestamp === 'string' ? data.timestamp : null,
-                source: safeUrl(data.source),
+                // Oud formaat: source was een URL. Nieuw: een omschrijving (tekst).
+                source: safeUrl(data.source) ? null : text(data.source, 120),
+                sourceUrl: safeUrl(data.sourceUrl) || safeUrl(data.source),
                 bigmac: bm !== null && bm > 0 && bm < 100 ? bm : null,
-                kind: typeof data.kind === 'string' ? data.kind.slice(0, 40) : null
+                kind: typeof data.kind === 'string' ? data.kind.slice(0, 40) : null,
+                n, stores, veggie
             };
         }
 
@@ -3358,12 +4457,17 @@
             return isNaN(d) ? null : d;
         }
 
-        function formatPriceDate(date) {
-            return date.toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+        function formatPriceDate(date, short = false) {
+            return date.toLocaleDateString('nl-NL', { day: 'numeric', month: short ? 'short' : 'long', year: 'numeric' });
         }
 
         function isStale(date, now = new Date()) {
             return !date || (now - date) > STALE_DAYS * 24 * 60 * 60 * 1000;
+        }
+
+        // Hele dagen oud (0 = vandaag gemeten), of null zonder datum
+        function ageInDays(date, now = new Date()) {
+            return date ? Math.max(0, Math.floor((now - date) / (24 * 60 * 60 * 1000))) : null;
         }
 
         // localStorage kan ontbreken of gooien (privévenster, geblokkeerde cookies)
@@ -3383,43 +4487,68 @@
             } catch (e) { /* geen opslag beschikbaar */ }
         }
 
+        // Tegels: prijs per doos en per nugget. De voordeligste per nugget krijgt een kroontje;
+        // dat is niet altijd de grootste doos (zie de prijsgeschiedenis).
         function renderPackages() {
             const prices = currentPrices();
-            document.getElementById('packageGrid').replaceChildren(...boxSizes(prices).map(size =>
+            const sizes = boxSizes(prices);
+            const best = sizes.length > 1 ? cheapestPerNugget(prices, sizes) : null;
+            const isBest = size => Boolean(best && best.best.length === 1 && best.best[0] === size);
+            document.getElementById('packageGrid').replaceChildren(...sizes.map(size =>
                 h('div', { className: 'package' },
                     h('div', { className: 'package-number' }, size),
                     h('div', { className: 'package-label' }, 'nuggets'),
-                    h('div', { className: 'package-price' }, formatEuro(prices[size])))
+                    h('div', { className: 'package-price' }, formatEuro(prices[size])),
+                    h('div', { className: isBest(size) ? 'package-rate best' : 'package-rate', title: isBest(size) ? 'Voordeligst per nugget' : 'Prijs per nugget' },
+                        `${formatEuro(prices[size] / size)} p/st`, isBest(size) ? h('span', { 'aria-label': ', voordeligst per nugget' }, ' 👑') : ''))
             ));
+        }
+
+        // Eén korte regel: "💰 Bezorgprijzen, mediaan van 10 filialen · 29 september 2026 ⓘ"
+        function priceInfoLead(state) {
+            const kind = state.kind === 'bezorgprijs' ? 'Bezorgprijzen' : 'Prijzen';
+            if (state.n) return `${kind}, mediaan van ${state.n} filialen`;
+            if (state.source) return `${kind} · ${state.source}`;
+            return kind;
         }
 
         function renderPriceInfo() {
             const info = document.getElementById('priceInfo');
-            const { origin, timestamp, source } = priceState;
+            const { origin, timestamp, sourceUrl } = priceState;
             if (origin === 'laden') {
                 info.className = 'price-info';
                 info.replaceChildren(h('small', {}, '💰 Prijzen laden…'));
                 return;
             }
             const date = parsePriceDate(timestamp);
-            const dateText = date ? formatPriceDate(date) : 'onbekende datum';
-            const lead = {
-                server: `💰 Prijzen van ${dateText}`,
-                opslag: `💰 Laatst bekende prijzen, van ${dateText} (de actuele prijzen konden niet worden geladen)`,
-                reserve: `💰 Ingebouwde reserveprijzen, van ${dateText} (de actuele prijzen konden niet worden geladen)`
+            // Op de telefoon "29 sep 2026", zodat de regel op één regel past
+            const short = window.matchMedia && window.matchMedia(GRID_NARROW).matches;
+            const dateText = date ? formatPriceDate(date, short) : 'onbekende datum';
+            const lead = priceInfoLead(priceState);
+            const tail = {
+                server: '',
+                opslag: ' (laatst bekende; de actuele konden niet worden geladen)',
+                reserve: ' (ingebouwde reserve; de actuele konden niet worden geladen)'
             }[origin];
             const stale = isStale(date);
-            const parts = [lead];
-            if (source) {
-                parts.push(' · bron: ', h('a', { href: source, target: '_blank', rel: 'noopener' }, new URL(source).hostname));
+            const age = ageInDays(date);
+            const parts = [`💰 ${lead} · `];
+            const when = h('span', { className: 'nowrap' }, dateText);
+            parts.push(when, tail);
+            if (sourceUrl) {
+                parts.push(' · bron: ', h('a', { href: sourceUrl, target: '_blank', rel: 'noopener' }, new URL(sourceUrl).hostname));
             }
             if (stale) parts.push(' ', h('span', { className: 'stale-note' }, '⚠️ mogelijk verouderd'));
+            else if (age !== null && age >= AGE_NOTE_DAYS) parts.push(' ', h('span', { className: 'age-note' }, `(${age} dagen oud)`));
+            const infoLink = h('a', { href: '#storesFold', className: 'info-link', 'aria-label': 'Waar komen de prijzen vandaan?', title: priceState.source ? `Bron: ${priceState.source}. Klik voor de prijzen per filiaal.` : 'Waar komen de prijzen vandaan?' }, 'i');
+            if (tail || stale || (age !== null && age >= AGE_NOTE_DAYS)) parts.push(' ', infoLink);
+            else when.append(' ', infoLink); // datum en i blijven bij elkaar
             info.className = stale ? 'price-info stale' : 'price-info';
             info.replaceChildren(h('small', {}, parts));
         }
 
         function applyPrices(data, origin) {
-            priceState = { prices: data.prices, timestamp: data.timestamp, source: data.source, bigmac: data.bigmac || null, kind: data.kind || null, origin };
+            priceState = { ...data, origin };
             renderPackages();
             renderPriceInfo();
             renderPriceChart(data.prices);
@@ -3509,6 +4638,8 @@
         initPriceChart();
         initInput();
         initTools();
+        initHistory();
+        initStores();
         loadPrices();
     </script>
 </body>

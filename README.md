@@ -12,7 +12,7 @@ McDonald's verkoopt Chicken McNuggets in verpakkingen van **6**, **9** en **20**
 
 1. **Of** het gevraagde aantal mogelijk is
 2. **Welke combinatie** het goedkoopst is
-3. **Wat het kost** op basis van actuele prijzen, ook per nugget
+3. **Wat het kost** op basis van actuele bezorgprijzen, ook per nugget
 
 Verder:
 
@@ -24,6 +24,9 @@ Verder:
 - **Sausjes, calorieën en Big Macs**: bij jouw bestelling het aantal sausjes (onze aanname, zelf aan te passen), kcal/vet/zout met fiets- en wandelminuten (voedingswaarde van mcdonalds.com/nl) en de nugget-index: hoeveel Big Macs of maanden Netflix je voor hetzelfde geld had.
 - **Uitdaging van de dag**: elke dag één aantal (uit de datum, voor iedereen hetzelfde). Kan het, en wat is de goedkoopste combinatie? Met reeks 🔥 en een deeltekst zonder spoilers.
 - **Doosjesspeeltuin**: verzin je eigen doosmaten en zie het grootste aantal dat nooit kan, hoeveel er nooit kunnen en een minirooster. Met een ggd groter dan 1 kan er oneindig veel niet.
+- **Prijs per nugget per doos**: bij de verpakkingen staat ook de prijs per nugget, met een 👑 voor de voordeligste. Dat is niet vanzelf de grootste doos: op dit moment is de 9 per nugget goedkoper dan de 20.
+- **Waar komen de prijzen vandaan?**: onder de verpakkingen één korte regel met soort prijs, aantal filialen en datum (na 3 dagen met leeftijd erbij, na 7 dagen *mogelijk verouderd*). Het (i) klapt een tabel open met de prijzen per filiaal en platform, de mediaan en een link om zelf een winkelprijs te melden.
+- **Prijsgeschiedenis**: ingeklapt, en `history.json` wordt pas opgehaald als je hem openklapt. Nuggets 6/9/20 per kwartaal sinds 2021, als prijs per doos of per nugget (wie was wanneer het voordeligst?), optioneel met de Veggie Nuggets als stippellijn (historisch: ze staan sinds 2025 niet meer op het menu en zitten dus niet in de calculator). Daaronder de Big Mac sinds 1987: winkelprijs volgens The Economist (met guldens), het eurozone-gemiddelde als gelabelde opvulling voor 2000–2010 en de bezorgprijs. Met tooltips, toetsenbordbediening en elke grafiek ook als tabel.
 - **Waarom 43?**: ingeklapte uitleg over het McNugget-getal, uitgerekend uit de doosjes die er zijn.
 - **Paaseieren** bij een paar bijzondere aantallen. Probeer 42 maar eens.
 
@@ -56,10 +59,16 @@ van tien filialen verspreid over het land en publiceert per doosje de
 **mediaan**. Dat zijn dus **bezorgprijzen** — doorgaans 10–35% duurder dan aan
 de balie — en zo staan ze ook in `prices.json`
 (`"kind": "bezorgprijs"`, `"source": "Thuisbezorgd/Uber Eats, mediaan van 10 filialen"`).
+De site zegt dat er ook bij ("Bezorgprijzen, mediaan van 10 filialen") en toont
+per filiaal wat er gemeten is. Wie in de winkel een prijs ziet, kan die
+[melden via een issue](https://github.com/randomdreft/canitnugget/issues/new).
 
 Mislukt de meting, dan blijft het vorige `prices.json` gewoon staan met zijn
 oude datum, zodat de site laat zien dat de prijzen verouderd zijn. De scraper
-vult nooit zelf verzonnen of ingebouwde prijzen in.
+vult nooit zelf verzonnen of ingebouwde prijzen in. Alleen als `prices.json`
+helemaal niet te laden is, valt de site terug op de laatst geziene prijzen in
+de browser, of op een ingebouwde reserve (de mediaan van 29 september 2026),
+en zegt dat er dan duidelijk bij.
 
 ### Prijsgeschiedenis
 
