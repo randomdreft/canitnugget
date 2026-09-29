@@ -1,0 +1,6254 @@
+{
+ "schema": 1,
+ "generated": "2026-09-29T09:57:03+02:00",
+ "economist_opgehaald": "2026-09-29T07:49:44+00:00",
+ "notes": "Alle prijzen in euro. Nuggets, veggie en bigmac_bezorg zijn BEZORGPRIJZEN (Thuisbezorgd/Uber Eats), doorgaans 10-35% hoger dan in het restaurant; McDonald’s Nederland publiceert zelf geen prijzen. Elk punt is de mediaan per kwartaal over alle filiaal-maand-metingen in dat kwartaal (n = aantal metingen); per filiaal telt hoogstens één meting per maand. Uitschieters (>50% afwijking van de mediaan van vergelijkbare metingen binnen 120 dagen) tellen niet mee en zijn in raw gemarkeerd met \"uitgesloten\". Veggie Nuggets zijn sinds ongeveer mei 2025 niet meer te koop. bigmac_nl en bigmac_eurozone zijn WINKELPRIJZEN volgens The Economist; bigmac_eurozone is alleen opvulling voor 2000-2010, toen The Economist geen losse Nederlandse prijs publiceerde. Guldenprijzen (1987-1999) zijn omgerekend tegen de vaste koers 2,20371 en staan ook in het veld nlg. dagelijks: mediaan per dag van het vaste filialenmandje.",
+ "series": {
+  "nuggets": [
+   {
+    "date": "2021-05-15",
+    "periode": "2021-Q2",
+    "6": null,
+    "9": 4.05,
+    "20": 9.1,
+    "n": 7
+   },
+   {
+    "date": "2021-08-15",
+    "periode": "2021-Q3",
+    "6": null,
+    "9": 4.0,
+    "20": 9.75,
+    "n": 2
+   },
+   {
+    "date": "2021-11-15",
+    "periode": "2021-Q4",
+    "6": null,
+    "9": 4.05,
+    "20": 9.2,
+    "n": 90
+   },
+   {
+    "date": "2022-02-15",
+    "periode": "2022-Q1",
+    "6": null,
+    "9": 4.05,
+    "20": 9.0,
+    "n": 3
+   },
+   {
+    "date": "2022-05-15",
+    "periode": "2022-Q2",
+    "6": null,
+    "9": 4.4,
+    "20": 10.05,
+    "n": 9
+   },
+   {
+    "date": "2022-08-15",
+    "periode": "2022-Q3",
+    "6": 3.0,
+    "9": 4.43,
+    "20": 9.73,
+    "n": 18
+   },
+   {
+    "date": "2022-11-15",
+    "periode": "2022-Q4",
+    "6": 3.0,
+    "9": 4.7,
+    "20": 10.1,
+    "n": 17
+   },
+   {
+    "date": "2023-02-15",
+    "periode": "2023-Q1",
+    "6": 3.75,
+    "9": 4.9,
+    "20": 11.8,
+    "n": 5
+   },
+   {
+    "date": "2023-05-15",
+    "periode": "2023-Q2",
+    "6": 3.05,
+    "9": 4.45,
+    "20": 10.1,
+    "n": 3
+   },
+   {
+    "date": "2023-08-15",
+    "periode": "2023-Q3",
+    "6": 3.63,
+    "9": 4.98,
+    "20": 11.33,
+    "n": 4
+   },
+   {
+    "date": "2023-11-15",
+    "periode": "2023-Q4",
+    "6": 3.45,
+    "9": 5.05,
+    "20": 12.15,
+    "n": 10
+   },
+   {
+    "date": "2024-02-15",
+    "periode": "2024-Q1",
+    "6": 3.38,
+    "9": 4.57,
+    "20": 11.63,
+    "n": 6
+   },
+   {
+    "date": "2024-05-15",
+    "periode": "2024-Q2",
+    "6": 3.55,
+    "9": 5.05,
+    "20": 10.95,
+    "n": 23
+   },
+   {
+    "date": "2024-08-15",
+    "periode": "2024-Q3",
+    "6": 3.6,
+    "9": 5.03,
+    "20": 10.55,
+    "n": 10
+   },
+   {
+    "date": "2024-11-15",
+    "periode": "2024-Q4",
+    "6": 3.55,
+    "9": 5.05,
+    "20": 11.45,
+    "n": 15
+   },
+   {
+    "date": "2025-02-15",
+    "periode": "2025-Q1",
+    "6": 3.55,
+    "9": 5.05,
+    "20": 11.2,
+    "n": 29
+   },
+   {
+    "date": "2025-05-15",
+    "periode": "2025-Q2",
+    "6": 3.53,
+    "9": 4.93,
+    "20": 10.55,
+    "n": 28
+   },
+   {
+    "date": "2025-08-15",
+    "periode": "2025-Q3",
+    "6": 3.55,
+    "9": 4.95,
+    "20": 10.95,
+    "n": 45
+   },
+   {
+    "date": "2025-11-15",
+    "periode": "2025-Q4",
+    "6": 3.65,
+    "9": 4.95,
+    "20": 10.8,
+    "n": 36
+   },
+   {
+    "date": "2026-02-15",
+    "periode": "2026-Q1",
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95,
+    "n": 5
+   },
+   {
+    "date": "2026-05-15",
+    "periode": "2026-Q2",
+    "6": 3.35,
+    "9": 4.6,
+    "20": 10.4,
+    "n": 7
+   },
+   {
+    "date": "2026-08-15",
+    "periode": "2026-Q3",
+    "6": 3.73,
+    "9": 5.2,
+    "20": 11.8,
+    "n": 10
+   }
+  ],
+  "veggie": [
+   {
+    "date": "2021-05-15",
+    "periode": "2021-Q2",
+    "6": null,
+    "9": 4.05,
+    "20": 9.1,
+    "n": 2
+   },
+   {
+    "date": "2023-08-15",
+    "periode": "2023-Q3",
+    "6": 3.68,
+    "9": 5.13,
+    "20": 11.48,
+    "n": 4
+   },
+   {
+    "date": "2023-11-15",
+    "periode": "2023-Q4",
+    "6": 3.35,
+    "9": 5.0,
+    "20": 11.63,
+    "n": 10
+   },
+   {
+    "date": "2024-02-15",
+    "periode": "2024-Q1",
+    "6": 3.38,
+    "9": 4.57,
+    "20": 11.63,
+    "n": 6
+   },
+   {
+    "date": "2024-05-15",
+    "periode": "2024-Q2",
+    "6": 3.55,
+    "9": 5.05,
+    "20": 10.95,
+    "n": 23
+   },
+   {
+    "date": "2024-08-15",
+    "periode": "2024-Q3",
+    "6": 3.63,
+    "9": 5.03,
+    "20": 10.55,
+    "n": 10
+   },
+   {
+    "date": "2024-11-15",
+    "periode": "2024-Q4",
+    "6": 3.55,
+    "9": 5.05,
+    "20": 11.4,
+    "n": 15
+   },
+   {
+    "date": "2025-02-15",
+    "periode": "2025-Q1",
+    "6": 3.55,
+    "9": 5.05,
+    "20": 11.3,
+    "n": 29
+   },
+   {
+    "date": "2025-05-15",
+    "periode": "2025-Q2",
+    "6": 3.45,
+    "9": 4.75,
+    "20": 10.65,
+    "n": 23
+   }
+  ],
+  "bigmac_bezorg": [
+   {
+    "date": "2021-05-15",
+    "periode": "2021-Q2",
+    "eur": 4.95,
+    "n": 7
+   },
+   {
+    "date": "2021-08-15",
+    "periode": "2021-Q3",
+    "eur": 5.35,
+    "n": 2
+   },
+   {
+    "date": "2021-11-15",
+    "periode": "2021-Q4",
+    "eur": 5.05,
+    "n": 90
+   },
+   {
+    "date": "2022-02-15",
+    "periode": "2022-Q1",
+    "eur": 5.05,
+    "n": 3
+   },
+   {
+    "date": "2022-05-15",
+    "periode": "2022-Q2",
+    "eur": 5.93,
+    "n": 8
+   },
+   {
+    "date": "2022-08-15",
+    "periode": "2022-Q3",
+    "eur": 5.9,
+    "n": 18
+   },
+   {
+    "date": "2022-11-15",
+    "periode": "2022-Q4",
+    "eur": 5.95,
+    "n": 17
+   },
+   {
+    "date": "2023-02-15",
+    "periode": "2023-Q1",
+    "eur": 6.95,
+    "n": 5
+   },
+   {
+    "date": "2023-05-15",
+    "periode": "2023-Q2",
+    "eur": 6.0,
+    "n": 3
+   },
+   {
+    "date": "2023-08-15",
+    "periode": "2023-Q3",
+    "eur": 7.2,
+    "n": 4
+   },
+   {
+    "date": "2023-11-15",
+    "periode": "2023-Q4",
+    "eur": 7.35,
+    "n": 10
+   },
+   {
+    "date": "2024-02-15",
+    "periode": "2024-Q1",
+    "eur": 6.98,
+    "n": 6
+   },
+   {
+    "date": "2024-05-15",
+    "periode": "2024-Q2",
+    "eur": 7.1,
+    "n": 23
+   },
+   {
+    "date": "2024-08-15",
+    "periode": "2024-Q3",
+    "eur": 7.05,
+    "n": 10
+   },
+   {
+    "date": "2024-11-15",
+    "periode": "2024-Q4",
+    "eur": 7.68,
+    "n": 12
+   },
+   {
+    "date": "2025-02-15",
+    "periode": "2025-Q1",
+    "eur": 7.35,
+    "n": 20
+   },
+   {
+    "date": "2025-05-15",
+    "periode": "2025-Q2",
+    "eur": 7.05,
+    "n": 28
+   },
+   {
+    "date": "2025-08-15",
+    "periode": "2025-Q3",
+    "eur": 7.25,
+    "n": 45
+   },
+   {
+    "date": "2025-11-15",
+    "periode": "2025-Q4",
+    "eur": 7.48,
+    "n": 36
+   },
+   {
+    "date": "2026-02-15",
+    "periode": "2026-Q1",
+    "eur": 8.1,
+    "n": 5
+   },
+   {
+    "date": "2026-05-15",
+    "periode": "2026-Q2",
+    "eur": 7.25,
+    "n": 7
+   },
+   {
+    "date": "2026-08-15",
+    "periode": "2026-Q3",
+    "eur": 8.15,
+    "n": 10
+   }
+  ],
+  "bigmac_nl": [
+   {
+    "date": "1987-01-01",
+    "eur": 2.04,
+    "nlg": 4.5,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1988-03-01",
+    "eur": 2.2,
+    "nlg": 4.85,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1989-04-01",
+    "eur": 2.31,
+    "nlg": 5.1,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1990-04-01",
+    "eur": 2.38,
+    "nlg": 5.25,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1991-04-01",
+    "eur": 2.38,
+    "nlg": 5.25,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1992-04-01",
+    "eur": 2.43,
+    "nlg": 5.35,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1993-04-01",
+    "eur": 2.47,
+    "nlg": 5.45,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1994-04-01",
+    "eur": 2.47,
+    "nlg": 5.45,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1995-04-01",
+    "eur": 2.47,
+    "nlg": 5.45,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1996-04-01",
+    "eur": 2.47,
+    "nlg": 5.45,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1997-04-01",
+    "eur": 2.47,
+    "nlg": 5.45,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1998-04-01",
+    "eur": 2.47,
+    "nlg": 5.45,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "1999-03-01",
+    "eur": 2.47,
+    "nlg": 5.45,
+    "bron": "economist-historisch",
+    "valuta": "NLG"
+   },
+   {
+    "date": "2011-07-01",
+    "eur": 3.25,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2012-01-01",
+    "eur": 3.25,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2012-07-01",
+    "eur": 3.38,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2013-01-01",
+    "eur": 3.45,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2013-07-01",
+    "eur": 3.45,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2014-01-01",
+    "eur": 3.45,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2014-07-01",
+    "eur": 3.45,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2015-01-01",
+    "eur": 3.45,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2015-07-01",
+    "eur": 3.45,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2016-01-01",
+    "eur": 3.45,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2016-07-01",
+    "eur": 3.45,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2017-01-01",
+    "eur": 3.61,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2017-07-01",
+    "eur": 3.61,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2018-01-01",
+    "eur": 3.71,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2018-07-01",
+    "eur": 3.79,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2019-01-01",
+    "eur": 4.0,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2019-07-09",
+    "eur": 4.06,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2020-01-14",
+    "eur": 4.09,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2020-07-01",
+    "eur": 4.09,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2021-01-01",
+    "eur": 4.13,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2021-07-01",
+    "eur": 4.22,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2022-01-01",
+    "eur": 4.4,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2022-07-01",
+    "eur": 4.5,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2023-01-01",
+    "eur": 4.88,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2023-07-01",
+    "eur": 5.33,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2024-01-01",
+    "eur": 5.53,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2024-07-01",
+    "eur": 5.69,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2025-01-01",
+    "eur": 5.75,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2025-07-01",
+    "eur": 5.95,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2026-01-01",
+    "eur": 5.95,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   },
+   {
+    "date": "2026-07-01",
+    "eur": 6.26,
+    "bron": "economist-v2",
+    "valuta": "EUR"
+   }
+  ],
+  "bigmac_eurozone": [
+   {
+    "date": "2000-04-01",
+    "eur": 2.56,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2001-04-01",
+    "eur": 2.57,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2002-04-01",
+    "eur": 2.67,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2003-04-01",
+    "eur": 2.71,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2004-05-01",
+    "eur": 2.74,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2005-06-01",
+    "eur": 2.92,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2006-01-01",
+    "eur": 2.91,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2006-05-01",
+    "eur": 2.94,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2007-01-01",
+    "eur": 2.94,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2007-06-01",
+    "eur": 3.06,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2008-06-01",
+    "eur": 3.37,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2009-07-01",
+    "eur": 3.31,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2010-01-01",
+    "eur": 3.36,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   },
+   {
+    "date": "2010-07-01",
+    "eur": 3.38,
+    "bron": "economist-v2",
+    "let_op": "gemiddelde eurozone, geen Nederlandse prijs"
+   }
+  ],
+  "dagelijks": [
+   {
+    "date": "2026-09-29",
+    "6": 3.73,
+    "9": 5.2,
+    "20": 11.8,
+    "bigmac": 8.15,
+    "n": 10
+   }
+  ]
+ },
+ "sources": [
+  {
+   "id": "wayback",
+   "naam": "Internet Archive Wayback Machine",
+   "url": "https://web.archive.org/",
+   "wat": "Gearchiveerde menupagina’s van McDonald’s-filialen op Thuisbezorgd en Uber Eats (2021–nu). Bezorgprijzen."
+  },
+  {
+   "id": "dagelijks",
+   "naam": "Thuisbezorgd en Uber Eats (live)",
+   "url": "https://www.thuisbezorgd.nl/",
+   "wat": "Dagelijkse meting van een vast mandje filialen, zie scraper/filialen.json. Bezorgprijzen."
+  },
+  {
+   "id": "economist-v2",
+   "naam": "The Economist, Big Mac index (source-data v2)",
+   "url": "https://github.com/TheEconomist/big-mac-data",
+   "wat": "Winkelprijs Big Mac Nederland 2011–nu (halfjaarlijks) en eurozone-gemiddelde 2000–2010."
+  },
+  {
+   "id": "economist-historisch",
+   "naam": "The Economist, Big Mac index (historical source data)",
+   "url": "https://github.com/TheEconomist/big-mac-data",
+   "wat": "Winkelprijs Big Mac Nederland 1987–1999 in guldens; omgerekend tegen 2,20371 gulden per euro."
+  }
+ ],
+ "raw": [
+  {
+   "date": "2021-05-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-kurhausweg",
+   "url": "https://web.archive.org/web/20210509224445/https://www.thuisbezorgd.nl/menu/mcdonalds-kurhausweg",
+   "nuggets": {
+    "9": 4.7,
+    "20": 9.85
+   },
+   "bigmac": 4.7
+  },
+  {
+   "date": "2021-05-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-sontplein",
+   "url": "https://web.archive.org/web/20210509234410/https://www.thuisbezorgd.nl/menu/mcdonalds-sontplein",
+   "nuggets": {
+    "9": 5.1,
+    "20": 9.25
+   },
+   "bigmac": 5.1
+  },
+  {
+   "date": "2021-05-11",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-woonplein",
+   "url": "https://web.archive.org/web/20210511135136/https://www.thuisbezorgd.nl/menu/mcdonalds-woonplein",
+   "nuggets": {
+    "9": 4.85,
+    "20": 9.1
+   },
+   "bigmac": 4.85
+  },
+  {
+   "date": "2021-05-12",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-osdorp-drive",
+   "url": "https://web.archive.org/web/20210512142805/https://www.thuisbezorgd.nl/menu/mcdonalds-osdorp-drive",
+   "nuggets": {
+    "9": 3.85,
+    "20": 8.25
+   },
+   "bigmac": 4.65
+  },
+  {
+   "date": "2021-05-12",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-park-boulevard",
+   "url": "https://web.archive.org/web/20210512151144/https://www.thuisbezorgd.nl/menu/mcdonalds-park-boulevard",
+   "nuggets": {
+    "9": 3.95,
+    "20": 8.5
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-06-19",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-beestenmarkt",
+   "url": "https://web.archive.org/web/20210619012022/https://www.thuisbezorgd.nl/menu/mcdonalds-beestenmarkt",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.2
+   },
+   "veggie": {
+    "9": 4.05,
+    "20": 9.2
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-06-25",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-breda-woonboulevard",
+   "url": "https://web.archive.org/web/20210625130333/https://www.thuisbezorgd.nl/menu/mcdonalds-breda-woonboulevard",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.0
+   },
+   "veggie": {
+    "9": 4.05,
+    "20": 9.0
+   },
+   "bigmac": 5.05
+  },
+  {
+   "date": "2021-08-05",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almere-centrum",
+   "url": "https://web.archive.org/web/20210805055646/https://www.thuisbezorgd.nl/menu/mcdonalds-almere-centrum",
+   "nuggets": {
+    "9": 3.5,
+    "20": 9.6
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-09-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-apeldoorn-centrum",
+   "url": "https://web.archive.org/web/20210924120102/https://www.thuisbezorgd.nl/menu/mcdonalds-apeldoorn-centrum",
+   "nuggets": {
+    "9": 4.5,
+    "20": 9.9
+   },
+   "bigmac": 5.5
+  },
+  {
+   "date": "2021-10-17",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-spaklerweg",
+   "url": "https://web.archive.org/web/20211017203109/https://www.thuisbezorgd.nl/menu/mcdonalds-spaklerweg",
+   "nuggets": {
+    "9": 4.0,
+    "20": 5.75
+   },
+   "bigmac": 5.0,
+   "uitgesloten": {
+    "nuggets.20": "5.75 wijkt meer dan 50% af van de mediaan 9.10 van 96 metingen binnen 120 dagen"
+   }
+  },
+  {
+   "date": "2021-10-18",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-osdorp-drive",
+   "url": "https://web.archive.org/web/20211018020556/https://www.thuisbezorgd.nl/en/menu/mcdonalds-osdorp-drive",
+   "nuggets": {
+    "9": 3.85,
+    "20": 8.25
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-18",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zaanstad-prins-bernhardplein",
+   "url": "https://web.archive.org/web/20211018020632/https://www.thuisbezorgd.nl/en/menu/mcdonalds-zaanstad-prins-bernhardplein",
+   "nuggets": {
+    "9": 3.85,
+    "20": 7.65
+   },
+   "bigmac": 4.65
+  },
+  {
+   "date": "2021-10-19",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amersfoort-centrum-1",
+   "url": "https://web.archive.org/web/20211019151945/https://www.thuisbezorgd.nl/menu/mcdonalds-amersfoort-centrum-1",
+   "nuggets": {
+    "9": 4.09,
+    "20": 9.6
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-19",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-breda-centrum",
+   "url": "https://web.archive.org/web/20211019220418/https://www.thuisbezorgd.nl/menu/mcdonalds-breda-centrum",
+   "nuggets": {
+    "9": 4.6,
+    "20": 9.2
+   },
+   "bigmac": 5.05
+  },
+  {
+   "date": "2021-10-20",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almere-centrum",
+   "url": "https://web.archive.org/web/20211020015928/https://www.thuisbezorgd.nl/menu/mcdonalds-almere-centrum",
+   "nuggets": {
+    "9": 3.5,
+    "20": 9.6
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-albert-cuyp",
+   "url": "https://web.archive.org/web/20211021113113/https://www.thuisbezorgd.nl/en/menu/mcdonalds-albert-cuyp",
+   "nuggets": {
+    "9": 4.0,
+    "20": 5.75
+   },
+   "bigmac": 5.55,
+   "uitgesloten": {
+    "nuggets.20": "5.75 wijkt meer dan 50% af van de mediaan 9.05 van 95 metingen binnen 120 dagen"
+   }
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-alkmaar-centrum",
+   "url": "https://web.archive.org/web/20211021123753/https://www.thuisbezorgd.nl/en/menu/mcdonalds-alkmaar-centrum",
+   "nuggets": {
+    "9": 3.85,
+    "20": 8.75
+   },
+   "bigmac": 4.5
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almere-buiten",
+   "url": "https://web.archive.org/web/20211021112042/https://www.thuisbezorgd.nl/en/menu/mcdonalds-almere-buiten",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.6
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almere-haven",
+   "url": "https://web.archive.org/web/20211021113328/https://www.thuisbezorgd.nl/en/menu/mcdonalds-almere-haven",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.6
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-alphen-aan-den-rijn-centrum",
+   "url": "https://web.archive.org/web/20211021124513/https://www.thuisbezorgd.nl/en/menu/mcdonalds-alphen-aan-den-rijn-centrum",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.2
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amstelveen",
+   "url": "https://web.archive.org/web/20211021124658/https://www.thuisbezorgd.nl/en/menu/mcdonalds-amstelveen",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.7
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amsterdamse-poort",
+   "url": "https://web.archive.org/web/20211021125918/https://www.thuisbezorgd.nl/en/menu/mcdonalds-amsterdamse-poort",
+   "nuggets": {
+    "9": 4.0,
+    "20": 5.75
+   },
+   "bigmac": 4.8,
+   "uitgesloten": {
+    "nuggets.20": "5.75 wijkt meer dan 50% af van de mediaan 9.05 van 95 metingen binnen 120 dagen"
+   }
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-apeldoorn-centrum",
+   "url": "https://web.archive.org/web/20211021123914/https://www.thuisbezorgd.nl/en/menu/mcdonalds-apeldoorn-centrum",
+   "nuggets": {
+    "9": 4.5,
+    "20": 9.9
+   },
+   "bigmac": 5.5
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-apeldoorn-noord",
+   "url": "https://web.archive.org/web/20211021112347/https://www.thuisbezorgd.nl/en/menu/mcdonalds-apeldoorn-noord",
+   "nuggets": {
+    "9": 4.5,
+    "20": 9.9
+   },
+   "bigmac": 5.5
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-apeldoorn-zuid",
+   "url": "https://web.archive.org/web/20211021125843/https://www.thuisbezorgd.nl/en/menu/mcdonalds-apeldoorn-zuid",
+   "nuggets": {
+    "9": 4.5,
+    "20": 9.9
+   },
+   "bigmac": 5.5
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-beurs",
+   "url": "https://web.archive.org/web/20211021123946/https://www.thuisbezorgd.nl/en/menu/mcdonalds-beurs",
+   "nuggets": {
+    "9": 4.25,
+    "20": 7.95
+   },
+   "bigmac": 4.65
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-buitenhof",
+   "url": "https://web.archive.org/web/20211021111318/https://www.thuisbezorgd.nl/en/menu/mcdonalds-buitenhof",
+   "nuggets": {
+    "9": 4.05,
+    "20": 10.9
+   },
+   "bigmac": 5.35
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-charlois",
+   "url": "https://web.archive.org/web/20211021122251/https://www.thuisbezorgd.nl/en/menu/mcdonalds-charlois",
+   "nuggets": {
+    "9": 4.1,
+    "20": 8.95
+   },
+   "bigmac": 4.65
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-coolsingel-1",
+   "url": "https://web.archive.org/web/20211021130459/https://www.thuisbezorgd.nl/en/menu/mcdonalds-coolsingel-1",
+   "nuggets": {
+    "9": 3.95,
+    "20": 8.5
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-delft-brabantse-turfmarkt",
+   "url": "https://web.archive.org/web/20211021122050/https://www.thuisbezorgd.nl/en/menu/mcdonalds-delft-brabantse-turfmarkt",
+   "nuggets": {
+    "9": 3.95,
+    "20": 8.5
+   },
+   "bigmac": 5.3
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-den-bosch",
+   "url": "https://web.archive.org/web/20211021130506/https://www.thuisbezorgd.nl/en/menu/mcdonalds-den-bosch",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.2
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-deventer-de-scheg",
+   "url": "https://web.archive.org/web/20211021125544/https://www.thuisbezorgd.nl/en/menu/mcdonalds-deventer-de-scheg",
+   "nuggets": {
+    "9": 4.5,
+    "20": 9.9
+   },
+   "bigmac": 5.5
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-diemen",
+   "url": "https://web.archive.org/web/20211021110942/https://www.thuisbezorgd.nl/en/menu/mcdonalds-diemen",
+   "nuggets": {
+    "9": 4.0,
+    "20": 5.75
+   },
+   "bigmac": 5.0,
+   "uitgesloten": {
+    "nuggets.20": "5.75 wijkt meer dan 50% af van de mediaan 9.05 van 95 metingen binnen 120 dagen"
+   }
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-eerste-van-swindenstraat",
+   "url": "https://web.archive.org/web/20211021130647/https://www.thuisbezorgd.nl/en/menu/mcdonalds-eerste-van-swindenstraat",
+   "nuggets": {
+    "9": 4.0,
+    "20": 5.75
+   },
+   "bigmac": 4.8,
+   "uitgesloten": {
+    "nuggets.20": "5.75 wijkt meer dan 50% af van de mediaan 9.05 van 95 metingen binnen 120 dagen"
+   }
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-escamplaan",
+   "url": "https://web.archive.org/web/20211021113806/https://www.thuisbezorgd.nl/en/menu/mcdonalds-escamplaan",
+   "nuggets": {
+    "9": 4.1,
+    "20": 8.75
+   },
+   "bigmac": 4.65
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-groene-hilledijk-1",
+   "url": "https://web.archive.org/web/20211021130631/https://www.thuisbezorgd.nl/en/menu/mcdonalds-groene-hilledijk-1",
+   "nuggets": {
+    "9": 4.0,
+    "20": 8.35
+   },
+   "bigmac": 4.5
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-haarlem",
+   "url": "https://web.archive.org/web/20211021130515/https://www.thuisbezorgd.nl/en/menu/mcdonalds-haarlem",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.8
+   },
+   "bigmac": 5.05
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-heerlen",
+   "url": "https://web.archive.org/web/20211021114134/https://www.thuisbezorgd.nl/en/menu/mcdonalds-heerlen",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.8
+   },
+   "bigmac": 4.75
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-hilversum-centrum",
+   "url": "https://web.archive.org/web/20211021125814/https://www.thuisbezorgd.nl/en/menu/mcdonalds-hilversum-centrum",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.6
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-hilversum-west",
+   "url": "https://web.archive.org/web/20211021125830/https://www.thuisbezorgd.nl/en/menu/mcdonalds-hilversum-west",
+   "nuggets": {
+    "9": 4.09,
+    "20": 9.6
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-hoendiep",
+   "url": "https://web.archive.org/web/20211021130015/https://www.thuisbezorgd.nl/en/menu/mcdonalds-hoendiep",
+   "nuggets": {
+    "9": 4.75,
+    "20": 10.45
+   },
+   "bigmac": 5.75
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-hoogstraat",
+   "url": "https://web.archive.org/web/20211021130610/https://www.thuisbezorgd.nl/en/menu/mcdonalds-hoogstraat",
+   "nuggets": {
+    "9": 4.1,
+    "20": 9.05
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-korte-lijnbaan",
+   "url": "https://web.archive.org/web/20211021121901/https://www.thuisbezorgd.nl/en/menu/mcdonalds-korte-lijnbaan",
+   "nuggets": {
+    "9": 3.95,
+    "20": 8.5
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-kurhausweg",
+   "url": "https://web.archive.org/web/20211021122356/https://www.thuisbezorgd.nl/en/menu/mcdonalds-kurhausweg",
+   "nuggets": {
+    "9": 4.05,
+    "20": 10.9
+   },
+   "bigmac": 5.35
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-lange-vie",
+   "url": "https://web.archive.org/web/20211021113723/https://www.thuisbezorgd.nl/en/menu/mcdonalds-lange-vie",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.8
+   },
+   "bigmac": 5.15
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leidsche-rijn",
+   "url": "https://web.archive.org/web/20211021103211/https://www.thuisbezorgd.nl/en/menu/mcdonalds-leidsche-rijn",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.8
+   },
+   "bigmac": 5.15
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leidschendam",
+   "url": "https://web.archive.org/web/20211021125559/https://www.thuisbezorgd.nl/en/menu/mcdonalds-leidschendam",
+   "nuggets": {
+    "9": 4.05,
+    "20": 10.9
+   },
+   "bigmac": 5.35
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-markt",
+   "url": "https://web.archive.org/web/20211021121643/https://www.thuisbezorgd.nl/en/menu/mcdonalds-markt",
+   "nuggets": {
+    "9": 4.0,
+    "20": 8.75
+   },
+   "bigmac": 4.9
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-oude-binnenweg",
+   "url": "https://web.archive.org/web/20211021124121/https://www.thuisbezorgd.nl/en/menu/mcdonalds-oude-binnenweg",
+   "nuggets": {
+    "9": 4.1,
+    "20": 9.05
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-park-boulevard",
+   "url": "https://web.archive.org/web/20211021125402/https://www.thuisbezorgd.nl/en/menu/mcdonalds-park-boulevard",
+   "nuggets": {
+    "9": 3.95,
+    "20": 8.5
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-rhijnspoor",
+   "url": "https://web.archive.org/web/20211021130303/https://www.thuisbezorgd.nl/en/menu/mcdonalds-rhijnspoor",
+   "nuggets": {
+    "9": 5.75,
+    "20": 9.95
+   },
+   "bigmac": 5.75
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-rijswijk",
+   "url": "https://web.archive.org/web/20211021104801/https://www.thuisbezorgd.nl/en/menu/mcdonalds-rijswijk",
+   "nuggets": {
+    "9": 4.05,
+    "20": 10.25
+   },
+   "bigmac": 4.85
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-rooseveltstraat",
+   "url": "https://web.archive.org/web/20211021130231/https://www.thuisbezorgd.nl/en/menu/mcdonalds-rooseveltstraat",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.2
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-schiedamseweg",
+   "url": "https://web.archive.org/web/20211021103735/https://www.thuisbezorgd.nl/en/menu/mcdonalds-schiedamseweg",
+   "nuggets": {
+    "9": 3.95,
+    "20": 8.5
+   },
+   "bigmac": 5.3
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-sontplein",
+   "url": "https://web.archive.org/web/20211021111541/https://www.thuisbezorgd.nl/en/menu/mcdonalds-sontplein",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.2
+   },
+   "bigmac": 5.5
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-spaanse-polder",
+   "url": "https://web.archive.org/web/20211021125720/https://www.thuisbezorgd.nl/en/menu/mcdonalds-spaanse-polder",
+   "nuggets": {
+    "9": 3.95,
+    "20": 8.5
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-stadshart",
+   "url": "https://web.archive.org/web/20211021130356/https://www.thuisbezorgd.nl/en/menu/mcdonalds-stadshart",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.3
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-vlamingstraat",
+   "url": "https://web.archive.org/web/20211021124053/https://www.thuisbezorgd.nl/en/menu/mcdonalds-vlamingstraat",
+   "nuggets": {
+    "9": 4.05,
+    "20": 10.9
+   },
+   "bigmac": 5.35
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-vrijthof",
+   "url": "https://web.archive.org/web/20211021124855/https://www.thuisbezorgd.nl/en/menu/mcdonalds-vrijthof",
+   "nuggets": {
+    "9": 5.15,
+    "20": 9.15
+   },
+   "bigmac": 4.5
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-westerhaven",
+   "url": "https://web.archive.org/web/20211021112800/https://www.thuisbezorgd.nl/en/menu/mcdonalds-westerhaven",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.2
+   },
+   "bigmac": 5.5
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-woensel",
+   "url": "https://web.archive.org/web/20211021120158/https://www.thuisbezorgd.nl/en/menu/mcdonalds-woensel",
+   "nuggets": {
+    "9": 4.4,
+    "20": 9.5
+   },
+   "bigmac": 5.3
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-woonplein",
+   "url": "https://web.archive.org/web/20211021115022/https://www.thuisbezorgd.nl/en/menu/mcdonalds-woonplein",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.7
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zaanstad-zuid",
+   "url": "https://web.archive.org/web/20211021124418/https://www.thuisbezorgd.nl/en/menu/mcdonalds-zaanstad-zuid",
+   "nuggets": {
+    "9": 4.1,
+    "20": 8.7
+   },
+   "bigmac": 4.8
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zilverstraat",
+   "url": "https://web.archive.org/web/20211021112217/https://www.thuisbezorgd.nl/en/menu/mcdonalds-zilverstraat",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.3
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwart-janstraat",
+   "url": "https://web.archive.org/web/20211021103057/https://www.thuisbezorgd.nl/en/menu/mcdonalds-zwart-janstraat",
+   "nuggets": {
+    "9": 3.95,
+    "20": 8.5
+   },
+   "bigmac": 5.3
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwolle-centrum",
+   "url": "https://web.archive.org/web/20211021123552/https://www.thuisbezorgd.nl/en/menu/mcdonalds-zwolle-centrum",
+   "nuggets": {
+    "9": 4.5,
+    "20": 9.95
+   },
+   "bigmac": 5.5
+  },
+  {
+   "date": "2021-10-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwolle-noord",
+   "url": "https://web.archive.org/web/20211021121934/https://www.thuisbezorgd.nl/en/menu/mcdonalds-zwolle-noord",
+   "nuggets": {
+    "9": 4.5,
+    "20": 9.95
+   },
+   "bigmac": 5.5
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-alexandrium",
+   "url": "https://web.archive.org/web/20211024052513/https://www.thuisbezorgd.nl/en/menu/mcdonalds-alexandrium",
+   "nuggets": {
+    "9": 5.75,
+    "20": 9.95
+   },
+   "bigmac": 5.75
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amersfoort-noord",
+   "url": "https://web.archive.org/web/20211024070828/https://www.thuisbezorgd.nl/en/menu/mcdonalds-amersfoort-noord",
+   "nuggets": {
+    "9": 4.09,
+    "20": 9.6
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-beestenmarkt",
+   "url": "https://web.archive.org/web/20211024065351/https://www.thuisbezorgd.nl/en/menu/mcdonalds-beestenmarkt",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.2
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-breda-woonboulevard",
+   "url": "https://web.archive.org/web/20211024072857/https://www.thuisbezorgd.nl/en/menu/mcdonalds-breda-woonboulevard",
+   "nuggets": {
+    "9": 4.6,
+    "20": 9.2
+   },
+   "bigmac": 5.05
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-buikslotermeerplein",
+   "url": "https://web.archive.org/web/20211024070349/https://www.thuisbezorgd.nl/en/menu/mcdonalds-buikslotermeerplein",
+   "nuggets": {
+    "9": 4.0,
+    "20": 5.75
+   },
+   "bigmac": 4.8,
+   "uitgesloten": {
+    "nuggets.20": "5.75 wijkt meer dan 50% af van de mediaan 9.10 van 94 metingen binnen 120 dagen"
+   }
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-bussum",
+   "url": "https://web.archive.org/web/20211024071526/https://www.thuisbezorgd.nl/en/menu/mcdonalds-bussum",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.6
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-centrum",
+   "url": "https://web.archive.org/web/20211024072604/https://www.thuisbezorgd.nl/en/menu/mcdonalds-centrum",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.95
+   },
+   "bigmac": 4.9
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-de-geusselt",
+   "url": "https://web.archive.org/web/20211024073258/https://www.thuisbezorgd.nl/en/menu/mcdonalds-de-geusselt",
+   "nuggets": {
+    "9": 4.0,
+    "20": 9.2
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-dordrecht-centrum",
+   "url": "https://web.archive.org/web/20211024065703/https://www.thuisbezorgd.nl/en/menu/mcdonalds-dordrecht-centrum",
+   "nuggets": {
+    "9": 3.85,
+    "20": 8.4
+   },
+   "bigmac": 4.35
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-herestraat",
+   "url": "https://web.archive.org/web/20211024072940/https://www.thuisbezorgd.nl/en/menu/mcdonalds-herestraat",
+   "nuggets": {
+    "9": 4.75,
+    "20": 10.45
+   },
+   "bigmac": 5.75
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-hoofdweg",
+   "url": "https://web.archive.org/web/20211024073102/https://www.thuisbezorgd.nl/en/menu/mcdonalds-hoofdweg",
+   "nuggets": {
+    "9": 5.75,
+    "20": 9.95
+   },
+   "bigmac": 5.75
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-kalanderstraat",
+   "url": "https://web.archive.org/web/20211024071541/https://www.thuisbezorgd.nl/en/menu/mcdonalds-kalanderstraat",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.7
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-kelvinstraat",
+   "url": "https://web.archive.org/web/20211024072520/https://www.thuisbezorgd.nl/en/menu/mcdonalds-kelvinstraat",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.3
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-kinkerstraat",
+   "url": "https://web.archive.org/web/20211024073209/https://www.thuisbezorgd.nl/en/menu/mcdonalds-kinkerstraat",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.7
+   },
+   "bigmac": 5.05
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leeuwarden",
+   "url": "https://web.archive.org/web/20211024065010/https://www.thuisbezorgd.nl/en/menu/mcdonalds-leeuwarden",
+   "nuggets": {
+    "9": 5.25,
+    "20": 10.25
+   },
+   "bigmac": 5.25
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leiden-1",
+   "url": "https://web.archive.org/web/20211024072912/https://www.thuisbezorgd.nl/en/menu/mcdonalds-leiden-1",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.2
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leidsestraat",
+   "url": "https://web.archive.org/web/20211024061500/https://www.thuisbezorgd.nl/en/menu/mcdonalds-leidsestraat",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.7
+   },
+   "bigmac": 5.05
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-muntplein",
+   "url": "https://web.archive.org/web/20211024072611/https://www.thuisbezorgd.nl/en/menu/mcdonalds-muntplein",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.5
+   },
+   "bigmac": 5.15
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nieuwendijk",
+   "url": "https://web.archive.org/web/20211024070209/https://www.thuisbezorgd.nl/en/menu/mcdonalds-nieuwendijk",
+   "nuggets": {
+    "9": 4.0,
+    "20": 10.05
+   },
+   "bigmac": 5.55
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nijmegen-molenstraat",
+   "url": "https://web.archive.org/web/20211024062504/https://www.thuisbezorgd.nl/en/menu/mcdonalds-nijmegen-molenstraat",
+   "nuggets": {
+    "9": 3.5,
+    "20": 8.75
+   },
+   "bigmac": 4.9
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-osdorpplein",
+   "url": "https://web.archive.org/web/20211024073012/https://www.thuisbezorgd.nl/en/menu/mcdonalds-osdorpplein",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.7
+   },
+   "bigmac": 4.96
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-oudegracht",
+   "url": "https://web.archive.org/web/20211024055032/https://www.thuisbezorgd.nl/en/menu/mcdonalds-oudegracht",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.8
+   },
+   "bigmac": 5.15
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-overvecht",
+   "url": "https://web.archive.org/web/20211024054125/https://www.thuisbezorgd.nl/en/menu/mcdonalds-overvecht",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.8
+   },
+   "bigmac": 4.85
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-reeshof",
+   "url": "https://web.archive.org/web/20211024054038/https://www.thuisbezorgd.nl/en/menu/mcdonalds-reeshof",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.7
+   },
+   "bigmac": 4.9
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-stadionweg",
+   "url": "https://web.archive.org/web/20211024070225/https://www.thuisbezorgd.nl/en/menu/mcdonalds-stadionweg",
+   "nuggets": {
+    "9": 3.85,
+    "20": 7.9
+   },
+   "bigmac": 4.65
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-stationsstraat",
+   "url": "https://web.archive.org/web/20211024061920/https://www.thuisbezorgd.nl/en/menu/mcdonalds-stationsstraat",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.0
+   },
+   "bigmac": 4.85
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-turfmarkt",
+   "url": "https://web.archive.org/web/20211024063623/https://www.thuisbezorgd.nl/en/menu/mcdonalds-turfmarkt",
+   "nuggets": {
+    "9": 4.05,
+    "20": 10.9
+   },
+   "bigmac": 5.35
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-vlaardingen",
+   "url": "https://web.archive.org/web/20211024072732/https://www.thuisbezorgd.nl/en/menu/mcdonalds-vlaardingen",
+   "nuggets": {
+    "9": 4.1,
+    "20": 8.95
+   },
+   "bigmac": 4.65
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-waldorpstraat",
+   "url": "https://web.archive.org/web/20211024064338/https://www.thuisbezorgd.nl/en/menu/mcdonalds-waldorpstraat",
+   "nuggets": {
+    "9": 4.5,
+    "20": 8.8
+   },
+   "bigmac": 4.55
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-world-of-food",
+   "url": "https://web.archive.org/web/20211024054522/https://www.thuisbezorgd.nl/en/menu/mcdonalds-world-of-food",
+   "nuggets": {
+    "9": 4.0,
+    "20": 5.75
+   },
+   "bigmac": 5.0,
+   "uitgesloten": {
+    "nuggets.20": "5.75 wijkt meer dan 50% af van de mediaan 9.10 van 94 metingen binnen 120 dagen"
+   }
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-wyck",
+   "url": "https://web.archive.org/web/20211024073313/https://www.thuisbezorgd.nl/en/menu/mcdonalds-wyck",
+   "nuggets": {
+    "9": 5.15,
+    "20": 9.15
+   },
+   "bigmac": 4.5
+  },
+  {
+   "date": "2021-10-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zuiderval",
+   "url": "https://web.archive.org/web/20211024051359/https://www.thuisbezorgd.nl/en/menu/mcdonalds-zuiderval",
+   "nuggets": {
+    "9": 4.05,
+    "20": 8.7
+   },
+   "bigmac": 5.2
+  },
+  {
+   "date": "2022-01-18",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-beestenmarkt",
+   "url": "https://web.archive.org/web/20220118021858/https://www.thuisbezorgd.nl/menu/mcdonalds-beestenmarkt",
+   "nuggets": {
+    "9": 4.55,
+    "20": 9.75
+   },
+   "bigmac": 5.85
+  },
+  {
+   "date": "2022-01-21",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-zaanstad-zuid/xlpfr_EhTHiyNm5iOWz_rw",
+   "url": "https://web.archive.org/web/20220121235156/https://www.ubereats.com/nl-en/store/mcdonalds-zaanstad-zuid/xlpfr_EhTHiyNm5iOWz_rw",
+   "nuggets": {
+    "9": 4.0,
+    "20": 8.5
+   },
+   "bigmac": 4.95
+  },
+  {
+   "date": "2022-01-27",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-stationsstraat",
+   "url": "https://web.archive.org/web/20220127091959/https://www.thuisbezorgd.nl/menu/mcdonalds-stationsstraat",
+   "nuggets": {
+    "9": 4.05,
+    "20": 9.0
+   },
+   "bigmac": 5.05
+  },
+  {
+   "date": "2022-06-26",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-dordrecht-centrum",
+   "url": "https://web.archive.org/web/20220626233257/https://www.thuisbezorgd.nl/menu/mcdonalds-dordrecht-centrum",
+   "nuggets": {
+    "9": 4.45,
+    "20": 8.95
+   },
+   "bigmac": 5.7
+  },
+  {
+   "date": "2022-06-26",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-hilversum-centrum",
+   "url": "https://web.archive.org/web/20220626222836/https://www.thuisbezorgd.nl/menu/mcdonalds-hilversum-centrum",
+   "nuggets": {
+    "9": 4.3,
+    "20": 10.1
+   }
+  },
+  {
+   "date": "2022-06-27",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-coolsingel-1",
+   "url": "https://web.archive.org/web/20220627024024/https://www.thuisbezorgd.nl/menu/mcdonalds-coolsingel-1",
+   "nuggets": {
+    "9": 5.0,
+    "20": 8.95
+   },
+   "bigmac": 5.9
+  },
+  {
+   "date": "2022-06-27",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-eerste-van-swindenstraat",
+   "url": "https://web.archive.org/web/20220627000651/https://www.thuisbezorgd.nl/menu/mcdonalds-eerste-van-swindenstraat",
+   "nuggets": {
+    "9": 4.4,
+    "20": 10.95
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2022-06-27",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-spaklerweg",
+   "url": "https://web.archive.org/web/20220627031546/https://www.thuisbezorgd.nl/menu/mcdonalds-spaklerweg",
+   "nuggets": {
+    "9": 4.4,
+    "20": 10.95
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2022-06-27",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-stadshart",
+   "url": "https://web.archive.org/web/20220627023914/https://www.thuisbezorgd.nl/menu/mcdonalds-stadshart",
+   "nuggets": {
+    "9": 4.25,
+    "20": 10.5
+   },
+   "bigmac": 6.05
+  },
+  {
+   "date": "2022-06-27",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-woensel",
+   "url": "https://web.archive.org/web/20220627023423/https://www.thuisbezorgd.nl/menu/mcdonalds-woensel",
+   "nuggets": {
+    "9": 4.3,
+    "20": 9.5
+   },
+   "bigmac": 6.0
+  },
+  {
+   "date": "2022-06-27",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-woonplein",
+   "url": "https://web.archive.org/web/20220627022951/https://www.thuisbezorgd.nl/menu/mcdonalds-woonplein",
+   "nuggets": {
+    "9": 4.45,
+    "20": 8.95
+   },
+   "bigmac": 5.5
+  },
+  {
+   "date": "2022-06-28",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q",
+   "url": "https://web.archive.org/web/20220628161742/https://www.ubereats.com/nl/store/mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q",
+   "nuggets": {
+    "9": 4.55,
+    "20": 10.05
+   },
+   "bigmac": 5.85
+  },
+  {
+   "date": "2022-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-albert-cuyp",
+   "url": "https://web.archive.org/web/20220809140616/https://www.thuisbezorgd.nl/menu/mcdonalds-albert-cuyp",
+   "nuggets": {
+    "9": 4.25,
+    "20": 10.7
+   },
+   "bigmac": 6.05
+  },
+  {
+   "date": "2022-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almere-haven",
+   "url": "https://web.archive.org/web/20220809131947/https://www.thuisbezorgd.nl/menu/mcdonalds-almere-haven",
+   "nuggets": {
+    "9": 4.3,
+    "20": 10.7
+   },
+   "bigmac": 5.8
+  },
+  {
+   "date": "2022-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-de-geusselt",
+   "url": "https://web.archive.org/web/20220809132704/https://www.thuisbezorgd.nl/menu/mcdonalds-de-geusselt",
+   "nuggets": {
+    "9": 4.4,
+    "20": 10.05
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2022-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-herestraat",
+   "url": "https://web.archive.org/web/20220809140254/https://www.thuisbezorgd.nl/menu/mcdonalds-herestraat",
+   "nuggets": {
+    "9": 4.55,
+    "20": 10.05
+   },
+   "bigmac": 5.85
+  },
+  {
+   "date": "2022-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-kinkerstraat",
+   "url": "https://web.archive.org/web/20220809141650/https://www.thuisbezorgd.nl/menu/mcdonalds-kinkerstraat",
+   "nuggets": {
+    "9": 4.95,
+    "20": 9.95
+   },
+   "bigmac": 5.65
+  },
+  {
+   "date": "2022-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-lange-vie",
+   "url": "https://web.archive.org/web/20220809142032/https://www.thuisbezorgd.nl/menu/mcdonalds-lange-vie",
+   "nuggets": {
+    "9": 4.25,
+    "20": 9.25
+   },
+   "bigmac": 6.0
+  },
+  {
+   "date": "2022-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-muntplein",
+   "url": "https://web.archive.org/web/20220809133907/https://www.thuisbezorgd.nl/menu/mcdonalds-muntplein",
+   "nuggets": {
+    "9": 6.3,
+    "20": 11.35
+   },
+   "bigmac": 5.65
+  },
+  {
+   "date": "2022-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nijmegen-molenstraat",
+   "url": "https://web.archive.org/web/20220809140228/https://www.thuisbezorgd.nl/menu/mcdonalds-nijmegen-molenstraat",
+   "nuggets": {
+    "9": 4.35,
+    "20": 9.5
+   },
+   "bigmac": 5.65
+  },
+  {
+   "date": "2022-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-rooseveltstraat",
+   "url": "https://web.archive.org/web/20220809141223/https://www.thuisbezorgd.nl/menu/mcdonalds-rooseveltstraat",
+   "nuggets": {
+    "9": 4.55,
+    "20": 9.75
+   },
+   "bigmac": 5.8
+  },
+  {
+   "date": "2022-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-sontplein",
+   "url": "https://web.archive.org/web/20220809150119/https://www.thuisbezorgd.nl/menu/mcdonalds-sontplein",
+   "nuggets": {
+    "9": 4.25,
+    "20": 9.7
+   },
+   "bigmac": 6.0
+  },
+  {
+   "date": "2022-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-stadionweg",
+   "url": "https://web.archive.org/web/20220809140713/https://www.thuisbezorgd.nl/menu/mcdonalds-stadionweg",
+   "nuggets": {
+    "9": 4.45,
+    "20": 8.65
+   },
+   "bigmac": 5.45
+  },
+  {
+   "date": "2022-08-12",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-kalanderstraat",
+   "url": "https://web.archive.org/web/20220812211144/https://www.thuisbezorgd.nl/menu/mcdonalds-kalanderstraat",
+   "nuggets": {
+    "9": 4.45,
+    "20": 9.45
+   },
+   "bigmac": 5.75
+  },
+  {
+   "date": "2022-08-12",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-westerhaven",
+   "url": "https://web.archive.org/web/20220812204245/https://www.thuisbezorgd.nl/menu/mcdonalds-westerhaven",
+   "nuggets": {
+    "9": 4.25,
+    "20": 9.7
+   },
+   "bigmac": 6.0
+  },
+  {
+   "date": "2022-08-12",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwart-janstraat",
+   "url": "https://web.archive.org/web/20220812141238/https://www.thuisbezorgd.nl/menu/mcdonalds-zwart-janstraat",
+   "nuggets": {
+    "9": 5.0,
+    "20": 8.5
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2022-08-16",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-woonplein",
+   "url": "https://web.archive.org/web/20220816051824/https://www.thuisbezorgd.nl/menu/mcdonalds-woonplein",
+   "nuggets": {
+    "9": 4.45,
+    "20": 9.45
+   },
+   "bigmac": 5.75
+  },
+  {
+   "date": "2022-08-16",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q",
+   "url": "https://web.archive.org/web/20220816045056/https://www.ubereats.com/nl/store/mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q?diningMode=DELIVERY",
+   "nuggets": {
+    "9": 4.55,
+    "20": 9.95
+   },
+   "bigmac": 6.6
+  },
+  {
+   "date": "2022-08-17",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-zoetermeer-kelvinstraat/P8Cn47etRwebR51a25DtvQ",
+   "url": "https://web.archive.org/web/20220817100437/https://www.ubereats.com/nl-en/store/mcdonalds-zoetermeer-kelvinstraat/P8Cn47etRwebR51a25DtvQ?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjE1JTIwVmlhJTIwZGUlMjBFc3RyZWxsYXMlMjIlMkMlMjJyZWZlcmVuY2UlMjIlM0ElMjJhNDU2MTFmNy0wN2Y3LTI5OGMtMmUzNS0zNGI1N2MwOGRiZWIlMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIydWJlcl9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTM1LjY4NzQ1NjclMkMlMjJsb25naXR1ZGUlMjIlM0EtMTA2LjA3MDM4NjclN0Q%3D",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.25,
+    "20": 10.5
+   },
+   "bigmac": 6.05
+  },
+  {
+   "date": "2022-09-26",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-markt",
+   "url": "https://web.archive.org/web/20220926092938/https://www.thuisbezorgd.nl/menu/mcdonalds-markt",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.25,
+    "20": 9.25
+   },
+   "bigmac": 6.0
+  },
+  {
+   "date": "2022-10-02",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-korte-lijnbaan",
+   "url": "https://web.archive.org/web/20221002030540/https://www.thuisbezorgd.nl/menu/mcdonalds-korte-lijnbaan",
+   "nuggets": {
+    "6": 3.0,
+    "9": 5.0,
+    "20": 8.5
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2022-10-02",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leidsestraat",
+   "url": "https://web.archive.org/web/20221002040541/https://www.thuisbezorgd.nl/menu/mcdonalds-leidsestraat",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.95,
+    "20": 9.95
+   },
+   "bigmac": 5.65
+  },
+  {
+   "date": "2022-10-06",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amersfoort-centrum-1",
+   "url": "https://web.archive.org/web/20221006195445/https://www.thuisbezorgd.nl/menu/mcdonalds-amersfoort-centrum-1",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.65,
+    "20": 11.55
+   },
+   "bigmac": 6.55
+  },
+  {
+   "date": "2022-10-06",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-breda-centrum",
+   "url": "https://web.archive.org/web/20221006200702/https://www.thuisbezorgd.nl/menu/mcdonalds-breda-centrum",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.55,
+    "20": 10.1
+   },
+   "bigmac": 6.15
+  },
+  {
+   "date": "2022-10-06",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-breda-woonboulevard",
+   "url": "https://web.archive.org/web/20221006200745/https://www.thuisbezorgd.nl/menu/mcdonalds-breda-woonboulevard",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.45,
+    "20": 9.0
+   },
+   "bigmac": 6.15
+  },
+  {
+   "date": "2022-10-06",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwolle-zuid",
+   "url": "https://web.archive.org/web/20221006211755/https://www.thuisbezorgd.nl/menu/mcdonalds-zwolle-zuid",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.85,
+    "20": 10.65
+   },
+   "bigmac": 5.85
+  },
+  {
+   "date": "2022-11-29",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-den-bosch-paleiskwartier",
+   "url": "https://web.archive.org/web/20221129213702/https://www.thuisbezorgd.nl/menu/mcdonalds-den-bosch-paleiskwartier",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.7,
+    "20": 10.25
+   },
+   "bigmac": 6.5
+  },
+  {
+   "date": "2022-11-29",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zaanstad-centrum",
+   "url": "https://web.archive.org/web/20221129212205/https://www.thuisbezorgd.nl/menu/mcdonalds-zaanstad-centrum",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.4,
+    "20": 8.95
+   },
+   "bigmac": 5.9
+  },
+  {
+   "date": "2022-11-30",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-alexandrium",
+   "url": "https://web.archive.org/web/20221130042620/https://www.thuisbezorgd.nl/menu/mcdonalds-alexandrium",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.95,
+    "20": 9.75
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2022-11-30",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almere-buiten",
+   "url": "https://web.archive.org/web/20221130035726/https://www.thuisbezorgd.nl/menu/mcdonalds-almere-buiten",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.75,
+    "20": 10.1
+   },
+   "bigmac": 6.7
+  },
+  {
+   "date": "2022-11-30",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-buitenhof",
+   "url": "https://web.archive.org/web/20221130030945/https://www.thuisbezorgd.nl/menu/mcdonalds-buitenhof",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.45,
+    "20": 11.25
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2022-11-30",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-overvecht",
+   "url": "https://web.archive.org/web/20221130030813/https://www.thuisbezorgd.nl/menu/mcdonalds-overvecht",
+   "nuggets": {
+    "6": 3.4,
+    "9": 4.75,
+    "20": 10.3
+   },
+   "bigmac": 6.7
+  },
+  {
+   "date": "2022-11-30",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zaanstad-prins-bernhardplein",
+   "url": "https://web.archive.org/web/20221130042726/https://www.thuisbezorgd.nl/menu/mcdonalds-zaanstad-prins-bernhardplein",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.45,
+    "20": 8.95
+   },
+   "bigmac": 5.45
+  },
+  {
+   "date": "2022-12-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-alkmaar-centrum",
+   "url": "https://web.archive.org/web/20221209130930/https://www.thuisbezorgd.nl/menu/mcdonalds-alkmaar-centrum",
+   "nuggets": {
+    "6": 3.49,
+    "9": 4.79,
+    "20": 8.99
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2022-12-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-breda-centrum",
+   "url": "https://web.archive.org/web/20221209134025/https://www.thuisbezorgd.nl/menu/mcdonalds-breda-centrum",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.55,
+    "20": 10.85
+   },
+   "bigmac": 6.25
+  },
+  {
+   "date": "2022-12-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leeuwarden",
+   "url": "https://web.archive.org/web/20221209132915/https://www.thuisbezorgd.nl/menu/mcdonalds-leeuwarden",
+   "nuggets": {
+    "6": 4.2,
+    "9": 5.75,
+    "20": 11.5
+   },
+   "bigmac": 6.5
+  },
+  {
+   "date": "2022-12-24",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-nijmegen-molenstraat/ePKsyfuPTgKfCevO1-j87A",
+   "url": "https://web.archive.org/web/20221224012059/https://www.ubereats.com/nl/store/mcdonalds-nijmegen-molenstraat/ePKsyfuPTgKfCevO1-j87A",
+   "nuggets": {
+    "6": 3.1,
+    "9": 4.35,
+    "20": 9.5
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2023-03-25",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-apeldoorn-zuid",
+   "url": "https://web.archive.org/web/20230325145058/https://www.thuisbezorgd.nl/en/menu/mcdonalds-apeldoorn-zuid",
+   "nuggets": {
+    "6": 3.15,
+    "9": 4.55,
+    "20": 10.1
+   },
+   "bigmac": 7.0
+  },
+  {
+   "date": "2023-03-26",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-coolsingel-1",
+   "url": "https://web.archive.org/web/20230326084003/https://www.thuisbezorgd.nl/menu/mcdonalds-coolsingel-1",
+   "nuggets": {
+    "6": 4.0,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "bigmac": 6.75
+  },
+  {
+   "date": "2023-03-26",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-eerste-van-swindenstraat",
+   "url": "https://web.archive.org/web/20230326132402/https://www.thuisbezorgd.nl/en/menu/mcdonalds-eerste-van-swindenstraat",
+   "nuggets": {
+    "6": 3.75,
+    "9": 5.05,
+    "20": 11.8
+   },
+   "bigmac": 6.7
+  },
+  {
+   "date": "2023-03-30",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-albert-cuyp",
+   "url": "https://web.archive.org/web/20230330170847/https://www.thuisbezorgd.nl/en/menu/mcdonalds-albert-cuyp",
+   "nuggets": {
+    "6": 3.75,
+    "9": 4.9,
+    "20": 12.35
+   },
+   "bigmac": 7.15
+  },
+  {
+   "date": "2023-03-31",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-muntplein",
+   "url": "https://web.archive.org/web/20230331164219/https://www.thuisbezorgd.nl/en/menu/mcdonalds-muntplein",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.9,
+    "20": 11.5
+   },
+   "bigmac": 6.95
+  },
+  {
+   "date": "2023-05-26",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-escamplaan/m0unHOy4SNakPy38zd-QXg",
+   "url": "https://web.archive.org/web/20230526184041/https://www.ubereats.com/nl/store/mcdonalds-escamplaan/m0unHOy4SNakPy38zd-QXg?utm_campaign\\u003dplace-action-link\\u0026utm_medium\\u003dorganic\\u0026utm_source\\u003dgoogle",
+   "nuggets": {
+    "6": 3.05,
+    "9": 4.45,
+    "20": 8.95
+   },
+   "bigmac": 5.5
+  },
+  {
+   "date": "2023-05-29",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-schuttersveld/KKO6zOTOT76g06N-TTkF8g",
+   "url": "https://web.archive.org/web/20230529133531/https://www.ubereats.com/nl-en/store/mcdonalds-schuttersveld/KKO6zOTOT76g06N-TTkF8g",
+   "nuggets": {
+    "6": 3.6,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "bigmac": 8.05
+  },
+  {
+   "date": "2023-06-03",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almere-centrum",
+   "url": "https://web.archive.org/web/20230603214030/https://www.thuisbezorgd.nl/en/menu/mcdonalds-almere-centrum",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.3,
+    "20": 10.1
+   },
+   "bigmac": 6.0
+  },
+  {
+   "date": "2023-09-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nijmegen-molenstraat",
+   "url": "https://web.archive.org/web/20230922054328/https://www.thuisbezorgd.nl/menu/mcdonalds-nijmegen-molenstraat",
+   "nuggets": {
+    "6": 3.55,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 11.65
+   },
+   "bigmac": 7.4
+  },
+  {
+   "date": "2023-09-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-westerhaven",
+   "url": "https://web.archive.org/web/20230922053936/https://www.thuisbezorgd.nl/menu/mcdonalds-westerhaven",
+   "nuggets": {
+    "6": 3.3,
+    "9": 5.0,
+    "20": 11.15
+   },
+   "veggie": {
+    "6": 2.7,
+    "9": 5.1,
+    "20": 11.3
+   },
+   "bigmac": 7.6
+  },
+  {
+   "date": "2023-09-26",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-heerhugowaard",
+   "url": "https://web.archive.org/web/20230926151735/https://www.thuisbezorgd.nl/menu/mcdonalds-heerhugowaard",
+   "nuggets": {
+    "6": 3.7,
+    "9": 4.95,
+    "20": 9.75
+   },
+   "veggie": {
+    "6": 3.7,
+    "9": 5.05,
+    "20": 9.9
+   },
+   "bigmac": 6.65
+  },
+  {
+   "date": "2023-09-29",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-korte-lijnbaan",
+   "url": "https://web.archive.org/web/20230929094735/https://www.thuisbezorgd.nl/menu/mcdonalds-korte-lijnbaan",
+   "nuggets": {
+    "6": 4.05,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 4.05,
+    "9": 6.6,
+    "20": 12.65
+   },
+   "bigmac": 7.0
+  },
+  {
+   "date": "2023-10-01",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-beurs",
+   "url": "https://web.archive.org/web/20231001224217/https://www.thuisbezorgd.nl/menu/mcdonalds-beurs",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.7,
+    "20": 9.1
+   },
+   "veggie": {
+    "6": 3.35,
+    "9": 4.8,
+    "20": 9.1
+   },
+   "bigmac": 6.45
+  },
+  {
+   "date": "2023-10-01",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-hoogstraat",
+   "url": "https://web.archive.org/web/20231001215427/https://www.thuisbezorgd.nl/menu/mcdonalds-hoogstraat",
+   "nuggets": {
+    "6": 3.05,
+    "9": 4.1,
+    "20": 10.6
+   },
+   "veggie": {
+    "6": 2.7,
+    "9": 3.85,
+    "20": 8.6
+   },
+   "bigmac": 6.45
+  },
+  {
+   "date": "2023-10-01",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-oude-binnenweg",
+   "url": "https://web.archive.org/web/20231001212111/https://www.thuisbezorgd.nl/menu/mcdonalds-oude-binnenweg",
+   "nuggets": {
+    "6": 3.05,
+    "9": 4.75,
+    "20": 12.2
+   },
+   "veggie": {
+    "6": 2.7,
+    "9": 3.85,
+    "20": 8.6
+   },
+   "bigmac": 7.45
+  },
+  {
+   "date": "2023-10-01",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-park-boulevard",
+   "url": "https://web.archive.org/web/20231001225003/https://www.thuisbezorgd.nl/menu/mcdonalds-park-boulevard",
+   "nuggets": {
+    "6": 4.05,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 4.05,
+    "9": 6.6,
+    "20": 12.65
+   },
+   "bigmac": 7.0
+  },
+  {
+   "date": "2023-10-01",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-schiedamseweg",
+   "url": "https://web.archive.org/web/20231001213527/https://www.thuisbezorgd.nl/menu/mcdonalds-schiedamseweg",
+   "nuggets": {
+    "6": 4.05,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 4.05,
+    "9": 6.6,
+    "20": 12.65
+   },
+   "bigmac": 7.0
+  },
+  {
+   "date": "2023-10-02",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwart-janstraat",
+   "url": "https://web.archive.org/web/20231002005156/https://www.thuisbezorgd.nl/menu/mcdonalds-zwart-janstraat",
+   "nuggets": {
+    "6": 4.05,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 4.05,
+    "9": 6.6,
+    "20": 12.65
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2023-10-05",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-hoogeveen/BnuG6KXyQgSeEgq7RFpYHw",
+   "url": "https://web.archive.org/web/20231005000227/https://www.ubereats.com/nl/store/mcdonalds-hoogeveen/BnuG6KXyQgSeEgq7RFpYHw",
+   "nuggets": {
+    "6": 3.45,
+    "9": 5.0,
+    "20": 10.3
+   },
+   "veggie": {
+    "6": 2.65,
+    "9": 3.75,
+    "20": 8.45
+   },
+   "bigmac": 7.25
+  },
+  {
+   "date": "2023-11-29",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-spaklerweg",
+   "url": "https://web.archive.org/web/20231129124002/https://www.thuisbezorgd.nl/menu/mcdonalds-spaklerweg",
+   "nuggets": {
+    "9": 5.1,
+    "20": 13.2
+   },
+   "veggie": {
+    "9": 5.2,
+    "20": 13.35
+   },
+   "bigmac": 7.45
+  },
+  {
+   "date": "2023-12-05",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q",
+   "url": "https://web.archive.org/web/20231205000204/https://www.ubereats.com/nl/store/mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q",
+   "nuggets": {
+    "6": 3.4,
+    "9": 4.55,
+    "20": 11.0
+   },
+   "veggie": {
+    "6": 3.25,
+    "9": 4.75,
+    "20": 11.0
+   },
+   "bigmac": 7.7
+  },
+  {
+   "date": "2023-12-11",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amersfoort-centrum-1",
+   "url": "https://web.archive.org/web/20231211121126/https://www.thuisbezorgd.nl/menu/mcdonalds-amersfoort-centrum-1",
+   "nuggets": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 12.1
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 12.25
+   },
+   "bigmac": 7.8
+  },
+  {
+   "date": "2024-02-04",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-leidsche-rijn/VDB-n7W9TIGj0HB31PkD8g",
+   "url": "https://web.archive.org/web/20240204152940/https://www.ubereats.com/nl/store/mcdonalds-leidsche-rijn/VDB-n7W9TIGj0HB31PkD8g?diningMode=DELIVERY",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.3
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.3
+   },
+   "bigmac": 7.85
+  },
+  {
+   "date": "2024-02-23",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-bleiswijk",
+   "url": "https://web.archive.org/web/20240223174214/https://www.thuisbezorgd.nl/menu/mcdonalds-bleiswijk",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 10.5
+   },
+   "veggie": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 10.5
+   },
+   "bigmac": 7.15
+  },
+  {
+   "date": "2024-02-26",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-spaanse-polder",
+   "url": "https://web.archive.org/web/20240226032418/https://www.thuisbezorgd.nl/menu/mcdonalds-spaanse-polder",
+   "nuggets": {
+    "6": 4.25,
+    "9": 4.5,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 4.25,
+    "9": 4.5,
+    "20": 12.5
+   },
+   "bigmac": 6.5
+  },
+  {
+   "date": "2024-02-29",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nieuwendijk",
+   "url": "https://web.archive.org/web/20240229144843/https://www.thuisbezorgd.nl/menu/mcdonalds-nieuwendijk",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2024-03-25",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-megastores/rxC8958jThO8_3GefTdY0w",
+   "url": "https://web.archive.org/web/20240325155330/https://www.ubereats.com/nl/store/mcdonalds-megastores/rxC8958jThO8_3GefTdY0w?chain_slug=mcdonalds&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMlRoZSUyMEhhZ3VlJTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyQ2hJSmNiMllRaS0zeFVjUkVHd2VqVnJlQUFRJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMmdvb2dsZV9wbGFjZXMlMjIlMkMlMjJsYXRpdHVkZSUyMiUzQTUyLjA3MDQ5NzglMkMlMjJsb25naXR1ZGUlMjIlM0E0LjMwMDY5OTklN0Q%3D",
+   "nuggets": {
+    "6": 3.05,
+    "9": 4.55,
+    "20": 9.95
+   },
+   "veggie": {
+    "6": 3.05,
+    "9": 4.55,
+    "20": 9.95
+   },
+   "bigmac": 6.35
+  },
+  {
+   "date": "2024-03-25",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-vlamingstraat/o2wNrt_TTTGqFn9bp1obqQ",
+   "url": "https://web.archive.org/web/20240325155406/https://www.ubereats.com/nl/store/mcdonalds-vlamingstraat/o2wNrt_TTTGqFn9bp1obqQ?diningMode=DELIVERY&mod=quickView&modctx=%257B%2522itemUuid%2522%253A%25223db14d49-9d0a-5439-8712-3836828eae87%2522%252C%2522sectionUuid%2522%253A%2522ea660177-1707-5018-b933-9a2f534ba14f%2522%252C%2522subsectionUuid%2522%253A%2522f0fb8bfc-ec6a-5ca7-9b81-ea61d56d59ca%2522%252C%2522storeUuid%2522%253A%2522a36c0dae-dfd3-4d31-aa16-7f5ba75a1ba9%2522%252C%2522customizationRefUuids%2522%253A%255B%25223db943ef-7a7b-56a5-a802-ec0d37fb3dcf%252B0%2522%252C%252277781eb6-6621-588f-a154-1325afa8f7d9%2522%252C%2522b80b70c5-ef71-5cd8-aae4-10a920d9602b%252B1%2522%252C%2522b01f83ca-9d2c-56bf-aa7d-d42e58796464%2522%255D%252C%2522showSeeDetailsCTA%2522%253Atrue%257D&ps=1&sc=SEARCH_SUGGESTION",
+   "nuggets": {
+    "6": 3.15,
+    "9": 4.55,
+    "20": 11.95
+   },
+   "veggie": {
+    "6": 3.15,
+    "9": 4.55,
+    "20": 11.95
+   },
+   "bigmac": 6.8
+  },
+  {
+   "date": "2024-04-13",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-albert-cuyp",
+   "url": "https://web.archive.org/web/20240413215328/https://www.thuisbezorgd.nl/en/menu/mcdonalds-albert-cuyp",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2024-04-13",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almelo-oost",
+   "url": "https://web.archive.org/web/20240413032452/https://www.thuisbezorgd.nl/en/menu/mcdonalds-almelo-oost",
+   "nuggets": {
+    "6": 2.7,
+    "9": 3.95,
+    "20": 8.95
+   },
+   "veggie": {
+    "6": 2.7,
+    "9": 3.95,
+    "20": 8.95
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2024-04-13",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-charlois",
+   "url": "https://web.archive.org/web/20240413033630/https://www.thuisbezorgd.nl/menu/mcdonalds-charlois",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.45,
+    "20": 8.95
+   },
+   "veggie": {
+    "6": 3.3,
+    "9": 4.45,
+    "20": 8.95
+   },
+   "bigmac": 6.4
+  },
+  {
+   "date": "2024-04-15",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-coolsingel-1",
+   "url": "https://web.archive.org/web/20240415124645/https://www.thuisbezorgd.nl/menu/mcdonalds-coolsingel-1",
+   "nuggets": {
+    "6": 4.25,
+    "9": 4.5,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 4.25,
+    "9": 4.5,
+    "20": 12.5
+   },
+   "bigmac": 6.5
+  },
+  {
+   "date": "2024-04-19",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-de-geusselt",
+   "url": "https://web.archive.org/web/20240419051415/https://www.thuisbezorgd.nl/menu/mcdonalds-de-geusselt",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.6,
+    "20": 10.4
+   },
+   "veggie": {
+    "6": 2.65,
+    "9": 3.75,
+    "20": 8.6
+   },
+   "bigmac": 6.8
+  },
+  {
+   "date": "2024-04-19",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwolle-centrum",
+   "url": "https://web.archive.org/web/20240419124220/https://www.thuisbezorgd.nl/menu/mcdonalds-zwolle-centrum",
+   "nuggets": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 11.35
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 11.35
+   },
+   "bigmac": 7.7
+  },
+  {
+   "date": "2024-04-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almelo-woonboulevard",
+   "url": "https://web.archive.org/web/20240421135518/https://www.thuisbezorgd.nl/en/menu/mcdonalds-almelo-woonboulevard",
+   "nuggets": {
+    "6": 2.7,
+    "9": 3.95,
+    "20": 8.95
+   },
+   "veggie": {
+    "6": 2.7,
+    "9": 3.95,
+    "20": 8.95
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2024-04-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amersfoort-noord",
+   "url": "https://web.archive.org/web/20240421154115/https://www.thuisbezorgd.nl/menu/mcdonalds-amersfoort-noord",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.95
+   },
+   "veggie": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.95
+   },
+   "bigmac": 7.1
+  },
+  {
+   "date": "2024-04-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-bleiswijk",
+   "url": "https://web.archive.org/web/20240422103208/https://www.thuisbezorgd.nl/en/menu/mcdonalds-bleiswijk",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 10.5
+   },
+   "veggie": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 10.5
+   },
+   "bigmac": 7.15
+  },
+  {
+   "date": "2024-04-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwolle-noord",
+   "url": "https://web.archive.org/web/20240422220755/https://www.thuisbezorgd.nl/menu/mcdonalds-zwolle-noord",
+   "nuggets": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 11.35
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 11.35
+   },
+   "bigmac": 7.7
+  },
+  {
+   "date": "2024-04-23",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwolle-zuid",
+   "url": "https://web.archive.org/web/20240423023030/https://www.thuisbezorgd.nl/menu/mcdonalds-zwolle-zuid",
+   "nuggets": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 11.35
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 11.35
+   },
+   "bigmac": 7.7
+  },
+  {
+   "date": "2024-04-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-vlaardingen",
+   "url": "https://web.archive.org/web/20240424101253/https://www.thuisbezorgd.nl/en/menu/mcdonalds-vlaardingen",
+   "nuggets": {
+    "6": 3.05,
+    "9": 4.45,
+    "20": 8.95
+   },
+   "veggie": {
+    "6": 3.3,
+    "9": 4.45,
+    "20": 8.95
+   },
+   "bigmac": 6.3
+  },
+  {
+   "date": "2024-04-25",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-breda-woonboulevard",
+   "url": "https://web.archive.org/web/20240425072608/https://www.thuisbezorgd.nl/menu/mcdonalds-breda-woonboulevard",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 12.1
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 12.1
+   },
+   "bigmac": 7.85
+  },
+  {
+   "date": "2024-04-25",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-den-bosch-1",
+   "url": "https://web.archive.org/web/20240425150235/https://www.thuisbezorgd.nl/menu/mcdonalds-den-bosch-1",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.1,
+    "20": 9.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.1,
+    "20": 10.75
+   },
+   "bigmac": 6.8
+  },
+  {
+   "date": "2024-04-25",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-den-bosch-paleiskwartier",
+   "url": "https://web.archive.org/web/20240425045231/https://www.thuisbezorgd.nl/menu/mcdonalds-den-bosch-paleiskwartier",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.1,
+    "20": 9.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.1,
+    "20": 10.75
+   },
+   "bigmac": 6.8
+  },
+  {
+   "date": "2024-05-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-rhijnspoor",
+   "url": "https://web.archive.org/web/20240521081005/https://www.thuisbezorgd.nl/en/menu/mcdonalds-rhijnspoor",
+   "nuggets": {
+    "6": 3.5,
+    "9": 5.75,
+    "20": 9.95
+   },
+   "veggie": {
+    "6": 3.5,
+    "9": 5.75,
+    "20": 9.95
+   },
+   "bigmac": 6.5
+  },
+  {
+   "date": "2024-05-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-waalwijk",
+   "url": "https://web.archive.org/web/20240524001516/https://www.thuisbezorgd.nl/menu/mcdonalds-waalwijk",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.9,
+    "20": 10.15
+   },
+   "veggie": {
+    "6": 2.65,
+    "9": 3.75,
+    "20": 7.95
+   },
+   "bigmac": 6.55
+  },
+  {
+   "date": "2024-05-28",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-eerste-van-swindenstraat",
+   "url": "https://web.archive.org/web/20240528115334/https://www.thuisbezorgd.nl/en/menu/mcdonalds-eerste-van-swindenstraat",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2024-06-12",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-schiedamseweg",
+   "url": "https://web.archive.org/web/20240612211526/https://www.thuisbezorgd.nl/menu/mcdonalds-schiedamseweg",
+   "nuggets": {
+    "6": 4.25,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 4.25,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "bigmac": 7.0
+  },
+  {
+   "date": "2024-06-16",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nieuwendijk",
+   "url": "https://web.archive.org/web/20240616151737/https://www.thuisbezorgd.nl/en/menu/mcdonalds-nieuwendijk",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2024-06-16",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nijmegen-molenstraat",
+   "url": "https://web.archive.org/web/20240616224806/https://www.thuisbezorgd.nl/menu/mcdonalds-nijmegen-molenstraat",
+   "nuggets": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "bigmac": 7.35
+  },
+  {
+   "date": "2024-06-20",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-park-boulevard",
+   "url": "https://web.archive.org/web/20240620225245/https://www.thuisbezorgd.nl/menu/mcdonalds-park-boulevard",
+   "nuggets": {
+    "6": 4.25,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 4.25,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "bigmac": 7.25
+  },
+  {
+   "date": "2024-06-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-osdorp-drive",
+   "url": "https://web.archive.org/web/20240622061052/https://www.thuisbezorgd.nl/menu/mcdonalds-osdorp-drive",
+   "nuggets": {
+    "6": 3.5,
+    "9": 5.05,
+    "20": 10.75
+   },
+   "veggie": {
+    "6": 3.5,
+    "9": 5.05,
+    "20": 10.75
+   },
+   "bigmac": 7.45
+  },
+  {
+   "date": "2024-07-19",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-huis-ter-heide",
+   "url": "https://web.archive.org/web/20240719092627/https://www.thuisbezorgd.nl/menu/mcdonalds-huis-ter-heide",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.3
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.3
+   },
+   "bigmac": 7.85
+  },
+  {
+   "date": "2024-07-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-rhijnspoor",
+   "url": "https://web.archive.org/web/20240721112330/https://www.thuisbezorgd.nl/menu/mcdonalds-rhijnspoor",
+   "nuggets": {
+    "6": 3.5,
+    "9": 5.75,
+    "20": 9.95
+   },
+   "veggie": {
+    "6": 3.75,
+    "9": 5.75,
+    "20": 9.95
+   },
+   "bigmac": 6.75
+  },
+  {
+   "date": "2024-07-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-beurs",
+   "url": "https://web.archive.org/web/20240724220601/https://www.thuisbezorgd.nl/menu/mcdonalds-beurs",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.8,
+    "20": 9.45
+   },
+   "veggie": {
+    "6": 3.3,
+    "9": 4.8,
+    "20": 9.45
+   },
+   "bigmac": 6.65
+  },
+  {
+   "date": "2024-08-06",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nijmegen-molenstraat",
+   "url": "https://web.archive.org/web/20240806070803/https://www.thuisbezorgd.nl/en/menu/mcdonalds-nijmegen-molenstraat",
+   "nuggets": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "bigmac": 7.35
+  },
+  {
+   "date": "2024-08-11",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-oudegracht",
+   "url": "https://web.archive.org/web/20240811014431/https://www.thuisbezorgd.nl/en/menu/mcdonalds-oudegracht",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.15
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.15
+   },
+   "bigmac": 7.85
+  },
+  {
+   "date": "2024-08-15",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-hengelo-westermaat",
+   "url": "https://web.archive.org/web/20240815121215/https://www.thuisbezorgd.nl/en/menu/mcdonalds-hengelo-westermaat",
+   "nuggets": {
+    "6": 2.7,
+    "9": 3.95,
+    "20": 8.95
+   },
+   "veggie": {
+    "6": 2.7,
+    "9": 3.95,
+    "20": 8.95
+   },
+   "bigmac": 5.95
+  },
+  {
+   "date": "2024-08-15",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-maarssen",
+   "url": "https://web.archive.org/web/20240815084435/https://www.thuisbezorgd.nl/en/menu/mcdonalds-maarssen",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.3
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.3
+   },
+   "bigmac": 7.85
+  },
+  {
+   "date": "2024-09-10",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almere-buiten",
+   "url": "https://web.archive.org/web/20240910032944/https://www.thuisbezorgd.nl/en/menu/mcdonalds-almere-buiten",
+   "nuggets": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 13.45
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 13.45
+   },
+   "bigmac": 8.05
+  },
+  {
+   "date": "2024-09-26",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-purmerend-verzetslaan/w47YwKG8SzW4Ni6wCtrqSQ",
+   "url": "https://web.archive.org/web/20240926172948/https://www.ubereats.com/nl/store/mcdonalds-purmerend-verzetslaan/w47YwKG8SzW4Ni6wCtrqSQ",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.45,
+    "20": 9.95
+   },
+   "veggie": {
+    "6": 3.3,
+    "9": 4.45,
+    "20": 9.95
+   },
+   "bigmac": 6.25
+  },
+  {
+   "date": "2024-09-27",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-drachten-omloop/sR8_rNirQGS7BXMd9TGQ4Q",
+   "url": "https://web.archive.org/web/20240927155538/https://www.ubereats.com/nl/store/mcdonalds-drachten-omloop/sR8_rNirQGS7BXMd9TGQ4Q?ad_id=600096808490&campaign_id=11327239882&chain_slug=mcdonalds&diningMode=DELIVERY&kw=mcdonalds&kwid=kwd-10230090&placement=",
+   "nuggets": {
+    "6": 3.7,
+    "9": 4.85,
+    "20": 9.75
+   },
+   "veggie": {
+    "6": 3.7,
+    "9": 4.85,
+    "20": 9.5
+   },
+   "bigmac": 6.05
+  },
+  {
+   "date": "2024-10-04",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-drachten-omloop/sR8_rNirQGS7BXMd9TGQ4Q",
+   "url": "https://web.archive.org/web/20241004141448/https://www.ubereats.com/nl/store/mcdonalds-drachten-omloop/sR8_rNirQGS7BXMd9TGQ4Q?kw=mcdonalds&modctx=%257B%2522storeUuid%2522%253A%2522b11f3fac-d8ab-4064-bb05-731df53190e1%2522%252C%2522sectionUuid%2522%253A%25220db4a15a-f474-573e-8aac-f2b13f7de0bc%2522%252C%2522subsectionUuid%2522%253A%25224c3e1eeb-1e5b-52d5-8b6a-a5eb523b7aae%2522%252C%2522itemUuid%2522%253A%2522cd61efe4-1085-5d57-9f3e-50787968dbe9%2522%252C%2522showSeeDetailsCTA%2522%253Atrue%257D&ps=1&campaign_id=11327239882&diningMode=DELIVERY&kwid=kwd-10230090&placement=&chain_slug=mcdonalds&mod=quickView&ad_id=600096808490",
+   "nuggets": {
+    "6": 3.7,
+    "9": 4.85,
+    "20": 9.75
+   },
+   "veggie": {
+    "6": 3.7,
+    "9": 4.85,
+    "20": 9.5
+   },
+   "bigmac": 6.05
+  },
+  {
+   "date": "2024-10-15",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-kelvinstraat",
+   "url": "https://web.archive.org/web/20241015070659/https://www.thuisbezorgd.nl/en/menu/mcdonalds-kelvinstraat",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 10.5
+   },
+   "veggie": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 10.5
+   },
+   "bigmac": 7.15
+  },
+  {
+   "date": "2024-11-01",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-korte-lijnbaan",
+   "url": "https://web.archive.org/web/20241101223812/https://www.thuisbezorgd.nl/menu/mcdonalds-korte-lijnbaan",
+   "nuggets": {
+    "6": 4.25,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 4.25,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "bigmac": 7.0
+  },
+  {
+   "date": "2024-11-04",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-ijsselstein",
+   "url": "https://web.archive.org/web/20241104203928/https://www.thuisbezorgd.nl/menu/mcdonalds-ijsselstein",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.1,
+    "20": 10.75
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.1,
+    "20": 10.75
+   },
+   "bigmac": 6.95
+  },
+  {
+   "date": "2024-11-04",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-kinkerstraat-1",
+   "url": "https://web.archive.org/web/20241104083437/https://www.thuisbezorgd.nl/en/menu/mcdonalds-kinkerstraat-1",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2024-11-04",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-muntplein-1",
+   "url": "https://web.archive.org/web/20241104084029/https://www.thuisbezorgd.nl/en/menu/mcdonalds-muntplein-1",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2024-11-12",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-alphen-aan-den-rijn-centrum",
+   "url": "https://web.archive.org/web/20241112095757/https://www.thuisbezorgd.nl/menu/mcdonalds-alphen-aan-den-rijn-centrum",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.4
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.4
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2024-11-12",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-julianaplein",
+   "url": "https://web.archive.org/web/20241112215517/https://www.thuisbezorgd.nl/en/menu/mcdonalds-julianaplein",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2024-11-14",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almere-haven",
+   "url": "https://web.archive.org/web/20241114072242/https://www.thuisbezorgd.nl/en/menu/mcdonalds-almere-haven",
+   "nuggets": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 13.45
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 13.45
+   },
+   "bigmac": 8.05
+  },
+  {
+   "date": "2024-11-26",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-vlamingstraat/o2wNrt_TTTGqFn9bp1obqQ",
+   "url": "https://web.archive.org/web/20241126223707/https://www.ubereats.com/nl/store/mcdonalds-vlamingstraat/o2wNrt_TTTGqFn9bp1obqQ?diningMode=DELIVERY",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.1,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.1,
+    "20": 12.5
+   },
+   "bigmac": 7.6
+  },
+  {
+   "date": "2024-11-27",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q",
+   "url": "https://web.archive.org/web/20241127040506/https://www.ubereats.com/nl/store/mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q?diningMode=DELIVERY",
+   "nuggets": {
+    "6": 3.5,
+    "9": 4.65,
+    "20": 11.0
+   },
+   "veggie": {
+    "6": 3.5,
+    "9": 4.6,
+    "20": 11.0
+   },
+   "bigmac": 8.0
+  },
+  {
+   "date": "2024-12-07",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-centrum",
+   "url": "https://web.archive.org/web/20241207093909/https://www.thuisbezorgd.nl/menu/mcdonalds-centrum",
+   "nuggets": {
+    "6": 3.5,
+    "9": 5.05,
+    "20": 11.15
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 11.15
+   }
+  },
+  {
+   "date": "2024-12-09",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q",
+   "url": "https://web.archive.org/web/20241209142708/https://www.ubereats.com/nl/store/mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q",
+   "nuggets": {
+    "6": 3.5,
+    "9": 4.65,
+    "20": 11.0
+   },
+   "veggie": {
+    "6": 3.5,
+    "9": 4.6,
+    "20": 11.0
+   },
+   "bigmac": 8.0
+  },
+  {
+   "date": "2024-12-12",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-venlo-1",
+   "url": "https://web.archive.org/web/20241212131730/https://www.thuisbezorgd.nl/en/menu/mcdonalds-venlo-1",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.9,
+    "20": 11.45
+   },
+   "veggie": {
+    "6": 3.45,
+    "9": 4.9,
+    "20": 11.45
+   }
+  },
+  {
+   "date": "2024-12-13",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-oude-binnenweg",
+   "url": "https://web.archive.org/web/20241213210003/https://www.thuisbezorgd.nl/menu/mcdonalds-oude-binnenweg",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.75,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 3.1,
+    "9": 4.5,
+    "20": 8.45
+   }
+  },
+  {
+   "date": "2025-01-14",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwart-janstraat",
+   "url": "https://web.archive.org/web/20250114121037/https://www.thuisbezorgd.nl/menu/mcdonalds-zwart-janstraat",
+   "nuggets": {
+    "6": 4.25,
+    "9": 6.5,
+    "20": 12.5
+   },
+   "veggie": {
+    "6": 4.25,
+    "9": 6.5,
+    "20": 12.5
+   }
+  },
+  {
+   "date": "2025-01-16",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amersfoort-noord",
+   "url": "https://web.archive.org/web/20250116084112/https://www.thuisbezorgd.nl/en/menu/mcdonalds-amersfoort-noord",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.6,
+    "20": 10.7
+   },
+   "veggie": {
+    "6": 3.25,
+    "9": 4.6,
+    "20": 10.7
+   }
+  },
+  {
+   "date": "2025-01-17",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amersfoort-centrum-1",
+   "url": "https://web.archive.org/web/20250117005443/https://www.thuisbezorgd.nl/en/menu/mcdonalds-amersfoort-centrum-1",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 12.1
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 12.1
+   }
+  },
+  {
+   "date": "2025-01-17",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-huis-ter-heide",
+   "url": "https://web.archive.org/web/20250117010721/https://www.thuisbezorgd.nl/en/menu/mcdonalds-huis-ter-heide",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.3
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.3
+   }
+  },
+  {
+   "date": "2025-01-18",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-ijsselstein",
+   "url": "https://web.archive.org/web/20250118162540/https://www.thuisbezorgd.nl/en/menu/mcdonalds-ijsselstein",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.1,
+    "20": 10.75
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.1,
+    "20": 10.75
+   }
+  },
+  {
+   "date": "2025-01-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-albert-cuypstraat/4G3eA01ESeSKFSKtFKLB1Q",
+   "url": "https://web.archive.org/web/20250118165315/https://www.ubereats.com/nl/store/mcdonalds-albert-cuypstraat/4G3eA01ESeSKFSKtFKLB1Q",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2025-01-24",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-spijkenisse-borgtweg/u_jTfIzjWUal8ky4m3UufQ",
+   "url": "https://web.archive.org/web/20250124103520/https://www.ubereats.com/nl/store/mcdonalds-spijkenisse-borgtweg/u_jTfIzjWUal8ky4m3UufQ",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 9.1
+   },
+   "veggie": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 9.1
+   },
+   "bigmac": 5.9
+  },
+  {
+   "date": "2025-02-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-huis-ter-heide",
+   "url": "https://web.archive.org/web/20250209051305/https://www.thuisbezorgd.nl/menu/mcdonalds-huis-ter-heide",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.3
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.3
+   }
+  },
+  {
+   "date": "2025-02-15",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-spaanse-polder",
+   "url": "https://web.archive.org/web/20250215221215/https://www.thuisbezorgd.nl/menu/mcdonalds-spaanse-polder",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 9.8
+   },
+   "veggie": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 9.8
+   }
+  },
+  {
+   "date": "2025-02-16",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-nijmegen-molenstraat/ePKsyfuPTgKfCevO1-j87A",
+   "url": "https://web.archive.org/web/20250216165142/https://www.ubereats.com/nl-en/store/mcdonalds-nijmegen-molenstraat/ePKsyfuPTgKfCevO1-j87A",
+   "nuggets": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "bigmac": 7.35
+  },
+  {
+   "date": "2025-02-17",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-albert-cuyp",
+   "url": "https://web.archive.org/web/20250217105930/https://www.thuisbezorgd.nl/en/menu/mcdonalds-albert-cuyp",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   }
+  },
+  {
+   "date": "2025-02-18",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-breda-woonboulevard",
+   "url": "https://web.archive.org/web/20250218092159/https://www.thuisbezorgd.nl/menu/mcdonalds-breda-woonboulevard",
+   "nuggets": {
+    "6": 3.4,
+    "9": 4.85,
+    "20": 11.2
+   },
+   "veggie": {
+    "6": 3.4,
+    "9": 4.85,
+    "20": 11.2
+   }
+  },
+  {
+   "date": "2025-03-03",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-nijmegen-molenstraat/ePKsyfuPTgKfCevO1-j87A",
+   "url": "https://web.archive.org/web/20250303200425/https://www.ubereats.com/nl-en/store/mcdonalds-nijmegen-molenstraat/ePKsyfuPTgKfCevO1-j87A?modctx=%257B%2522storeUuid%2522%253A%252278f2acc9-fb8f-4e02-9f09-ebced7e8fcec%2522%252C%2522sectionUuid%2522%253A%25228caedddc-5011-5413-b998-311d3f9df015%2522%252C%2522subsectionUuid%2522%253A%25220379a62a-1156-4ddb-a09a-7e1dc45d5dfb%2522%252C%2522itemUuid%2522%253A%2522df9edc8e-cc1b-5a17-b3f3-379b75385c18%2522%252C%2522showSeeDetailsCTA%2522%253Atrue%257D&ps=1&diningMode=DELIVERY&mod=quickView",
+   "nuggets": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "bigmac": 7.35
+  },
+  {
+   "date": "2025-03-15",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nieuwendijk",
+   "url": "https://web.archive.org/web/20250315233409/https://www.thuisbezorgd.nl/menu/mcdonalds-nieuwendijk",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2025-03-16",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almelo-oost",
+   "url": "https://web.archive.org/web/20250316163056/https://www.thuisbezorgd.nl/menu/mcdonalds-almelo-oost",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.55,
+    "20": 10.95
+   },
+   "veggie": {
+    "6": 3.25,
+    "9": 4.6,
+    "20": 10.95
+   },
+   "bigmac": 7.05
+  },
+  {
+   "date": "2025-03-16",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-diemen",
+   "url": "https://web.archive.org/web/20250316085416/https://www.thuisbezorgd.nl/en/menu/mcdonalds-diemen",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.55,
+    "9": 5.05,
+    "20": 12.95
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2025-03-16",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-schiedamseweg",
+   "url": "https://web.archive.org/web/20250316153308/https://www.thuisbezorgd.nl/menu/mcdonalds-schiedamseweg",
+   "nuggets": {
+    "6": 4.0,
+    "9": 5.0,
+    "20": 10.0
+   },
+   "veggie": {
+    "6": 4.0,
+    "9": 5.0,
+    "20": 10.0
+   },
+   "bigmac": 7.0
+  },
+  {
+   "date": "2025-03-16",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zuiderval",
+   "url": "https://web.archive.org/web/20250316083522/https://www.thuisbezorgd.nl/en/menu/mcdonalds-zuiderval",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.55,
+    "20": 10.95
+   },
+   "veggie": {
+    "6": 3.25,
+    "9": 4.6,
+    "20": 10.95
+   },
+   "bigmac": 7.05
+  },
+  {
+   "date": "2025-03-19",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-woonplein",
+   "url": "https://web.archive.org/web/20250319123726/https://www.thuisbezorgd.nl/en/menu/mcdonalds-woonplein",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.95
+   },
+   "veggie": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 13.0
+   },
+   "bigmac": 7.05
+  },
+  {
+   "date": "2025-03-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-heerhugowaard",
+   "url": "https://web.archive.org/web/20250321042028/https://www.thuisbezorgd.nl/en/menu/mcdonalds-heerhugowaard",
+   "nuggets": {
+    "6": 2.8,
+    "9": 3.95,
+    "20": 9.95
+   },
+   "veggie": {
+    "6": 2.8,
+    "9": 3.95,
+    "20": 9.95
+   },
+   "bigmac": 7.15
+  },
+  {
+   "date": "2025-03-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amsterdamse-poort",
+   "url": "https://web.archive.org/web/20250322032755/https://www.thuisbezorgd.nl/en/menu/mcdonalds-amsterdamse-poort",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2025-03-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-buikslotermeerplein-1",
+   "url": "https://web.archive.org/web/20250322024045/https://www.thuisbezorgd.nl/en/menu/mcdonalds-buikslotermeerplein-1",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.25,
+    "20": 9.75
+   },
+   "veggie": {
+    "6": 3.25,
+    "9": 4.6,
+    "20": 8.95
+   },
+   "bigmac": 6.85
+  },
+  {
+   "date": "2025-03-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-ijdoornlaan-1",
+   "url": "https://web.archive.org/web/20250322022657/https://www.thuisbezorgd.nl/en/menu/mcdonalds-ijdoornlaan-1",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.6,
+    "20": 10.25
+   },
+   "veggie": {
+    "6": 3.25,
+    "9": 4.6,
+    "20": 8.95
+   },
+   "bigmac": 6.95
+  },
+  {
+   "date": "2025-03-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-kalanderstraat",
+   "url": "https://web.archive.org/web/20250322061034/https://www.thuisbezorgd.nl/en/menu/mcdonalds-kalanderstraat",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.95
+   },
+   "veggie": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 13.0
+   },
+   "bigmac": 7.05
+  },
+  {
+   "date": "2025-03-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-osdorp-drive",
+   "url": "https://web.archive.org/web/20250322025540/https://www.thuisbezorgd.nl/en/menu/mcdonalds-osdorp-drive",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.15
+   },
+   "veggie": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.15
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2025-03-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-osdorpplein",
+   "url": "https://web.archive.org/web/20250322032902/https://www.thuisbezorgd.nl/en/menu/mcdonalds-osdorpplein",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.15
+   },
+   "veggie": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.15
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2025-03-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-spaklerweg",
+   "url": "https://web.archive.org/web/20250322023833/https://www.thuisbezorgd.nl/en/menu/mcdonalds-spaklerweg",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2025-03-24",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-sontplein",
+   "url": "https://web.archive.org/web/20250324123512/https://www.thuisbezorgd.nl/en/menu/mcdonalds-sontplein",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.75
+   },
+   "veggie": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.75
+   },
+   "bigmac": 8.05
+  },
+  {
+   "date": "2025-03-28",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwolle-zuid",
+   "url": "https://web.archive.org/web/20250328164120/https://www.thuisbezorgd.nl/menu/mcdonalds-zwolle-zuid",
+   "nuggets": {
+    "6": 3.7,
+    "9": 5.25,
+    "20": 11.55
+   },
+   "veggie": {
+    "6": 3.7,
+    "9": 5.25,
+    "20": 11.55
+   },
+   "bigmac": 7.7
+  },
+  {
+   "date": "2025-04-04",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-spijkenisse-borgtweg/u_jTfIzjWUal8ky4m3UufQ",
+   "url": "https://web.archive.org/web/20250404145746/https://www.ubereats.com/nl/store/mcdonalds-spijkenisse-borgtweg/u_jTfIzjWUal8ky4m3UufQ",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 9.1
+   },
+   "veggie": {
+    "6": 3.2,
+    "9": 4.6,
+    "20": 9.1
+   },
+   "bigmac": 5.9
+  },
+  {
+   "date": "2025-04-13",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-hoogvliet/zO7IQTRkRs-HJBC6K_f5qQ",
+   "url": "https://web.archive.org/web/20250413085907/https://www.ubereats.com/nl/store/mcdonalds-hoogvliet/zO7IQTRkRs-HJBC6K_f5qQ",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.55,
+    "20": 8.95
+   },
+   "veggie": {
+    "6": 3.45,
+    "9": 4.55,
+    "20": 8.95
+   },
+   "bigmac": 6.5
+  },
+  {
+   "date": "2025-04-18",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-udenhout",
+   "url": "https://web.archive.org/web/20250418165157/https://www.thuisbezorgd.nl/en/menu/mcdonalds-udenhout",
+   "nuggets": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 11.1
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 5.1,
+    "20": 11.1
+   },
+   "bigmac": 7.3
+  },
+  {
+   "date": "2025-04-20",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-den-bosch-paleiskwartier",
+   "url": "https://web.archive.org/web/20250420100539/https://www.thuisbezorgd.nl/menu/mcdonalds-den-bosch-paleiskwartier",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 10.55
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 10.55
+   },
+   "bigmac": 7.55
+  },
+  {
+   "date": "2025-04-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-deventer-a1",
+   "url": "https://web.archive.org/web/20250422200934/https://www.thuisbezorgd.nl/menu/mcdonalds-deventer-a1",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.65,
+    "20": 10.65
+   },
+   "veggie": {
+    "6": 3.2,
+    "9": 4.65,
+    "20": 10.65
+   },
+   "bigmac": 7.6
+  },
+  {
+   "date": "2025-04-25",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwolle-noord",
+   "url": "https://web.archive.org/web/20250425151358/https://www.thuisbezorgd.nl/menu/mcdonalds-zwolle-noord",
+   "nuggets": {
+    "6": 3.7,
+    "9": 5.25,
+    "20": 11.35
+   },
+   "veggie": {
+    "6": 3.7,
+    "9": 5.25,
+    "20": 11.35
+   },
+   "bigmac": 7.7
+  },
+  {
+   "date": "2025-05-05",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-hoogvliet/zO7IQTRkRs-HJBC6K_f5qQ",
+   "url": "https://web.archive.org/web/20250505055814/https://www.ubereats.com/nl/store/mcdonalds-hoogvliet/zO7IQTRkRs-HJBC6K_f5qQ?diningMode=DELIVERY&mod=quickView&modctx=%257B%2522storeUuid%2522%253A%2522cceec841-3464-46cf-8724-10ba2bf7f9a9%2522%252C%2522sectionUuid%2522%253A%2522b875fe28-ff79-59a5-bc6b-ef6750d87685%2522%252C%2522subsectionUuid%2522%253A%252299706c93-807a-5f4c-b229-c4a63f0fd000%2522%252C%2522itemUuid%2522%253A%25221fae1a5a-f7e8-5e2f-a326-4b9126501be1%2522%252C%2522showSeeDetailsCTA%2522%253Atrue%257D&ps=1",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.55,
+    "20": 8.95
+   },
+   "veggie": {
+    "6": 3.45,
+    "9": 4.55,
+    "20": 8.95
+   },
+   "bigmac": 6.5
+  },
+  {
+   "date": "2025-05-13",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almelo-oost",
+   "url": "https://web.archive.org/web/20250513003323/https://www.thuisbezorgd.nl/en/menu/mcdonalds-almelo-oost",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.95
+   },
+   "veggie": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.95
+   },
+   "bigmac": 7.05
+  },
+  {
+   "date": "2025-05-14",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-charlois",
+   "url": "https://web.archive.org/web/20250514083618/https://www.thuisbezorgd.nl/menu/mcdonalds-charlois",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.55,
+    "20": 8.95
+   },
+   "veggie": {
+    "6": 3.45,
+    "9": 4.55,
+    "20": 8.95
+   },
+   "bigmac": 6.6
+  },
+  {
+   "date": "2025-05-14",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-santpoort-noord",
+   "url": "https://web.archive.org/web/20250514022140/https://www.thuisbezorgd.nl/en/menu/mcdonalds-santpoort-noord",
+   "nuggets": {
+    "6": 3.35,
+    "9": 4.7,
+    "20": 9.95
+   },
+   "veggie": {
+    "6": 3.35,
+    "9": 4.7,
+    "20": 9.95
+   },
+   "bigmac": 6.6
+  },
+  {
+   "date": "2025-05-16",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nijmegen-molenstraat",
+   "url": "https://web.archive.org/web/20250516022107/https://www.thuisbezorgd.nl/menu/mcdonalds-nijmegen-molenstraat",
+   "nuggets": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "bigmac": 7.35
+  },
+  {
+   "date": "2025-05-17",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-rhijnspoor",
+   "url": "https://web.archive.org/web/20250517191256/https://www.thuisbezorgd.nl/en/menu/mcdonalds-rhijnspoor",
+   "nuggets": {
+    "6": 3.75,
+    "9": 5.75,
+    "20": 9.95
+   },
+   "veggie": {
+    "6": 3.75,
+    "9": 5.75,
+    "20": 9.95
+   },
+   "bigmac": 6.75
+  },
+  {
+   "date": "2025-05-18",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amersfoort-noord",
+   "url": "https://web.archive.org/web/20250518110759/https://www.thuisbezorgd.nl/menu/mcdonalds-amersfoort-noord",
+   "nuggets": {
+    "6": 3.35,
+    "9": 4.75,
+    "20": 10.7
+   },
+   "veggie": {
+    "6": 3.35,
+    "9": 4.75,
+    "20": 10.7
+   },
+   "bigmac": 7.05
+  },
+  {
+   "date": "2025-05-18",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-eerste-van-swindenstraat",
+   "url": "https://web.archive.org/web/20250518014819/https://www.thuisbezorgd.nl/en/menu/mcdonalds-eerste-van-swindenstraat",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2025-05-18",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-park-boulevard",
+   "url": "https://web.archive.org/web/20250518104810/https://www.thuisbezorgd.nl/menu/mcdonalds-park-boulevard",
+   "nuggets": {
+    "6": 4.0,
+    "9": 4.7,
+    "20": 11.5
+   },
+   "veggie": {
+    "6": 4.0,
+    "9": 4.7,
+    "20": 11.5
+   },
+   "bigmac": 7.25
+  },
+  {
+   "date": "2025-05-19",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-almelo-woonboulevard",
+   "url": "https://web.archive.org/web/20250519074558/https://www.thuisbezorgd.nl/en/menu/mcdonalds-almelo-woonboulevard",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.95
+   },
+   "veggie": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 13.0
+   },
+   "bigmac": 7.05
+  },
+  {
+   "date": "2025-05-19",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-den-bosch-1",
+   "url": "https://web.archive.org/web/20250519151342/https://www.thuisbezorgd.nl/menu/mcdonalds-den-bosch-1",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 10.55
+   },
+   "veggie": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 10.55
+   },
+   "bigmac": 7.55
+  },
+  {
+   "date": "2025-05-19",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwolle-centrum",
+   "url": "https://web.archive.org/web/20250519212139/https://www.thuisbezorgd.nl/menu/mcdonalds-zwolle-centrum",
+   "nuggets": {
+    "6": 3.7,
+    "9": 5.25,
+    "20": 11.55
+   },
+   "veggie": {
+    "6": 3.7,
+    "9": 5.25,
+    "20": 11.35
+   },
+   "bigmac": 7.7
+  },
+  {
+   "date": "2025-05-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-de-geusselt",
+   "url": "https://web.archive.org/web/20250521235154/https://www.thuisbezorgd.nl/menu/mcdonalds-de-geusselt",
+   "nuggets": {
+    "6": 3.0,
+    "9": 4.6,
+    "20": 10.4
+   },
+   "veggie": {
+    "6": 2.65,
+    "9": 3.75,
+    "20": 8.6
+   },
+   "bigmac": 6.95
+  },
+  {
+   "date": "2025-05-21",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-osdorp-drive",
+   "url": "https://web.archive.org/web/20250521082623/https://www.thuisbezorgd.nl/menu/mcdonalds-osdorp-drive",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.15
+   },
+   "veggie": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.15
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2025-05-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-alphen-aan-den-rijn-centrum",
+   "url": "https://web.archive.org/web/20250522101843/https://www.thuisbezorgd.nl/en/menu/mcdonalds-alphen-aan-den-rijn-centrum",
+   "nuggets": {
+    "6": 3.35,
+    "9": 4.7,
+    "20": 10.5
+   },
+   "veggie": {
+    "6": 3.35,
+    "9": 4.7,
+    "20": 10.5
+   },
+   "bigmac": 6.75
+  },
+  {
+   "date": "2025-05-22",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-waalwijk",
+   "url": "https://web.archive.org/web/20250522105728/https://www.thuisbezorgd.nl/en/menu/mcdonalds-waalwijk",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.9,
+    "20": 10.15
+   },
+   "veggie": {
+    "6": 3.45,
+    "9": 4.9,
+    "20": 10.15
+   },
+   "bigmac": 6.55
+  },
+  {
+   "date": "2025-05-25",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-nijmegen-molenstraat/ePKsyfuPTgKfCevO1-j87A",
+   "url": "https://web.archive.org/web/20250525001920/https://www.ubereats.com/nl-en/store/mcdonalds-nijmegen-molenstraat/ePKsyfuPTgKfCevO1-j87A",
+   "nuggets": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "veggie": {
+    "6": 3.6,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "bigmac": 7.35
+  },
+  {
+   "date": "2025-06-08",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-spijkenisse-borgtweg/u_jTfIzjWUal8ky4m3UufQ",
+   "url": "https://web.archive.org/web/20250608082911/https://www.ubereats.com/nl/store/mcdonalds-spijkenisse-borgtweg/u_jTfIzjWUal8ky4m3UufQ",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.95,
+    "20": 9.5
+   },
+   "bigmac": 5.9
+  },
+  {
+   "date": "2025-06-15",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-rhijnspoor",
+   "url": "https://web.archive.org/web/20250615220457/https://www.thuisbezorgd.nl/menu/mcdonalds-rhijnspoor",
+   "nuggets": {
+    "6": 3.95,
+    "9": 5.75,
+    "20": 10.5
+   },
+   "bigmac": 6.95
+  },
+  {
+   "date": "2025-06-16",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-nijmegen-molenstraat/ePKsyfuPTgKfCevO1-j87A",
+   "url": "https://web.archive.org/web/20250616144207/https://www.ubereats.com/nl-en/store/mcdonalds-nijmegen-molenstraat/ePKsyfuPTgKfCevO1-j87A",
+   "nuggets": {
+    "6": 3.85,
+    "9": 5.3,
+    "20": 11.5
+   },
+   "bigmac": 7.35
+  },
+  {
+   "date": "2025-06-18",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leiderdorp",
+   "url": "https://web.archive.org/web/20250618112220/https://www.thuisbezorgd.nl/en/menu/mcdonalds-leiderdorp",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.55,
+    "20": 9.5
+   },
+   "bigmac": 5.6
+  },
+  {
+   "date": "2025-06-18",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-park-boulevard",
+   "url": "https://web.archive.org/web/20250618062653/https://www.thuisbezorgd.nl/en/menu/mcdonalds-park-boulevard",
+   "nuggets": {
+    "6": 4.3,
+    "9": 5.4,
+    "20": 10.4
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2025-07-11",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nieuwendijk",
+   "url": "https://web.archive.org/web/20250711090041/https://www.thuisbezorgd.nl/en/menu/mcdonalds-nieuwendijk",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.95
+  },
+  {
+   "date": "2025-07-14",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-waalwijk",
+   "url": "https://web.archive.org/web/20250714021251/https://www.thuisbezorgd.nl/menu/mcdonalds-waalwijk",
+   "nuggets": {
+    "6": 3.7,
+    "9": 5.25,
+    "20": 10.55
+   },
+   "bigmac": 6.35
+  },
+  {
+   "date": "2025-07-16",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-lange-vie",
+   "url": "https://web.archive.org/web/20250716140736/https://www.thuisbezorgd.nl/menu/mcdonalds-lange-vie",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.15
+   },
+   "bigmac": 7.25
+  },
+  {
+   "date": "2025-07-17",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-beurs",
+   "url": "https://web.archive.org/web/20250717063935/https://www.thuisbezorgd.nl/menu/mcdonalds-beurs",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.3
+   },
+   "bigmac": 6.85
+  },
+  {
+   "date": "2025-08-05",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-grote-houtstraat-1",
+   "url": "https://web.archive.org/web/20250805173600/https://www.thuisbezorgd.nl/menu/mcdonalds-grote-houtstraat-1",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.85,
+    "20": 10.3
+   },
+   "bigmac": 6.7
+  },
+  {
+   "date": "2025-08-05",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zaanstad-zmc",
+   "url": "https://web.archive.org/web/20250805171027/https://www.thuisbezorgd.nl/menu/mcdonalds-zaanstad-zmc",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.65
+   },
+   "bigmac": 7.3
+  },
+  {
+   "date": "2025-08-07",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-escamplaan",
+   "url": "https://web.archive.org/web/20250807001010/https://www.thuisbezorgd.nl/en/menu/mcdonalds-escamplaan",
+   "nuggets": {
+    "6": 3.55,
+    "9": 4.8,
+    "20": 9.35
+   },
+   "bigmac": 6.1
+  },
+  {
+   "date": "2025-08-07",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-hoofdweg",
+   "url": "https://web.archive.org/web/20250807232743/https://www.thuisbezorgd.nl/en/menu/mcdonalds-hoofdweg",
+   "nuggets": {
+    "6": 3.95,
+    "9": 5.75,
+    "20": 10.5
+   },
+   "bigmac": 6.95
+  },
+  {
+   "date": "2025-08-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-casablancastraat-2",
+   "url": "https://web.archive.org/web/20250809221133/https://www.thuisbezorgd.nl/menu/mcdonalds-casablancastraat-2",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.9,
+    "20": 10.3
+   },
+   "bigmac": 6.75
+  },
+  {
+   "date": "2025-08-14",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-amstel-towers/xjgnqZRnUPOXR2b4ENrp3w",
+   "url": "https://web.archive.org/web/20250814234443/https://www.ubereats.com/nl/store/mcdonalds-amstel-towers/xjgnqZRnUPOXR2b4ENrp3w",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 11.8
+   },
+   "bigmac": 7.25
+  },
+  {
+   "date": "2025-08-14",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-zaanstad-prins-bernhardplein/xqj_qygoRhifmKjvnBg0Ow",
+   "url": "https://web.archive.org/web/20250814223842/https://www.ubereats.com/nl/store/mcdonalds-zaanstad-zmc/xqj_qygoRhifmKjvnBg0Ow",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.65
+   },
+   "bigmac": 7.3
+  },
+  {
+   "date": "2025-08-15",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-deventer-de-scheg",
+   "url": "https://web.archive.org/web/20250815032252/https://www.thuisbezorgd.nl/en/menu/mcdonalds-deventer-de-scheg",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.8,
+    "20": 10.65
+   },
+   "bigmac": 7.7
+  },
+  {
+   "date": "2025-08-15",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-albert-cuypstraat/4G3eA01ESeSKFSKtFKLB1Q",
+   "url": "https://web.archive.org/web/20250815022438/https://www.ubereats.com/nl/store/mcdonalds-albert-cuypstraat/4G3eA01ESeSKFSKtFKLB1Q",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.95
+  },
+  {
+   "date": "2025-08-15",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-amersfoort-centrum/PgzheEO7QmmgLYnkRdlZag",
+   "url": "https://web.archive.org/web/20250815092618/https://www.ubereats.com/nl/store/mcdonalds-amersfoort-centrum/PgzheEO7QmmgLYnkRdlZag",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 12.15
+   },
+   "bigmac": 8.05
+  },
+  {
+   "date": "2025-08-15",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-amersfoort-noord/6tzWWjKmQC6dK_TL0M6DmQ",
+   "url": "https://web.archive.org/web/20250815024032/https://www.ubereats.com/nl/store/mcdonalds-amersfoort-noord/6tzWWjKmQC6dK_TL0M6DmQ",
+   "nuggets": {
+    "6": 3.35,
+    "9": 4.75,
+    "20": 10.75
+   },
+   "bigmac": 7.1
+  },
+  {
+   "date": "2025-08-15",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-buikslotermeerplein/HTZm5m2LQuqqs2ok-pISmA",
+   "url": "https://web.archive.org/web/20250815075404/https://www.ubereats.com/nl/store/mcdonalds-buikslotermeerplein/HTZm5m2LQuqqs2ok-pISmA",
+   "nuggets": {
+    "6": 3.45,
+    "9": 5.6,
+    "20": 10.15
+   },
+   "bigmac": 6.85
+  },
+  {
+   "date": "2025-08-15",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-spaklerweg/nWIphnbhS9m5loajNXsfxA",
+   "url": "https://web.archive.org/web/20250815043126/https://www.ubereats.com/nl/store/mcdonalds-spaklerweg/nWIphnbhS9m5loajNXsfxA",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.95
+  },
+  {
+   "date": "2025-08-15",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-zaanstad-centrum/YJRtjxrFVX25G7NS5pwimw",
+   "url": "https://web.archive.org/web/20250815022617/https://www.ubereats.com/nl/store/mcdonalds-zaanstad-centrum/YJRtjxrFVX25G7NS5pwimw",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.75,
+    "20": 10.65
+   },
+   "bigmac": 7.3
+  },
+  {
+   "date": "2025-08-16",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-kinkerstraat/c2jx4wWSS0u5wQHpmayIMg",
+   "url": "https://web.archive.org/web/20250816060507/https://www.ubereats.com/nl/store/mcdonalds-kinkerstraat/c2jx4wWSS0u5wQHpmayIMg",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.95
+  },
+  {
+   "date": "2025-08-17",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-bergen-op-zoom/tBG879yARYij_LjZqy78ag",
+   "url": "https://web.archive.org/web/20250817214114/https://www.ubereats.com/nl/store/mcdonalds-bergen-op-zoom/tBG879yARYij_LjZqy78ag",
+   "nuggets": {
+    "6": 3.75,
+    "9": 4.95,
+    "20": 10.65
+   },
+   "bigmac": 6.85
+  },
+  {
+   "date": "2025-08-17",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-delft-brabantse-turfmarkt/ROjRb7UDSJaAG0zhnY4_yg",
+   "url": "https://web.archive.org/web/20250817143049/https://www.ubereats.com/nl/store/mcdonalds-delft-brabantse-turfmarkt/ROjRb7UDSJaAG0zhnY4_yg",
+   "nuggets": {
+    "6": 3.95,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "bigmac": 7.0
+  },
+  {
+   "date": "2025-08-17",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-leiden/pzSo4egLT--ts8b98d7rOA",
+   "url": "https://web.archive.org/web/20250817043618/https://www.ubereats.com/nl/store/mcdonalds-leiden/pzSo4egLT--ts8b98d7rOA",
+   "nuggets": {
+    "6": 3.5,
+    "9": 4.7,
+    "20": 10.75
+   },
+   "bigmac": 6.95
+  },
+  {
+   "date": "2025-08-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-arnhem-centraal/9zt7PlsUTqKlxOwAfZz-iw",
+   "url": "https://web.archive.org/web/20250818110417/https://www.ubereats.com/nl/store/mcdonalds-arnhem-centraal/9zt7PlsUTqKlxOwAfZz-iw",
+   "nuggets": {
+    "6": 4.25,
+    "9": 5.95,
+    "20": 12.4
+   },
+   "bigmac": 8.05
+  },
+  {
+   "date": "2025-08-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-buitenplein/OSU02OpjTyeaQWnRGR4M2Q",
+   "url": "https://web.archive.org/web/20250818205425/https://www.ubereats.com/nl/store/mcdonalds-buitenplein/OSU02OpjTyeaQWnRGR4M2Q",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.15
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2025-08-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-haarlem-casablancastraat/0sP3FPkLXe2yDt1zUSH9vw",
+   "url": "https://web.archive.org/web/20250818203742/https://www.ubereats.com/nl/store/mcdonalds-haarlem-casablancastraat/0sP3FPkLXe2yDt1zUSH9vw",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.9,
+    "20": 10.3
+   },
+   "bigmac": 6.75
+  },
+  {
+   "date": "2025-08-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-osdorp/TFG9CvUNTQCVY7yWRagt0A",
+   "url": "https://web.archive.org/web/20250818080445/https://www.ubereats.com/nl/store/mcdonalds-osdorp/TFG9CvUNTQCVY7yWRagt0A",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.15
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2025-08-19",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-diemen/qVS7CfFsQ86diHEtmFPyKQ",
+   "url": "https://web.archive.org/web/20250819164311/https://www.ubereats.com/nl/store/mcdonalds-diemen/qVS7CfFsQ86diHEtmFPyKQ",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.95
+  },
+  {
+   "date": "2025-08-19",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-nieuwendijk-70/MWUdnE0TTIygAY6UFQroDQ",
+   "url": "https://web.archive.org/web/20250819211612/https://www.ubereats.com/nl/store/mcdonalds-nieuwendijk-70/MWUdnE0TTIygAY6UFQroDQ",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.95
+  },
+  {
+   "date": "2025-08-27",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-beurs/QuuAVwDpTm-GWC0XnbUhSA",
+   "url": "https://web.archive.org/web/20250827120010/https://www.ubereats.com/nl/store/mcdonalds-beurs/QuuAVwDpTm-GWC0XnbUhSA",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.3
+   },
+   "bigmac": 6.85
+  },
+  {
+   "date": "2025-08-27",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-harnaschpolder/eyiRO_-7SR6li7PtIgJBeg",
+   "url": "https://web.archive.org/web/20250827123310/https://www.ubereats.com/nl/store/mcdonalds-harnaschpolder/eyiRO_-7SR6li7PtIgJBeg",
+   "nuggets": {
+    "6": 3.55,
+    "9": 4.8,
+    "20": 9.5
+   },
+   "bigmac": 6.1
+  },
+  {
+   "date": "2025-08-27",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-van-swindenstraat/3DxResnNQUe48HRU0kf_QQ",
+   "url": "https://web.archive.org/web/20250827162322/https://www.ubereats.com/nl/store/mcdonalds-van-swindenstraat/3DxResnNQUe48HRU0kf_QQ",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2025-09-01",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-tilburg-centrum/BV5z66K3RSG2tSHdzwpZBg",
+   "url": "https://web.archive.org/web/20250901233757/https://www.ubereats.com/nl-en/store/mcdonalds-tilburg-centrum/BV5z66K3RSG2tSHdzwpZBg",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.55
+   },
+   "bigmac": 8.45
+  },
+  {
+   "date": "2025-09-06",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-buitenplein/OSU02OpjTyeaQWnRGR4M2Q",
+   "url": "https://web.archive.org/web/20250906205327/https://www.ubereats.com/nl/store/mcdonalds-buitenplein/OSU02OpjTyeaQWnRGR4M2Q",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.15
+   },
+   "bigmac": 7.75
+  },
+  {
+   "date": "2025-09-07",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-coolsingel-1",
+   "url": "https://web.archive.org/web/20250907082912/https://www.thuisbezorgd.nl/menu/mcdonalds-coolsingel-1",
+   "nuggets": {
+    "6": 3.95,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "bigmac": 7.0
+  },
+  {
+   "date": "2025-09-07",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-leiden-zuid/ym_q8amRQWqtapc475oOng",
+   "url": "https://web.archive.org/web/20250907143442/https://www.ubereats.com/nl/store/mcdonalds-leiden-zuid/ym_q8amRQWqtapc475oOng",
+   "nuggets": {
+    "6": 3.5,
+    "9": 4.75,
+    "20": 10.75
+   },
+   "bigmac": 6.95
+  },
+  {
+   "date": "2025-09-08",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-muntbergweg",
+   "url": "https://web.archive.org/web/20250908174744/https://www.thuisbezorgd.nl/menu/mcdonalds-muntbergweg",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.95
+  },
+  {
+   "date": "2025-09-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-arnhem-pleijroute-1",
+   "url": "https://web.archive.org/web/20250909140503/https://www.thuisbezorgd.nl/menu/mcdonalds-arnhem-pleijroute-1",
+   "nuggets": {
+    "6": 3.9,
+    "9": 5.55,
+    "20": 12.4
+   },
+   "bigmac": 8.05
+  },
+  {
+   "date": "2025-09-09",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-hengelo-het-plein/hld-bHnpRzy7M05GPhfMbA",
+   "url": "https://web.archive.org/web/20250909013805/https://www.ubereats.com/nl-en/store/mcdonalds-hengelo-het-plein/hld-bHnpRzy7M05GPhfMbA",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.75,
+    "20": 10.95
+   },
+   "bigmac": 7.25
+  },
+  {
+   "date": "2025-09-12",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-grote-houtstraat-1",
+   "url": "https://web.archive.org/web/20250912041135/https://www.thuisbezorgd.nl/en/menu/mcdonalds-grote-houtstraat-1",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.85,
+    "20": 10.3
+   },
+   "bigmac": 6.7
+  },
+  {
+   "date": "2025-09-12",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leidsche-rijn",
+   "url": "https://web.archive.org/web/20250912155300/https://www.thuisbezorgd.nl/menu/mcdonalds-leidsche-rijn",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 11.55
+   },
+   "bigmac": 8.0
+  },
+  {
+   "date": "2025-09-13",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-tilburg-zuid/AZy3j96eRb-ykr2MjBIeBg",
+   "url": "https://web.archive.org/web/20250913104125/https://www.ubereats.com/nl/store/mcdonalds-tilburg-zuid/AZy3j96eRb-ykr2MjBIeBg",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 11.45
+   },
+   "bigmac": 7.45
+  },
+  {
+   "date": "2025-09-13",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-turfmarkt/Au3ZuhPvSkmI67toXzkJrA",
+   "url": "https://web.archive.org/web/20250913095150/https://www.ubereats.com/nl/store/mcdonalds-turfmarkt/Au3ZuhPvSkmI67toXzkJrA",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 11.8
+   },
+   "bigmac": 7.05
+  },
+  {
+   "date": "2025-09-14",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-schuttersveld/KKO6zOTOT76g06N-TTkF8g",
+   "url": "https://web.archive.org/web/20250914182916/https://www.ubereats.com/nl/store/mcdonalds-schuttersveld/KKO6zOTOT76g06N-TTkF8g?diningMode=DELIVERY",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.75,
+    "20": 10.95
+   },
+   "bigmac": 7.25
+  },
+  {
+   "date": "2025-09-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-hengelo-goudstraat/FwafQZWQXQqYJQICvOXxeA",
+   "url": "https://web.archive.org/web/20250918001156/https://www.ubereats.com/nl-en/store/mcdonalds-hengelo-goudstraat/FwafQZWQXQqYJQICvOXxeA",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.75,
+    "20": 10.95
+   },
+   "bigmac": 7.25
+  },
+  {
+   "date": "2025-09-24",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg",
+   "url": "https://web.archive.org/web/20250924165335/https://www.ubereats.com/nl/store/mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg",
+   "nuggets": {
+    "6": 3.95,
+    "9": 4.7,
+    "20": 10.2
+   },
+   "bigmac": 7.3
+  },
+  {
+   "date": "2025-10-06",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-charlois",
+   "url": "https://web.archive.org/web/20251006074547/https://www.thuisbezorgd.nl/en/menu/mcdonalds-charlois",
+   "nuggets": {
+    "6": 3.55,
+    "9": 4.8,
+    "20": 9.35
+   },
+   "bigmac": 6.6
+  },
+  {
+   "date": "2025-10-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-deventer-de-scheg",
+   "url": "https://web.archive.org/web/20251009084033/https://www.thuisbezorgd.nl/menu/mcdonalds-deventer-de-scheg",
+   "nuggets": {
+    "6": 3.45,
+    "9": 4.8,
+    "20": 10.65
+   },
+   "bigmac": 7.7
+  },
+  {
+   "date": "2025-10-09",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leiden-a44",
+   "url": "https://web.archive.org/web/20251009184327/https://www.thuisbezorgd.nl/menu/mcdonalds-leiden-a44",
+   "nuggets": {
+    "6": 3.55,
+    "9": 4.8,
+    "20": 9.85
+   },
+   "bigmac": 6.4
+  },
+  {
+   "date": "2025-10-10",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amersfoort-centrum-1",
+   "url": "https://web.archive.org/web/20251010023120/https://www.thuisbezorgd.nl/menu/mcdonalds-amersfoort-centrum-1",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 12.15
+   },
+   "bigmac": 8.05
+  },
+  {
+   "date": "2025-10-11",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-berkel-en-rodenrijs",
+   "url": "https://web.archive.org/web/20251011101939/https://www.thuisbezorgd.nl/menu/mcdonalds-berkel-en-rodenrijs",
+   "nuggets": {
+    "6": 4.0,
+    "9": 4.7,
+    "20": 10.95
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2025-10-14",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg",
+   "url": "https://web.archive.org/web/20251014161613/https://www.ubereats.com/nl/store/mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg?diningMode=DELIVERY&mod=quickView&modctx=%257B%2522storeUuid%2522%253A%2522315a47b5-eaa5-48f7-9684-216d8de8362e%2522%252C%2522sectionUuid%2522%253A%252283546be8-c4eb-5b94-8d9b-6b716f2c3de7%2522%252C%2522subsectionUuid%2522%253A%252200770077-83f0-5c86-ae52-5d8cfce66013%2522%252C%2522itemUuid%2522%253A%252240584703-dd95-5e72-9a88-133678071008%2522%252C%2522showSeeDetailsCTA%2522%253Atrue%257D&ps=1",
+   "nuggets": {
+    "6": 3.95,
+    "9": 4.7,
+    "20": 10.2
+   },
+   "bigmac": 7.3
+  },
+  {
+   "date": "2025-10-15",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-ijsselstein",
+   "url": "https://web.archive.org/web/20251015043752/https://www.thuisbezorgd.nl/en/menu/mcdonalds-ijsselstein",
+   "nuggets": {
+    "6": 3.55,
+    "9": 5.1,
+    "20": 11.45
+   },
+   "bigmac": 6.95
+  },
+  {
+   "date": "2025-10-15",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-albert-cuypstraat/4G3eA01ESeSKFSKtFKLB1Q",
+   "url": "https://web.archive.org/web/20251015112902/https://www.ubereats.com/nl/store/mcdonalds-albert-cuypstraat/4G3eA01ESeSKFSKtFKLB1Q",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.95
+  },
+  {
+   "date": "2025-10-17",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-gouda",
+   "url": "https://web.archive.org/web/20251017133652/https://www.thuisbezorgd.nl/en/menu/mcdonalds-gouda",
+   "nuggets": {
+    "6": 3.15,
+    "9": 4.55,
+    "20": 10.4
+   },
+   "bigmac": 7.45
+  },
+  {
+   "date": "2025-10-17",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-rhijnspoor",
+   "url": "https://web.archive.org/web/20251017113329/https://www.thuisbezorgd.nl/en/menu/mcdonalds-rhijnspoor",
+   "nuggets": {
+    "6": 3.95,
+    "9": 5.75,
+    "20": 10.5
+   },
+   "bigmac": 6.95
+  },
+  {
+   "date": "2025-11-15",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-delft-brabantse-turfmarkt/ROjRb7UDSJaAG0zhnY4_yg",
+   "url": "https://web.archive.org/web/20251115053019/https://www.ubereats.com/nl/store/mcdonalds-delft-brabantse-turfmarkt/ROjRb7UDSJaAG0zhnY4_yg",
+   "nuggets": {
+    "6": 3.95,
+    "9": 4.95,
+    "20": 11.5
+   },
+   "bigmac": 7.0
+  },
+  {
+   "date": "2025-11-15",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-escamplaan/m0unHOy4SNakPy38zd-QXg",
+   "url": "https://web.archive.org/web/20251115163034/https://www.ubereats.com/nl/store/mcdonalds-escamplaan/m0unHOy4SNakPy38zd-QXg",
+   "nuggets": {
+    "6": 3.55,
+    "9": 4.8,
+    "20": 9.6
+   },
+   "bigmac": 6.1
+  },
+  {
+   "date": "2025-11-15",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-ridderkerk/IiuPjXfYR8CZR1J5fh70Vg",
+   "url": "https://web.archive.org/web/20251115134848/https://www.ubereats.com/nl/store/mcdonalds-ridderkerk/IiuPjXfYR8CZR1J5fh70Vg",
+   "nuggets": {
+    "6": 3.55,
+    "9": 4.8,
+    "20": 9.35
+   },
+   "bigmac": 6.5
+  },
+  {
+   "date": "2025-11-16",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg",
+   "url": "https://web.archive.org/web/20251116171314/https://www.ubereats.com/nl/store/mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg",
+   "nuggets": {
+    "6": 3.95,
+    "9": 4.7,
+    "20": 10.2
+   },
+   "bigmac": 7.6
+  },
+  {
+   "date": "2025-11-16",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-megastores/rxC8958jThO8_3GefTdY0w",
+   "url": "https://web.archive.org/web/20251116014231/https://www.ubereats.com/nl/store/mcdonalds-megastores/rxC8958jThO8_3GefTdY0w",
+   "nuggets": {
+    "6": 4.0,
+    "9": 4.8,
+    "20": 10.5
+   },
+   "bigmac": 6.5
+  },
+  {
+   "date": "2025-11-16",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-zwolle-noord/SnhBqYKkQ2anaybnmLP_1A",
+   "url": "https://web.archive.org/web/20251116204550/https://www.ubereats.com/nl/store/mcdonalds-zwolle-noord/SnhBqYKkQ2anaybnmLP_1A",
+   "nuggets": {
+    "6": 3.85,
+    "9": 5.25,
+    "20": 11.55
+   },
+   "bigmac": 8.3
+  },
+  {
+   "date": "2025-11-17",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-buikslotermeerplein/HTZm5m2LQuqqs2ok-pISmA",
+   "url": "https://web.archive.org/web/20251117095928/https://www.ubereats.com/nl/store/mcdonalds-buikslotermeerplein/HTZm5m2LQuqqs2ok-pISmA",
+   "nuggets": {
+    "6": 3.45,
+    "9": 5.6,
+    "20": 10.15
+   },
+   "bigmac": 6.85
+  },
+  {
+   "date": "2025-11-17",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-santpoort-noord/UcplInCaQ3GN2FEFAbtQ4g",
+   "url": "https://web.archive.org/web/20251117233341/https://www.ubereats.com/nl/store/mcdonalds-santpoort-noord/UcplInCaQ3GN2FEFAbtQ4g",
+   "nuggets": {
+    "6": 3.35,
+    "9": 4.85,
+    "20": 10.55
+   },
+   "bigmac": 6.8
+  },
+  {
+   "date": "2025-11-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-buitenhof/PG10dwqiS9iX5cWmfsnRPA",
+   "url": "https://web.archive.org/web/20251118201937/https://www.ubereats.com/nl/store/mcdonalds-buitenhof/PG10dwqiS9iX5cWmfsnRPA",
+   "nuggets": {
+    "6": 3.7,
+    "9": 5.2,
+    "20": 13.15
+   },
+   "bigmac": 7.85
+  },
+  {
+   "date": "2025-11-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-eindhoven-woensel/sIdWdhQCRiqLHI_eZo0BEQ",
+   "url": "https://web.archive.org/web/20251118044246/https://www.ubereats.com/nl/store/mcdonalds-eindhoven-woensel/sIdWdhQCRiqLHI_eZo0BEQ",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.7
+   },
+   "bigmac": 8.45
+  },
+  {
+   "date": "2025-11-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-oosterhout-weststad/OguH5tO3XMWtua3A-nLUHg",
+   "url": "https://web.archive.org/web/20251118152547/https://www.ubereats.com/nl/store/mcdonalds-oosterhout-weststad/OguH5tO3XMWtua3A-nLUHg",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 11.65
+   },
+   "bigmac": 7.9
+  },
+  {
+   "date": "2025-11-19",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-voorburg/oFyOjbxVQ-2WKjPkmT-euA",
+   "url": "https://web.archive.org/web/20251119113107/https://www.ubereats.com/nl/store/mcdonalds-voorburg/oFyOjbxVQ-2WKjPkmT-euA",
+   "nuggets": {
+    "6": 3.7,
+    "9": 5.2,
+    "20": 13.15
+   },
+   "bigmac": 7.85
+  },
+  {
+   "date": "2025-11-21",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-rijswijk/E-DaMAKCRx28iXxbEQZTqw",
+   "url": "https://web.archive.org/web/20251121100858/https://www.ubereats.com/nl/store/mcdonalds-rijswijk/E-DaMAKCRx28iXxbEQZTqw",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.3,
+    "20": 12.25
+   },
+   "bigmac": 7.45
+  },
+  {
+   "date": "2025-11-21",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-tilburg-centrum/BV5z66K3RSG2tSHdzwpZBg",
+   "url": "https://web.archive.org/web/20251121125948/https://www.ubereats.com/nl/store/mcdonalds-tilburg-centrum/BV5z66K3RSG2tSHdzwpZBg",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.2,
+    "20": 11.7
+   },
+   "bigmac": 8.75
+  },
+  {
+   "date": "2025-11-21",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-vlamingstraat/o2wNrt_TTTGqFn9bp1obqQ",
+   "url": "https://web.archive.org/web/20251121112127/https://www.ubereats.com/nl/store/mcdonalds-vlamingstraat/o2wNrt_TTTGqFn9bp1obqQ",
+   "nuggets": {
+    "6": 3.7,
+    "9": 5.2,
+    "20": 13.15
+   },
+   "bigmac": 7.85
+  },
+  {
+   "date": "2025-11-23",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-almelo-woonboulevard/TNpNIaNgQhm-YO8tVSKv4A",
+   "url": "https://web.archive.org/web/20251123021440/https://www.ubereats.com/nl/store/mcdonalds-almelo-woonboulevard/TNpNIaNgQhm-YO8tVSKv4A",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.75,
+    "20": 10.95
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2025-11-23",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-turfmarkt/Au3ZuhPvSkmI67toXzkJrA",
+   "url": "https://web.archive.org/web/20251123160841/https://www.ubereats.com/nl/store/mcdonalds-turfmarkt/Au3ZuhPvSkmI67toXzkJrA",
+   "nuggets": {
+    "6": 3.7,
+    "9": 5.2,
+    "20": 13.15
+   },
+   "bigmac": 7.85
+  },
+  {
+   "date": "2025-11-30",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leeuwarden",
+   "url": "https://web.archive.org/web/20251130075318/https://www.thuisbezorgd.nl/menu/mcdonalds-leeuwarden?utm_medium=cps&utm_campaign=CM_P_AW_NLD_NL_%5BENGM%5D_%5BOTHR%5D_%5B516911%5D_PERFDIS&sv1=affiliate&sv_campaign_id=516911&utm_content=deeplink&zanpid=10510_1764489198_67d2c18235ebfd8b2d28647226de6f06&utm_source=awin",
+   "nuggets": {
+    "6": 5.5,
+    "9": 7.95,
+    "20": 12.95
+   },
+   "bigmac": 8.25,
+   "uitgesloten": {
+    "nuggets.6": "5.50 wijkt meer dan 50% af van de mediaan 3.65 van 81 metingen binnen 120 dagen",
+    "nuggets.9": "7.95 wijkt meer dan 50% af van de mediaan 4.95 van 81 metingen binnen 120 dagen"
+   }
+  },
+  {
+   "date": "2025-12-01",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg",
+   "url": "https://web.archive.org/web/20251201024121/https://www.ubereats.com/nl/store/mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg?mod=selectLanguage&ps=1",
+   "nuggets": {
+    "6": 3.95,
+    "9": 4.7,
+    "20": 10.2
+   },
+   "bigmac": 7.6
+  },
+  {
+   "date": "2025-12-01",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-escamplaan/m0unHOy4SNakPy38zd-QXg",
+   "url": "https://web.archive.org/web/20251201004654/https://www.ubereats.com/nl/store/mcdonalds-escamplaan/m0unHOy4SNakPy38zd-QXg?ps=1&modctx=%257B%2522storeUuid%2522%253A%25229b4ba71c-ecb8-48d6-a43f-2dfccddf905e%2522%252C%2522sectionUuid%2522%253A%25222bec098b-95c1-57e4-b48c-ae6b37ad1803%2522%252C%2522subsectionUuid%2522%253A%25220379a62a-1156-4ddb-a09a-7e1dc45d5dfb%2522%252C%2522itemUuid%2522%253A%252228c742b8-4d9f-5c23-a996-b5e59ef8b4c9%2522%252C%2522showSeeDetailsCTA%2522%253Atrue%257D&campaign_id=11327239882&placement=&kw=mcdonalds+bezorgen&chain_slug=mcdonalds&diningMode=DELIVERY&kwid=kwd-388446921117&ad_id=600096808490&mod=quickView",
+   "nuggets": {
+    "6": 3.55,
+    "9": 4.8,
+    "20": 9.6
+   },
+   "bigmac": 6.1
+  },
+  {
+   "date": "2025-12-03",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-binckhorstlaan/0tMIG6NeTgyEMNZBc_Lm-A",
+   "url": "https://web.archive.org/web/20251203085118/https://www.ubereats.com/nl/store/mcdonalds-binckhorstlaan/0tMIG6NeTgyEMNZBc_Lm-A",
+   "nuggets": {
+    "6": 3.7,
+    "9": 5.2,
+    "20": 13.15
+   },
+   "bigmac": 8.25
+  },
+  {
+   "date": "2025-12-04",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-beverwijk-parallelweg/YAayS0nSVw2dUYY4ncnVdw",
+   "url": "https://web.archive.org/web/20251204064332/https://www.ubereats.com/nl/store/mcdonalds-beverwijk-parallelweg/YAayS0nSVw2dUYY4ncnVdw",
+   "nuggets": {
+    "6": 3.5,
+    "9": 4.95,
+    "20": 9.75
+   },
+   "bigmac": 7.25
+  },
+  {
+   "date": "2025-12-08",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-weert/Kq3UFhWKSOKniM4xLPBWSw",
+   "url": "https://web.archive.org/web/20251208224924/https://www.ubereats.com/nl/store/mcdonalds-weert/Kq3UFhWKSOKniM4xLPBWSw",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.7,
+    "20": 10.35
+   },
+   "bigmac": 6.6
+  },
+  {
+   "date": "2025-12-14",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-hoorn-noord/tpLycyw7TRqMDPR1KUtlIQ",
+   "url": "https://web.archive.org/web/20251214001358/https://www.ubereats.com/nl/store/mcdonalds-hoorn-noord/tpLycyw7TRqMDPR1KUtlIQ",
+   "nuggets": {
+    "6": 3.2,
+    "9": 4.55,
+    "20": 8.8
+   },
+   "bigmac": 5.7
+  },
+  {
+   "date": "2025-12-20",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-berkhout-kleine-wijzend/EFbwLRa2WH6SsR5vie8ljw",
+   "url": "https://web.archive.org/web/20251220065603/https://www.ubereats.com/nl/store/mcdonalds-berkhout-kleine-wijzend/EFbwLRa2WH6SsR5vie8ljw",
+   "nuggets": {
+    "6": 3.15,
+    "9": 4.55,
+    "20": 9.35
+   },
+   "bigmac": 5.7
+  },
+  {
+   "date": "2025-12-24",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-eindhoven-markt/buUEeubHQOuy9KDjOTil-A",
+   "url": "https://web.archive.org/web/20251224062751/https://www.ubereats.com/nl/store/mcdonalds-eindhoven-markt/buUEeubHQOuy9KDjOTil-A",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 11.5
+   },
+   "bigmac": 8.25
+  },
+  {
+   "date": "2026-01-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-nieuwendijk-70/MWUdnE0TTIygAY6UFQroDQ",
+   "url": "https://web.archive.org/web/20260118022338/https://www.ubereats.com/nl/store/mcdonalds-nieuwendijk-70/MWUdnE0TTIygAY6UFQroDQ",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 8.1
+  },
+  {
+   "date": "2026-03-02",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-delft-noord/gqHrJTYPTFuB-a-KljJWgQ",
+   "url": "https://web.archive.org/web/20260302154940/https://www.ubereats.com/nl/store/mcdonalds-delft-noord/gqHrJTYPTFuB-a-KljJWgQ",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.6,
+    "20": 11.55
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2026-03-07",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-spaklerweg/nWIphnbhS9m5loajNXsfxA",
+   "url": "https://web.archive.org/web/20260307035136/https://www.ubereats.com/nl/store/mcdonalds-spaklerweg/nWIphnbhS9m5loajNXsfxA",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 8.1
+  },
+  {
+   "date": "2026-03-17",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-muntplein/SYnlmOXVSWW8tz-8OM25MQ",
+   "url": "https://web.archive.org/web/20260317063638/https://www.ubereats.com/nl/store/mcdonalds-muntplein/SYnlmOXVSWW8tz-8OM25MQ",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 8.1
+  },
+  {
+   "date": "2026-03-17",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-van-swindenstraat/3DxResnNQUe48HRU0kf_QQ",
+   "url": "https://web.archive.org/web/20260317003915/https://www.ubereats.com/nl/store/mcdonalds-van-swindenstraat/3DxResnNQUe48HRU0kf_QQ",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 7.9
+  },
+  {
+   "date": "2026-04-04",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-zuidplein/7snHvmgNTfqA2t3bcGa60A",
+   "url": "https://web.archive.org/web/20260404140146/https://www.ubereats.com/nl/store/mcdonalds-zuidplein/7snHvmgNTfqA2t3bcGa60A",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.55,
+    "20": 10.4
+   },
+   "bigmac": 7.1
+  },
+  {
+   "date": "2026-04-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-bergen-op-zoom/tBG879yARYij_LjZqy78ag",
+   "url": "https://web.archive.org/web/20260418001113/https://www.ubereats.com/nl-en/store/mcdonalds-bergen-op-zoom/tBG879yARYij_LjZqy78ag",
+   "nuggets": {
+    "6": 3.35,
+    "9": 4.75,
+    "20": 10.75
+   },
+   "bigmac": 7.25
+  },
+  {
+   "date": "2026-04-18",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg",
+   "url": "https://web.archive.org/web/20260418153819/https://www.ubereats.com/nl/store/mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg",
+   "nuggets": {
+    "6": 3.95,
+    "9": 4.6,
+    "20": 9.9
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2026-04-27",
+   "bron": "wayback",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-alkmaar-centrum",
+   "url": "https://web.archive.org/web/20260427204929/https://www.thuisbezorgd.nl/menu/mcdonalds-alkmaar-centrum",
+   "nuggets": {
+    "6": 3.8,
+    "9": 4.95,
+    "20": 9.95
+   },
+   "bigmac": 6.95
+  },
+  {
+   "date": "2026-05-22",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-capelle-rhijnspoor/3ssyD0DLQXeGrxDMBSOZQA",
+   "url": "https://web.archive.org/web/20260522103643/https://www.ubereats.com/nl/store/mcdonalds-capelle-rhijnspoor/3ssyD0DLQXeGrxDMBSOZQA",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.75,
+    "20": 10.5
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2026-05-22",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-zuidplein/7snHvmgNTfqA2t3bcGa60A",
+   "url": "https://web.archive.org/web/20260522103411/https://www.ubereats.com/nl/store/mcdonalds-zuidplein/7snHvmgNTfqA2t3bcGa60A",
+   "nuggets": {
+    "6": 3.3,
+    "9": 4.55,
+    "20": 10.4
+   },
+   "bigmac": 7.1
+  },
+  {
+   "date": "2026-06-14",
+   "bron": "wayback",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg",
+   "url": "https://web.archive.org/web/20260614160705/https://www.ubereats.com/nl/store/mcdonalds-eindhoven-noord-brabantlaan/MVpHteqlSPeWhCFtjeg2Lg?diningMode=DELIVERY&mod=quickView&modctx=%257B%2522storeUuid%2522%253A%2522315a47b5-eaa5-48f7-9684-216d8de8362e%2522%252C%2522sectionUuid%2522%253A%25220564323b-4ebc-54e9-891f-44df209c9ed8%2522%252C%2522subsectionUuid%2522%253A%2522c7879214-ec6e-5455-8921-cea1db69aebf%2522%252C%2522itemUuid%2522%253A%2522ae400b95-1de2-5432-be88-329d51020a53%2522%252C%2522showSeeDetailsCTA%2522%253Atrue%257D&ps=1",
+   "nuggets": {
+    "6": 3.95,
+    "9": 4.6,
+    "20": 10.2
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2026-09-29",
+   "bron": "dagelijks",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-alkmaar-centrum",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-alkmaar-centrum",
+   "nuggets": {
+    "6": 3.8,
+    "9": 4.95,
+    "20": 9.95
+   },
+   "bigmac": 6.9
+  },
+  {
+   "date": "2026-09-29",
+   "bron": "dagelijks",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-amersfoort-centrum-1",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-amersfoort-centrum-1",
+   "nuggets": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 12.5
+   },
+   "bigmac": 8.25
+  },
+  {
+   "date": "2026-09-29",
+   "bron": "dagelijks",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-breda-woonboulevard",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-breda-woonboulevard",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.05
+   },
+   "bigmac": 8.3
+  },
+  {
+   "date": "2026-09-29",
+   "bron": "dagelijks",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-coolsingel-1",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-coolsingel-1",
+   "nuggets": {
+    "6": 3.25,
+    "9": 4.6,
+    "20": 11.55
+   },
+   "bigmac": 7.25
+  },
+  {
+   "date": "2026-09-29",
+   "bron": "dagelijks",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-de-geusselt",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-de-geusselt",
+   "nuggets": {
+    "6": 3.35,
+    "9": 4.75,
+    "20": 10.75
+   },
+   "bigmac": 7.1
+  },
+  {
+   "date": "2026-09-29",
+   "bron": "dagelijks",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-leeuwarden",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-leeuwarden",
+   "nuggets": {
+    "6": 5.5,
+    "9": 7.4,
+    "20": 12.95
+   },
+   "bigmac": 8.25
+  },
+  {
+   "date": "2026-09-29",
+   "bron": "dagelijks",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-nijmegen-molenstraat",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-nijmegen-molenstraat",
+   "nuggets": {
+    "6": 3.85,
+    "9": 5.3,
+    "20": 11.5
+   },
+   "bigmac": 7.5
+  },
+  {
+   "date": "2026-09-29",
+   "bron": "dagelijks",
+   "platform": "thuisbezorgd",
+   "filiaal": "mcdonalds-zwolle-centrum",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-zwolle-centrum",
+   "nuggets": {
+    "6": 3.7,
+    "9": 5.25,
+    "20": 11.65
+   },
+   "bigmac": 8.65
+  },
+  {
+   "date": "2026-09-29",
+   "bron": "dagelijks",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q",
+   "url": "https://www.ubereats.com/nl/store/mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q",
+   "nuggets": {
+    "6": 3.75,
+    "9": 5.5,
+    "20": 11.95
+   },
+   "bigmac": 8.05
+  },
+  {
+   "date": "2026-09-29",
+   "bron": "dagelijks",
+   "platform": "ubereats",
+   "filiaal": "mcdonalds-muntplein/SYnlmOXVSWW8tz-8OM25MQ",
+   "url": "https://www.ubereats.com/nl/store/mcdonalds-muntplein/SYnlmOXVSWW8tz-8OM25MQ",
+   "nuggets": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 8.45
+  }
+ ]
+}

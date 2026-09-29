@@ -1,0 +1,26 @@
+[Unit]
+Description=canitnugget.nl: dagelijkse nuggetprijzen ophalen (Thuisbezorgd/Uber Eats)
+Documentation=https://github.com/randomdreft/canitnugget/tree/main/scraper
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=canitnugget
+Group=canitnugget
+# Chrome wil een HOME voor zijn profiel; StateDirectory maakt /var/lib/canitnugget aan
+StateDirectory=canitnugget
+Environment=HOME=/var/lib/canitnugget
+WorkingDirectory=/var/lib/canitnugget
+ExecStart=/usr/bin/python3 /usr/local/lib/canitnugget/nugget_prijzen.py
+TimeoutStartSec=45min
+Nice=10
+# Afscherming: alleen de webroot van canitnugget en de eigen state-map zijn schrijfbaar
+ProtectSystem=strict
+ReadWritePaths=/var/www/canitnugget
+ProtectHome=yes
+PrivateTmp=yes
+NoNewPrivileges=yes
+
+[Install]
+WantedBy=multi-user.target

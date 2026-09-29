@@ -1,10 +1,136 @@
 {
-  "timestamp": "2025-09-07T16:00:03.755366",
-  "prices": {
-    "6": 3.55,
-    "9": 4.8,
-    "20": 9.5
+ "timestamp": "2026-09-29T09:57:03+02:00",
+ "prices": {
+  "6": 3.73,
+  "9": 5.2,
+  "20": 11.8
+ },
+ "source": "Thuisbezorgd/Uber Eats, mediaan van 10 filialen",
+ "kind": "bezorgprijs",
+ "note": "Bezorgprijzen van Thuisbezorgd/Uber Eats, doorgaans 10-35% hoger dan in het restaurant. McDonald’s Nederland publiceert zelf geen prijzen.",
+ "n": 10,
+ "bigmac": 8.15,
+ "veggie": {
+  "available": false,
+  "last_seen": "2025-05",
+  "last_prices": {
+   "6": 3.45,
+   "9": 4.75,
+   "20": 10.65
   },
-  "source": "https://mcdonaldsmenu.nl/#mcdonalds-prijzen",
-  "note": "Alleen chicken mcnuggets (geen veggie/spicy)"
+  "last_prices_periode": "2025-Q2"
+ },
+ "stores": [
+  {
+   "name": "Alkmaar Centrum",
+   "platform": "thuisbezorgd",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-alkmaar-centrum",
+   "prices": {
+    "6": 3.8,
+    "9": 4.95,
+    "20": 9.95
+   },
+   "bigmac": 6.9
+  },
+  {
+   "name": "Rotterdam Coolsingel",
+   "platform": "thuisbezorgd",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-coolsingel-1",
+   "prices": {
+    "6": 3.25,
+    "9": 4.6,
+    "20": 11.55
+   },
+   "bigmac": 7.25
+  },
+  {
+   "name": "Amersfoort Centrum",
+   "platform": "thuisbezorgd",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-amersfoort-centrum-1",
+   "prices": {
+    "6": 3.8,
+    "9": 5.35,
+    "20": 12.5
+   },
+   "bigmac": 8.25
+  },
+  {
+   "name": "Nijmegen Molenstraat",
+   "platform": "thuisbezorgd",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-nijmegen-molenstraat",
+   "prices": {
+    "6": 3.85,
+    "9": 5.3,
+    "20": 11.5
+   },
+   "bigmac": 7.5
+  },
+  {
+   "name": "Breda Woonboulevard",
+   "platform": "thuisbezorgd",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-breda-woonboulevard",
+   "prices": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.05
+   },
+   "bigmac": 8.3
+  },
+  {
+   "name": "Zwolle Centrum",
+   "platform": "thuisbezorgd",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-zwolle-centrum",
+   "prices": {
+    "6": 3.7,
+    "9": 5.25,
+    "20": 11.65
+   },
+   "bigmac": 8.65
+  },
+  {
+   "name": "Leeuwarden",
+   "platform": "thuisbezorgd",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-leeuwarden",
+   "prices": {
+    "6": 5.5,
+    "9": 7.4,
+    "20": 12.95
+   },
+   "bigmac": 8.25
+  },
+  {
+   "name": "Maastricht De Geusselt",
+   "platform": "thuisbezorgd",
+   "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-de-geusselt",
+   "prices": {
+    "6": 3.35,
+    "9": 4.75,
+    "20": 10.75
+   },
+   "bigmac": 7.1
+  },
+  {
+   "name": "Amsterdam Muntplein",
+   "platform": "ubereats",
+   "url": "https://www.ubereats.com/nl/store/mcdonalds-muntplein/SYnlmOXVSWW8tz-8OM25MQ",
+   "prices": {
+    "6": 3.65,
+    "9": 5.15,
+    "20": 12.95
+   },
+   "bigmac": 8.45
+  },
+  {
+   "name": "Groningen Herestraat",
+   "platform": "ubereats",
+   "url": "https://www.ubereats.com/nl/store/mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q",
+   "prices": {
+    "6": 3.75,
+    "9": 5.5,
+    "20": 11.95
+   },
+   "bigmac": 8.05
+  }
+ ],
+ "history": "/history.json"
 }

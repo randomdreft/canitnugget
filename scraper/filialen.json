@@ -1,0 +1,17 @@
+{
+ "_uitleg": "Vast mandje McDonald's-filialen voor de dagelijkse meting, verspreid over Nederland. Gepubliceerd wordt per doosgrootte de mediaan. Een filiaal dat een tijd niet meer lukt: vervangen door een ander in dezelfde regio (en dat in de README noteren), niet stilletjes weglaten. id = vaste sleutel in history.json; bij Uber Eats 'slug/winkel-ID'.",
+ "minimum_geslaagd": 5,
+ "pauze_seconden": [15, 45],
+ "filialen": [
+  {"id": "mcdonalds-alkmaar-centrum", "naam": "Alkmaar Centrum", "provincie": "Noord-Holland", "platform": "thuisbezorgd", "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-alkmaar-centrum"},
+  {"id": "mcdonalds-coolsingel-1", "naam": "Rotterdam Coolsingel", "provincie": "Zuid-Holland", "platform": "thuisbezorgd", "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-coolsingel-1"},
+  {"id": "mcdonalds-amersfoort-centrum-1", "naam": "Amersfoort Centrum", "provincie": "Utrecht", "platform": "thuisbezorgd", "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-amersfoort-centrum-1"},
+  {"id": "mcdonalds-nijmegen-molenstraat", "naam": "Nijmegen Molenstraat", "provincie": "Gelderland", "platform": "thuisbezorgd", "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-nijmegen-molenstraat"},
+  {"id": "mcdonalds-breda-woonboulevard", "naam": "Breda Woonboulevard", "provincie": "Noord-Brabant", "platform": "thuisbezorgd", "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-breda-woonboulevard"},
+  {"id": "mcdonalds-zwolle-centrum", "naam": "Zwolle Centrum", "provincie": "Overijssel", "platform": "thuisbezorgd", "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-zwolle-centrum"},
+  {"id": "mcdonalds-leeuwarden", "naam": "Leeuwarden", "provincie": "Friesland", "platform": "thuisbezorgd", "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-leeuwarden"},
+  {"id": "mcdonalds-de-geusselt", "naam": "Maastricht De Geusselt", "provincie": "Limburg", "platform": "thuisbezorgd", "url": "https://www.thuisbezorgd.nl/menu/mcdonalds-de-geusselt"},
+  {"id": "mcdonalds-muntplein/SYnlmOXVSWW8tz-8OM25MQ", "naam": "Amsterdam Muntplein", "provincie": "Noord-Holland", "platform": "ubereats", "url": "https://www.ubereats.com/nl/store/mcdonalds-muntplein/SYnlmOXVSWW8tz-8OM25MQ"},
+  {"id": "mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q", "naam": "Groningen Herestraat", "provincie": "Groningen", "platform": "ubereats", "url": "https://www.ubereats.com/nl/store/mcdonalds-herestraat/szUDnSd7ScqNUbCM4W775Q"}
+ ]
+}

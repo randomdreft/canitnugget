@@ -46,29 +46,59 @@ De site gebruikt dynamisch programmeren om de goedkoopste combinatie te vinden.
 
 ## Prijzen
 
-Prijzen worden automatisch gescrapet van [mcdonaldsmenu.nl](https://mcdonaldsmenu.nl) met een Python-script. Bij falen valt de site terug op standaardprijzen.
+**McDonald's Nederland publiceert zelf geen prijzen**, en prijzen verschillen
+per filiaal. De "menuprijzen"-sites die in Google bovenaan staan verzinnen of
+kopiëren hun cijfers; die gebruiken we niet.
+
+Wat wel echt is: de menukaarten van filialen op **Thuisbezorgd** en **Uber
+Eats**. Elke ochtend meet de scraper in [`scraper/`](scraper/) een vast mandje
+van tien filialen verspreid over het land en publiceert per doosje de
+**mediaan**. Dat zijn dus **bezorgprijzen** — doorgaans 10–35% duurder dan aan
+de balie — en zo staan ze ook in `prices.json`
+(`"kind": "bezorgprijs"`, `"source": "Thuisbezorgd/Uber Eats, mediaan van 10 filialen"`).
+
+Mislukt de meting, dan blijft het vorige `prices.json` gewoon staan met zijn
+oude datum, zodat de site laat zien dat de prijzen verouderd zijn. De scraper
+vult nooit zelf verzonnen of ingebouwde prijzen in.
+
+### Prijsgeschiedenis
+
+`history.json` bevat:
+
+- **Nuggets 6/9/20 (2021–nu)** en **Veggie Nuggets (2021–mei 2025**, daarna van
+  het menu): mediaan per kwartaal van gearchiveerde Thuisbezorgd- en Uber
+  Eats-menu's uit het [Internet Archive](https://web.archive.org/), aangevuld
+  met de dagelijkse metingen. Ook bezorgprijzen. Elke losse meting staat erbij,
+  met een link naar de gearchiveerde pagina.
+- **Big Mac**: dezelfde bezorgprijs-mediaan, plus de winkelprijs volgens
+  [The Economist](https://github.com/TheEconomist/big-mac-data): Nederland
+  1987–1999 (guldens, omgerekend tegen 2,20371) en 2011–nu, met het
+  eurozone-gemiddelde als duidelijk gelabelde opvulling voor 2000–2010.
+
+Methode, schema en beheer: [`scraper/README.md`](scraper/README.md).
 
 | Bestand | Functie |
 |---------|---------|
-| `price_scraper.py` | Scrapet actuele McNugget-prijzen |
-| `update_prices.sh` | Cron wrapper voor de scraper |
-| `prices.json` | Gecachte prijzen met timestamp |
+| `scraper/nugget_prijzen.py` | Dagelijkse meting → `prices.json` + `history.json` |
+| `scraper/backfill_wayback.py` | Geschiedenis uit het Internet Archive en The Economist |
+| `scraper/filialen.json` | Het vaste mandje filialen |
+| `prices.json` | Actuele prijzen (kopie; live versie op de server) |
+| `history.json` | Prijsgeschiedenis (kopie; live versie op de server) |
 
 ## Zelf draaien
 
-Open `index.html` in je browser — klaar. De prijsscraper is optioneel.
+Open `index.html` in je browser — klaar. De prijsscraper is optioneel en heeft
+alleen Python 3 en Google Chrome nodig:
 
 ```bash
-# Optioneel: prijzen updaten
-pip install requests beautifulsoup4
-python3 price_scraper.py
+python3 scraper/nugget_prijzen.py --droog --alleen alkmaar
 ```
 
 ## Technisch
 
 - **Frontend**: vanilla HTML + CSS + JavaScript, geen dependencies
 - **Algoritme**: dynamisch programmeren voor optimale combinatie
-- **Prijzen**: Python scraper met BeautifulSoup, fallback naar hardcoded prijzen
+- **Prijzen**: Python-scraper (alleen standaardbibliotheek) met headless Chrome, dagelijks via een systemd-timer
 - **Responsive**: werkt op desktop en mobiel; op de telefoon staat het antwoord direct onder het invoerveld
 - **Licht en donker**: volgt de systeeminstelling (`prefers-color-scheme`); alle kleuren zijn CSS-tokens op `:root`, getoetst op WCAG AA
 - **Delen**: favicon (`favicon.svg` + PNG/ICO), Open Graph-afbeelding `og-image.png` (bron: `bron/og-image.html`)

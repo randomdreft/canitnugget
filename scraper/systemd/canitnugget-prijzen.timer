@@ -1,0 +1,10 @@
+[Unit]
+Description=canitnugget.nl: nuggetprijzen dagelijks rond 06:30 ophalen
+
+[Timer]
+OnCalendar=*-*-* 06:30:00 Europe/Amsterdam
+RandomizedDelaySec=30min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
