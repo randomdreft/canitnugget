@@ -12,7 +12,14 @@ McDonald's verkoopt Chicken McNuggets in verpakkingen van **6**, **9** en **20**
 
 1. **Of** het gevraagde aantal mogelijk is
 2. **Welke combinatie** het goedkoopst is
-3. **Wat het kost** op basis van actuele prijzen
+3. **Wat het kost** op basis van actuele prijzen, ook per nugget
+
+Verder:
+
+- **Deelbare link**: de adresbalk volgt je invoer (`?n=43`, met `&verspil=1` in verspillingsmodus). Met de knop *Deel dit* deel je het antwoord (op de telefoon via het deelmenu, anders naar het klembord).
+- **Alle manieren**: onder het antwoord een ingeklapte lijst van elke combinatie die precies jouw aantal maakt, op prijs gesorteerd (bij grote aantallen de 20 goedkoopste).
+- **Waarom 43?**: ingeklapte uitleg over het McNugget-getal, uitgerekend uit de doosjes die er zijn.
+- **Paaseieren** bij een paar bijzondere aantallen. Probeer 42 maar eens.
 
 ### De wiskunde
 

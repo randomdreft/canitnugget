@@ -672,6 +672,148 @@
             border: 0;
         }
 
+        /* ===== Extra's in het antwoord: prijs per nugget, paaseieren, delen ===== */
+        .result .egg {
+            display: block;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .share-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 6px 10px;
+            margin-top: 14px;
+            font-size: 0.8em;
+        }
+
+        /* Klein en rustig: erft de tekstkleur van het antwoordvak (dus altijd AA) */
+        .share-btn {
+            background: transparent;
+            color: inherit;
+            border: 2px solid currentColor;
+            padding: 5px 14px;
+            font-size: 1em;
+            border-radius: 999px;
+            box-shadow: none;
+        }
+
+        .share-btn:hover {
+            transform: none;
+            box-shadow: none;
+            text-decoration: underline;
+        }
+
+        .share-btn:focus-visible {
+            outline: 3px solid currentColor;
+            outline-offset: 2px;
+        }
+
+        /* ===== Alle manieren (ingeklapt, direct onder het antwoord) ===== */
+        .combos-fold {
+            background: var(--panel);
+            margin-top: -14px;
+        }
+
+        .combos-fold > summary {
+            padding: 10px 16px;
+        }
+
+        .combos-fold .fold-title {
+            font-size: 1em;
+        }
+
+        .combo-note {
+            text-align: center;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .combo-list {
+            list-style: none;
+            max-width: 520px;
+            margin: 0 auto;
+            font-size: 0.95em;
+        }
+
+        .combo-list li {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2px 12px;
+            padding: 7px 4px;
+            border-bottom: 1px dashed var(--divider);
+        }
+
+        .combo-list li:last-child {
+            border-bottom: none;
+        }
+
+        .combo-list .combo-price {
+            white-space: nowrap;
+        }
+
+        .combo-list .combo-diff {
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        .combo-list li.cheapest {
+            font-weight: bold;
+            color: var(--ok);
+        }
+
+        .combo-list li.cheapest .combo-diff {
+            color: var(--ok);
+        }
+
+        /* ===== Waarom 43? ===== */
+        .why-fold {
+            background: var(--panel);
+        }
+
+        .why-body {
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .why-body p {
+            margin-bottom: 12px;
+        }
+
+        .why-body h4 {
+            color: var(--heading);
+            margin: 18px 0 6px;
+        }
+
+        .why-body a {
+            color: var(--link);
+        }
+
+        .why-sums {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 6px 16px;
+            margin: 0 0 12px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .why-sums li {
+            background: var(--tile);
+            border-radius: 8px;
+            padding: 6px 10px;
+        }
+
+        .why-sources {
+            font-size: 0.85em;
+            color: var(--text-muted);
+        }
+
         /* ===== Telefoon: compact, zodat het antwoord zonder scrollen in beeld is ===== */
         @media (max-width: 600px) {
             body {
@@ -782,6 +924,14 @@
             .fold-body {
                 padding: 0 10px 20px;
             }
+
+            .combos-fold {
+                margin-top: 0;
+            }
+
+            .combos-fold > summary {
+                padding: 10px 12px;
+            }
         }
     </style>
 </head>
@@ -809,6 +959,14 @@
             <div id="result" class="result pending" aria-live="polite">
                 Voer een aantal in om te controleren of het mogelijk is!
             </div>
+
+            <!-- Ingeklapt: elke combinatie die precies het ingevoerde aantal maakt (renderCombos) -->
+            <details class="fold combos-fold" id="combosFold" hidden>
+                <summary>
+                    <span class="fold-title" id="combosTitle">🧮 Alle manieren</span>
+                </summary>
+                <div class="fold-body" id="combosBody"></div>
+            </details>
 
             <div class="packages">
                 <h3>📦 Beschikbare verpakkingen</h3>
@@ -867,6 +1025,15 @@
                     <p class="visually-hidden" id="chartLive" aria-live="polite"></p>
                 </div>
             </details>
+
+            <!-- Ingeklapt: de wiskunde erachter. Getallen worden uit de doosjes berekend (renderWhy) -->
+            <details class="fold why-fold" id="whyFold" hidden>
+                <summary>
+                    <span class="fold-title" id="whyTitle">🤓 Waarom 43?</span>
+                    <span class="fold-note">(de wiskunde achter de nuggets)</span>
+                </summary>
+                <div class="fold-body why-body" id="whyBody"></div>
+            </details>
         </div>
     </div>
 
@@ -919,7 +1086,11 @@
             const resultDiv = document.getElementById('result');
             const check = validateCount(input.value);
 
+            const wasteMode = document.getElementById('wasteMode').checked;
+
             setChartSelection(check.ok ? check.n : null);
+            updateShareUrl(check.ok ? check.n : null, wasteMode);
+            updateCombos(check.ok ? check.n : null);
 
             if (!check.ok) {
                 resultDiv.className = check.kind === 'leeg' ? 'result pending' : 'result invalid';
@@ -928,14 +1099,16 @@
             }
 
             const count = check.n;
+            const prices = currentPrices();
+            const egg = easterEgg(count, boxSizes(prices));
             if (count === 0) {
                 resultDiv.className = 'result yes';
-                resultDiv.replaceChildren('🍗 0 nuggets? Dat is makkelijk - bestel gewoon niets! 😄');
+                resultDiv.replaceChildren(h('div', {},
+                    '🍗 0 nuggets? Dat is makkelijk - bestel gewoon niets! 😄',
+                    egg, shareRow(count, { possible: true, plan: null })));
                 return;
             }
 
-            const prices = currentPrices();
-            const wasteMode = document.getElementById('wasteMode').checked;
             const exact = cheapestExact(count, prices);
             const atLeast = cheapestAtLeast(count, prices);
             const main = wasteMode ? atLeast : exact;
@@ -945,7 +1118,8 @@
                 resultDiv.className = 'result yes';
                 const details = [
                     'Goedkoopste combinatie: ', describePackages(main), h('br'),
-                    '💰 Totaalprijs: ', formatEuro(main.price)
+                    '💰 Totaalprijs: ', formatEuro(main.price), h('br'),
+                    `🍗 ${formatPerNugget(main)} per nugget`
                 ];
                 if (main.extra > 0) {
                     body.append(
@@ -970,7 +1144,321 @@
                         `💡 Tip: de goedkoopste manier om er minstens ${count} te krijgen is ${atLeast.total} nuggets (${atLeast.extra} extra): ${describePackages(atLeast)} voor ${formatEuro(atLeast.price)}`));
                 }
             }
+            body.append(egg || '', shareRow(count, { possible: Boolean(main), plan: main }));
             resultDiv.replaceChildren(body);
+        }
+
+        // ===== Prijs per nugget =====
+        // Per nugget die je daadwerkelijk krijgt (in verspillingsmodus dus ook de extra's)
+        function perNuggetCents(plan) {
+            return plan && plan.total > 0 ? plan.cents / plan.total : null;
+        }
+
+        function formatPerNugget(plan) {
+            const cents = perNuggetCents(plan);
+            return cents === null ? '' : formatEuro(cents / 100);
+        }
+
+        // ===== Paaseieren: een grapje bij bijzondere aantallen =====
+        // Komt ná het antwoord, vervangt het nooit. {n} wordt het aantal.
+        // 'grootsteGat' hoort bij het grootste aantal dat nooit kan (met 6/9/20: 43)
+        // en wordt uit de doosjes berekend, zodat het klopt als het assortiment verandert.
+        const EASTER_EGGS = {
+            0: '🧘 Nul nuggets. Innerlijke rust. Wij zijn trots op je.',
+            1: '🥺 Eén nugget is geen maaltijd. Dat is een voorproefje.',
+            42: '🌌 Het antwoord op het leven, het universum en alles. Vergeet je handdoek niet.',
+            69: '😏 Nice.',
+            100: '💯 Honderd nuggets! Neem je vrienden mee (of doe alsof).',
+            420: '🌿 Aha. Dat verklaart de trek.',
+            666: '😈 Het getal van het beest. Extra pittige saus erbij?',
+            1337: '👾 1337 n00g3t h4x0r. Respect.',
+            [MAX_NUGGETS]: `🧮 ${MAX_NUGGETS.toLocaleString('nl-NL')}: ons maximum! Verder rekenen we niet, ook onze frituur heeft grenzen.`,
+            grootsteGat: '🏆 Bingo! {n} is het grootste aantal dat nooit kan. Alles daarboven lukt wél; lees onderaan waarom.'
+        };
+
+        function easterEggText(n, sizes, eggs = EASTER_EGGS) {
+            const gap = largestImpossible(sizes);
+            const text = gap && gap.largest === n && n > 0 ? eggs.grootsteGat : eggs[n];
+            return text ? text.replace('{n}', n) : null;
+        }
+
+        function easterEgg(n, sizes) {
+            const text = easterEggText(n, sizes);
+            return text ? h('small', { className: 'egg' }, text) : null;
+        }
+
+        // ===== Deelbare link: ?n=43 (&verspil=1) =====
+        // Leest ?n= en &verspil= uit een querystring. n blijft tekst: validateCount beslist.
+        function parseShareParams(search) {
+            const params = new URLSearchParams(search || '');
+            const n = params.get('n');
+            const v = params.get('verspil');
+            return { n: n === null ? null : n, verspil: v === '1' || v === 'ja' || v === 'true' };
+        }
+
+        // Nieuwe querystring: n en verspil zetten of weghalen, andere parameters blijven staan
+        function buildShareSearch(search, n, verspil) {
+            const params = new URLSearchParams(search || '');
+            if (Number.isInteger(n) && n >= 0) params.set('n', String(n));
+            else params.delete('n');
+            if (Number.isInteger(n) && verspil) params.set('verspil', '1');
+            else params.delete('verspil');
+            const q = params.toString();
+            return q ? `?${q}` : '';
+        }
+
+        // Adresbalk bijwerken zonder de geschiedenis vol te zetten
+        function updateShareUrl(n, verspil) {
+            try {
+                const search = buildShareSearch(location.search, n, verspil);
+                if (search !== location.search) {
+                    history.replaceState(history.state, '', location.pathname + search + location.hash);
+                }
+            } catch (e) { /* bijv. in een sandbox zonder history */ }
+        }
+
+        // "canitnugget.nl/?n=43" (zonder https:// leest het lekkerder in een appje)
+        function shareLink(n, verspil) {
+            const origin = /^https?:$/.test(location.protocol) ? location.host : 'canitnugget.nl';
+            return `${origin}/${buildShareSearch('', n, verspil)}`;
+        }
+
+        // De pakkende zin die je deelt, zonder link
+        function shareLine(n, { possible, plan }) {
+            const nug = n === 1 ? 'nugget' : 'nuggets';
+            if (!possible) return `${n} ${nug}? Kan NIET 😔`;
+            if (!plan) return `${n} ${nug}? Kan! Bestel gewoon niets 😄`;
+            if (plan.extra > 0) return `${n} ${nug}? Bestel er ${plan.total} voor ${formatEuro(plan.price)} 🗑️`;
+            return `${n} ${nug}? Kan! 🎉 ${describePackages(plan)} voor ${formatEuro(plan.price)}`;
+        }
+
+        function shareRow(n, outcome) {
+            const verspil = document.getElementById('wasteMode').checked;
+            const line = shareLine(n, outcome);
+            const link = shareLink(n, verspil);
+            const status = h('span', { role: 'status', className: 'share-status' });
+            const btn = h('button', { type: 'button', className: 'share-btn', 'aria-label': `Deel dit antwoord: ${line}` }, '🔗 Deel dit');
+            btn.addEventListener('click', () => shareAnswer(line, link, btn, status));
+            return h('div', { className: 'share-row' }, btn, status);
+        }
+
+        async function shareAnswer(line, link, btn, status) {
+            const url = `${location.protocol === 'http:' ? 'http' : 'https'}://${link}`;
+            const text = `${line} — ${link}`;
+            const touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+            if (touch && navigator.share) {
+                try {
+                    await navigator.share({ title: 'Can It Nugget?', text: line, url });
+                    return;
+                } catch (e) {
+                    if (e && e.name === 'AbortError') return; // zelf geannuleerd
+                }
+            }
+            const ok = await copyText(text);
+            status.textContent = ok ? '✅ Gekopieerd!' : `Kopiëren lukte niet. Hier is 'ie: ${text}`;
+            if (ok) {
+                clearTimeout(status._timer);
+                status._timer = setTimeout(() => { status.textContent = ''; }, 2500);
+            }
+        }
+
+        async function copyText(text) {
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(text);
+                    return true;
+                }
+            } catch (e) { /* val terug op de oude manier */ }
+            try {
+                const ta = h('textarea', { readonly: '', style: 'position:fixed;opacity:0' });
+                ta.value = text;
+                document.body.append(ta);
+                ta.select();
+                const ok = document.execCommand('copy');
+                ta.remove();
+                return ok;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        // ===== Alle manieren om precies n te maken =====
+        // Aantal combinaties (volgorde telt niet), klassiek muntenprobleem: O(n · doosjes)
+        function countCombinations(n, sizes) {
+            if (!Number.isInteger(n) || n < 0) return 0;
+            const ways = new Array(n + 1).fill(0);
+            ways[0] = 1;
+            for (const s of sizes) {
+                for (let m = s; m <= n; m++) ways[m] += ways[m - s];
+            }
+            return ways[n];
+        }
+
+        // De `limit` goedkoopste combinaties voor precies n, gesorteerd op prijs,
+        // dan minste doosjes. Alles opsommen kan niet (bij 10.000 zijn het er
+        // tienduizenden), dus zoeken met snoeien: een tak die zelfs met het
+        // voordeligste resterende doosje duurder uitvalt dan nummer `limit`, valt af.
+        function cheapestCombinations(n, prices, limit = 20) {
+            const sizes = boxSizes(prices).reverse(); // groot naar klein
+            if (!Number.isInteger(n) || n < 1 || sizes.length === 0) return [];
+            const cents = sizes.map(s => Math.round(prices[s] * 100));
+            // Laagste prijs per nugget onder de doosjes vanaf positie i
+            const minRate = new Array(sizes.length + 1).fill(Infinity);
+            for (let i = sizes.length - 1; i >= 0; i--) minRate[i] = Math.min(minRate[i + 1], cents[i] / sizes[i]);
+
+            const best = [];
+            const counts = new Array(sizes.length).fill(0);
+            const worse = (a, b) => a.cents - b.cents || a.boxes - b.boxes;
+
+            function add(total, boxes) {
+                const item = { cents: total, boxes, counts: counts.slice() };
+                if (best.length === limit && worse(item, best[best.length - 1]) >= 0) return;
+                let i = best.length;
+                while (i > 0 && worse(item, best[i - 1]) < 0) i--;
+                best.splice(i, 0, item);
+                if (best.length > limit) best.pop();
+            }
+
+            function walk(i, rem, total, boxes) {
+                if (best.length === limit && total + rem * minRate[i] > best[best.length - 1].cents) return;
+                const s = sizes[i];
+                if (i === sizes.length - 1) {
+                    if (rem % s === 0) {
+                        counts[i] = rem / s;
+                        add(total + counts[i] * cents[i], boxes + counts[i]);
+                        counts[i] = 0;
+                    }
+                    return;
+                }
+                for (let c = Math.floor(rem / s); c >= 0; c--) {
+                    counts[i] = c;
+                    walk(i + 1, rem - c * s, total + c * cents[i], boxes + c);
+                }
+                counts[i] = 0;
+            }
+            walk(0, n, 0, 0);
+
+            return best.map(b => ({
+                cents: b.cents,
+                boxes: b.boxes,
+                packages: sizes.map((size, i) => ({ size, count: b.counts[i] })).filter(p => p.count > 0)
+            }));
+        }
+
+        const COMBO_LIMIT = 20;
+        const combosState = { n: null };
+
+        // Titel bijwerken (goedkoop) en de lijst alleen tekenen als de sectie open is
+        function updateCombos(n) {
+            const fold = document.getElementById('combosFold');
+            const count = Number.isInteger(n) && n > 0 ? countCombinations(n, boxSizes(currentPrices())) : 0;
+            combosState.n = count > 0 ? n : null;
+            combosState.count = count;
+            fold.hidden = count === 0;
+            if (count === 0) return;
+            document.getElementById('combosTitle').textContent =
+                `🧮 Alle manieren (${count.toLocaleString('nl-NL')})`;
+            if (fold.open) renderCombos();
+        }
+
+        function renderCombos() {
+            const { n, count } = combosState;
+            const body = document.getElementById('combosBody');
+            if (n === null) { body.replaceChildren(); return; }
+            const list = cheapestCombinations(n, currentPrices(), COMBO_LIMIT);
+            if (list.length === 0) { body.replaceChildren(); return; }
+            const cheapest = list[0].cents;
+            const note = count === 1
+                ? `Er is precies één manier om ${n} nuggets te bestellen.`
+                : count > list.length
+                    ? `${count.toLocaleString('nl-NL')} manieren om precies ${n} te maken. Dit zijn de ${list.length} goedkoopste.`
+                    : `Alle ${count} manieren om precies ${n} te maken, van goedkoop naar duur.`;
+            const items = list.map((c, i) => {
+                const diff = c.cents - cheapest;
+                const tag = i === 0 ? '👑 goedkoopst' : diff === 0 ? 'even duur' : `+ ${formatEuro(diff / 100)}`;
+                return h('li', { className: i === 0 ? 'cheapest' : '' },
+                    h('span', {}, formatPackagesShort(c)),
+                    h('span', { className: 'combo-price' }, formatEuro(c.cents / 100), ' ', h('span', { className: 'combo-diff' }, `(${tag})`)));
+            });
+            body.replaceChildren(h('p', { className: 'combo-note' }, note), h('ol', { className: 'combo-list' }, items));
+        }
+
+        // ===== Waarom 43? (Frobeniusgetal) =====
+        function gcd(a, b) {
+            while (b) [a, b] = [b, a % b];
+            return a;
+        }
+
+        // Welke aantallen kunnen nooit, en wat is het grootste? Alleen de doosgroottes tellen.
+        // null als er geen grootste is (ggd > 1: dan kan er oneindig veel niet).
+        // Grens: het Frobeniusgetal is kleiner dan kleinste × grootste doos.
+        function largestImpossible(sizes) {
+            const s = [...new Set(sizes)].filter(x => Number.isInteger(x) && x > 0).sort((a, b) => a - b);
+            if (s.length === 0 || s.reduce(gcd) !== 1) return null;
+            const limit = s[0] * s[s.length - 1];
+            const can = new Array(limit + 1).fill(false);
+            can[0] = true;
+            for (let m = 1; m <= limit; m++) can[m] = s.some(x => x <= m && can[m - x]);
+            const impossible = [];
+            for (let m = 1; m <= limit; m++) if (!can[m]) impossible.push(m);
+            return { largest: impossible.length ? impossible[impossible.length - 1] : 0, impossible, smallest: s[0] };
+        }
+
+        // Een combinatie met zo min mogelijk doosjes, uitgeschreven: "20 + 9 + 9 + 6"
+        function spelledOut(n, sizes) {
+            const ones = Object.fromEntries(sizes.map(s => [s, 1])); // elk doosje "kost" 1 → minste doosjes
+            const table = nuggetTable(n, ones);
+            if (!table[n]) return null;
+            return makePlan(table, n, n).packages.flatMap(p => Array(p.count).fill(p.size)).join(' + ');
+        }
+
+        const HAPPY_MEAL_BOX = 4;
+
+        function renderWhy() {
+            const fold = document.getElementById('whyFold');
+            const sizes = boxSizes(currentPrices());
+            const gap = largestImpossible(sizes);
+            fold.hidden = !gap || gap.largest === 0;
+            if (fold.hidden) return;
+            const { largest, impossible, smallest } = gap;
+            const boxes = sizes.slice(0, -1).join(', ') + ' en ' + sizes[sizes.length - 1];
+            document.getElementById('whyTitle').textContent = `🤓 Waarom ${largest}?`;
+
+            const run = [];
+            for (let m = largest + 1; m <= largest + smallest; m++) run.push(h('li', {}, `${m} = ${spelledOut(m, sizes)}`));
+
+            const parts = [
+                h('p', {}, `Met doosjes van ${boxes} kun je `, h('strong', {}, impossible.length), ' aantallen nooit precies bestellen. De grootste daarvan is ',
+                    h('strong', {}, largest), '. Wiskundigen noemen dat het ', h('em', {}, 'Frobeniusgetal'), '; voor nuggetliefhebbers is het gewoon het McNuggetgetal.'),
+                h('h4', {}, `Waarom lukt alles vanaf ${largest + 1}?`),
+                h('p', {}, `Omdat ${largest + 1} tot en met ${largest + smallest} allemaal lukken, ${smallest} op een rij:`),
+                h('ul', { className: 'why-sums' }, run),
+                h('p', {}, `Doe bij elk daarvan een doosje van ${smallest} en je hebt de volgende ${smallest} (${largest + smallest + 1} tot en met ${largest + 2 * smallest}). Nog een doosje erbij, en nog een… zo kom je bij élk groter aantal. Tot in het oneindige, of tot je buik vol zit.`)
+            ];
+
+            // Alleen bij het klassieke 6/9/20 klopt deze korte uitleg letterlijk
+            if (sizes.join() === '6,9,20') {
+                parts.push(h('p', {}, `En ${largest} zelf? Haal er doosjes van 20 af: 43, 23 of 3 blijft over. Met 6 en 9 maak je alleen drievouden, en geen van die drie is een drievoud. Pech.`));
+            }
+
+            parts.push(
+                h('h4', {}, 'Waar komt het vandaan?'),
+                h('p', {}, 'Wiskundeleraar Henri Picciotto bedacht het in de jaren 80, toen hij met zijn zoon bij McDonald\'s zat en het op een servetje uitrekende. In 1987 stond het als puzzel in Games Magazine. Sindsdien heten dit McNuggetgetallen.')
+            );
+
+            if (!sizes.includes(HAPPY_MEAL_BOX)) {
+                const hm = largestImpossible([HAPPY_MEAL_BOX, ...sizes]);
+                if (hm) {
+                    parts.push(h('p', {}, `Met het doosje van ${HAPPY_MEAL_BOX} uit het Happy Meal erbij is het een stuk saaier: dan kunnen alleen ${hm.impossible.join(', ').replace(/, (\d+)$/, ' en $1')} niet, en is het grootste gat `, h('strong', {}, hm.largest), '.'));
+                }
+            }
+
+            parts.push(h('p', { className: 'why-sources' }, 'Meer lezen: ',
+                h('a', { href: 'https://en.wikipedia.org/wiki/Coin_problem#McNugget_numbers', target: '_blank', rel: 'noopener' }, 'Wikipedia (Coin problem)'),
+                ' · ',
+                h('a', { href: 'https://www.numberphile.com/videos/how-to-order-43-chicken-mcnuggets', target: '_blank', rel: 'noopener' }, 'Numberphile: How to order 43 Chicken McNuggets')));
+
+            document.getElementById('whyBody').replaceChildren(...parts);
         }
 
         // ===== Verspillingsmodus: meer nuggets bestellen als dat goedkoper is =====
@@ -1634,6 +2122,7 @@
             renderPackages();
             renderPriceInfo();
             renderPriceChart(data.prices);
+            renderWhy();
             if (document.getElementById('nuggetCount').value !== '') checkNuggets();
         }
 
@@ -1689,6 +2178,17 @@
             try {
                 toggle.checked = localStorage.getItem('wasteMode') === '1';
             } catch (e) { /* geen opslag beschikbaar */ }
+
+            // Gedeelde link (?n=43&verspil=1): invullen en meteen uitrekenen.
+            // De link wint van de opgeslagen stand, maar overschrijft die niet.
+            const shared = parseShareParams(location.search);
+            if (shared.n !== null && validateCount(shared.n).ok) {
+                toggle.checked = shared.verspil;
+                input.value = validateCount(shared.n).n;
+                checkNuggets();
+            }
+
+            onFoldOpen('combosFold', renderCombos);
             toggle.addEventListener('change', () => {
                 try {
                     localStorage.setItem('wasteMode', toggle.checked ? '1' : '0');
@@ -1703,6 +2203,7 @@
         priceState = { ...(readStoredPrices() || BUILTIN_PRICES), origin: 'laden' };
         renderPackages();
         renderPriceInfo();
+        renderWhy();
         initPriceChart();
         initInput();
         loadPrices();
