@@ -298,9 +298,130 @@
             border-top: 1px dashed rgba(0,0,0,0.2);
         }
 
+        /* ===== Grafiek: aantal vs prijs ===== */
+        .chart-section {
+            background: #fff8f0;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .chart-section h3 {
+            text-align: center;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .chart-intro {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .chart-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 18px;
+            font-size: 0.85em;
+            color: #555;
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .chart-legend li {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .chart-legend svg {
+            flex-shrink: 0;
+        }
+
+        .chart-wrap {
+            position: relative;
+            background: white;
+            border-radius: 12px;
+            padding: 8px 4px 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            touch-action: pan-y;
+        }
+
+        .chart-wrap:focus {
+            outline: none;
+        }
+
+        .chart-wrap:focus-visible {
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.45);
+        }
+
+        .chart-wrap svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            overflow: visible;
+        }
+
+        .chart-wrap text {
+            font-family: inherit;
+            font-size: 12px;
+            fill: #777;
+        }
+
+        .chart-tip {
+            position: absolute;
+            pointer-events: none;
+            background: #333;
+            color: white;
+            font-size: 0.85em;
+            line-height: 1.4;
+            padding: 8px 11px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 260px;
+            width: max-content;
+            z-index: 2;
+            display: none;
+        }
+
+        .chart-tip small {
+            display: block;
+            opacity: 0.85;
+            margin-top: 3px;
+        }
+
+        .chart-hint {
+            text-align: center;
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 2em;
+            }
+
+            .content {
+                padding: 24px 16px;
+            }
+
+            .chart-section {
+                padding: 20px 10px;
             }
             
             .input-group {
@@ -385,6 +506,20 @@
                     </div>
                 </div>
             </div>
+
+            <section class="chart-section" aria-labelledby="chartTitle">
+                <h3 id="chartTitle">📈 Aantal vs. prijs</h3>
+                <p class="chart-intro">Wat kost precies zoveel nuggets? En wanneer is méér bestellen goedkoper?</p>
+                <ul class="chart-legend">
+                    <li><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="4" fill="#e4572e"/></svg>Precies zoveel</li>
+                    <li><svg width="22" height="12" aria-hidden="true"><path d="M1 9H11V3H21" fill="none" stroke="#2a9d8f" stroke-width="2"/></svg>Minstens zoveel (verspillingsmodus)</li>
+                    <li><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="3.5" fill="white" stroke="#d32f2f" stroke-width="1.5"/></svg>Kan niet</li>
+                </ul>
+                <div class="chart-wrap" id="priceChart" tabindex="0" aria-describedby="chartSummary"></div>
+                <p class="chart-hint">Wijs of tik een punt aan voor de prijs; klik om dat aantal te checken. Met het toetsenbord: pijltjes en Enter.</p>
+                <p class="visually-hidden" id="chartSummary"></p>
+                <p class="visually-hidden" id="chartLive" aria-live="polite"></p>
+            </section>
         </div>
     </div>
 
@@ -394,6 +529,8 @@
             const count = parseInt(input.value);
             const resultDiv = document.getElementById('result');
             
+            setChartSelection(count);
+
             if (isNaN(count) || count < 0) {
                 resultDiv.className = 'result pending';
                 resultDiv.innerHTML = 'Voer een geldig aantal in!';
@@ -529,6 +666,372 @@
             return bestPlan ? makePlan(bestPlan.m, bestPlan.entry, n) : null;
         }
 
+        // ===== Grafiek: aantal vs prijs =====
+        // Data voor de grafiek: per aantal 1..limit de goedkoopste prijs voor
+        // precies dat aantal (of null als het niet kan) en de goedkoopste prijs
+        // voor minstens dat aantal (verspillingsmodus). Alles in centen.
+        // Werkt voor elk prijzen-object, dus ook voor een andere prijsset.
+        function nuggetChartData(limit, prices) {
+            const sizes = boxSizes(prices);
+            if (sizes.length === 0 || limit < 1) return [];
+            const top = limit + sizes[sizes.length - 1] - 1;
+            const table = nuggetTable(top, prices);
+            // Van achter naar voren het goedkoopste aantal >= m bijhouden.
+            // Met '<=' wint bij gelijke prijs het kleinste aantal (minste verspilling),
+            // net als in cheapestAtLeast.
+            const atLeast = new Array(top + 2).fill(null);
+            for (let m = top; m >= 1; m--) {
+                const next = atLeast[m + 1];
+                const e = table[m];
+                atLeast[m] = e && (!next || e.cents <= next.cents) ? { total: m, cents: e.cents } : next;
+            }
+            const rows = [];
+            for (let n = 1; n <= limit; n++) {
+                const e = table[n];
+                const least = atLeast[n];
+                rows.push({
+                    n,
+                    exact: e ? makePlan(n, e, n) : null,
+                    cents: e ? e.cents : null,
+                    atLeastCents: least ? least.cents : null,
+                    atLeast: least ? makePlan(least.total, table[least.total], n) : null
+                });
+            }
+            return rows;
+        }
+
+        // [1,2,3,5,7,8] -> "1–3, 5, 7, 8" (reeksen van 3 of meer worden ingekort)
+        function compressRanges(nums) {
+            const parts = [];
+            for (let i = 0; i < nums.length; i++) {
+                let j = i;
+                while (j + 1 < nums.length && nums[j + 1] === nums[j] + 1) j++;
+                if (j - i >= 2) parts.push(`${nums[i]}–${nums[j]}`);
+                else for (let k = i; k <= j; k++) parts.push(String(nums[k]));
+                i = j;
+            }
+            return parts.join(', ');
+        }
+
+        // Korte tekst voor schermlezers
+        function chartSummaryText(rows) {
+            if (rows.length === 0) return 'Geen prijzen beschikbaar.';
+            const limit = rows[rows.length - 1].n;
+            const impossible = rows.filter(r => !r.exact).map(r => r.n);
+            let text = `Grafiek van de goedkoopste prijs voor 1 tot en met ${limit} nuggets. `;
+            if (impossible.length) {
+                const last = impossible[impossible.length - 1];
+                text += `Niet te bestellen: ${compressRanges(impossible)}. `;
+                if (last < limit) text += `Vanaf ${last + 1} kan elk aantal. `;
+            } else {
+                text += 'Elk aantal is te bestellen. ';
+            }
+            const cheaper = rows.filter(r => r.exact && r.atLeastCents < r.cents).map(r => r.n);
+            if (cheaper.length) {
+                text += `Bij ${cheaper.length} aantallen is méér bestellen goedkoper, zoals ${compressRanges(cheaper.slice(0, 8))}. `;
+            }
+            const lastRow = rows[rows.length - 1];
+            if (lastRow.exact) text += `${limit} nuggets kost ${formatEuro(lastRow.cents / 100)}.`;
+            return text.trim();
+        }
+
+        // --- Kleine, herbruikbare SVG-grafiekhelper (zonder bibliotheken) ---
+        const SVG_NS = 'http://www.w3.org/2000/svg';
+
+        function svgEl(tag, attrs = {}, parent) {
+            const el = document.createElementNS(SVG_NS, tag);
+            for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+            if (parent) parent.appendChild(el);
+            return el;
+        }
+
+        // Tekent een lege grafiek met assen en rasterlijnen en geeft de schalen terug.
+        // opts: width, height, margin {top,right,bottom,left}, xDomain [min,max],
+        // yDomain [min,max], xTicks [..], yTicks [..], xFormat(v), yFormat(v),
+        // xLabel, label (aria-label), title
+        function svgChart(opts) {
+            const m = opts.margin;
+            const w = opts.width - m.left - m.right;
+            const h = opts.height - m.top - m.bottom;
+            const [x0, x1] = opts.xDomain;
+            const [y0, y1] = opts.yDomain;
+            const x = v => m.left + (v - x0) / (x1 - x0) * w;
+            const y = v => m.top + h - (v - y0) / (y1 - y0) * h;
+            x.invert = px => x0 + (px - m.left) / w * (x1 - x0);
+
+            const svg = svgEl('svg', {
+                viewBox: `0 0 ${opts.width} ${opts.height}`,
+                width: opts.width,
+                height: opts.height,
+                role: 'img',
+                'aria-label': opts.label || ''
+            });
+            if (opts.title) svgEl('title', {}, svg).textContent = opts.title;
+
+            const grid = svgEl('g', { 'aria-hidden': 'true' }, svg);
+            for (const t of opts.yTicks || []) {
+                svgEl('line', { x1: m.left, x2: m.left + w, y1: y(t), y2: y(t), stroke: t === y0 ? '#bbb' : '#eee', 'stroke-width': 1 }, grid);
+                svgEl('text', { x: m.left - 8, y: y(t) + 4, 'text-anchor': 'end' }, grid)
+                    .textContent = opts.yFormat ? opts.yFormat(t) : t;
+            }
+            for (const t of opts.xTicks || []) {
+                svgEl('line', { x1: x(t), x2: x(t), y1: m.top + h, y2: m.top + h + 5, stroke: '#bbb' }, grid);
+                svgEl('text', { x: x(t), y: m.top + h + 19, 'text-anchor': 'middle' }, grid)
+                    .textContent = opts.xFormat ? opts.xFormat(t) : t;
+            }
+            if (opts.xLabel) {
+                svgEl('text', { x: m.left + w, y: m.top + h + 36, 'text-anchor': 'end' }, grid).textContent = opts.xLabel;
+            }
+            const plot = svgEl('g', {}, svg);
+            return { svg, plot, x, y, width: w, height: h, margin: m };
+        }
+
+        // Pad door opeenvolgende punten; onderbroken waar een waarde null is
+        function linePath(points) {
+            let d = '';
+            let pen = false;
+            for (const p of points) {
+                if (p === null) { pen = false; continue; }
+                d += `${pen ? 'L' : 'M'}${p[0].toFixed(1)} ${p[1].toFixed(1)}`;
+                pen = true;
+            }
+            return d;
+        }
+
+        // --- De nuggetgrafiek zelf ---
+        const CHART_COLORS = { exact: '#e4572e', atLeast: '#2a9d8f', impossible: '#d32f2f', mark: '#333' };
+        const chartState = { prices: null, selected: null, rows: [], chart: null, active: null };
+
+        function formatPackagesShort(plan) {
+            return plan.packages.map(p => `${p.count}×${p.size}`).join(' + ');
+        }
+
+        function chartTipHtml(row) {
+            // Harde spatie na het euroteken, zodat een bedrag niet over twee regels breekt
+            const eur = amount => formatEuro(amount).replace(' ', '\u00a0');
+            if (row.exact) {
+                let html = `<strong>${row.n} nuggets: ${eur(row.cents / 100)}</strong> (${formatPackagesShort(row.exact)}) — ${eur(row.cents / 100 / row.n)} per stuk`;
+                if (row.atLeast && row.atLeastCents < row.cents) {
+                    html += `<small>🗑️ Goedkoper: ${row.atLeast.total} voor ${eur(row.atLeastCents / 100)} (${formatPackagesShort(row.atLeast)})</small>`;
+                }
+                return html;
+            }
+            let html = `<strong>${row.n} nuggets: kan niet</strong> 😔`;
+            if (row.atLeast) {
+                html += `<small>Minstens ${row.n}: ${row.atLeast.total} voor ${eur(row.atLeastCents / 100)} (${formatPackagesShort(row.atLeast)})</small>`;
+            }
+            return html;
+        }
+
+        // Tekent de grafiek (opnieuw) voor een prijzen-object.
+        // Aanroepen met een andere prijsset (bijv. veggie) tekent die in hetzelfde vak.
+        function renderPriceChart(prices = chartState.prices || getPrices(), containerId = 'priceChart') {
+            const wrap = document.getElementById(containerId);
+            if (!wrap) return;
+            chartState.prices = prices;
+
+            const sel = chartState.selected;
+            const limit = sel && sel > 100 ? Math.min(Math.ceil((sel + 5) / 20) * 20, 500) : 100;
+            const rows = nuggetChartData(limit, prices);
+            chartState.rows = rows;
+
+            const width = Math.max(wrap.clientWidth - 8, 260);
+            const narrow = width < 480;
+            const height = narrow ? 240 : 300;
+            const maxCents = Math.max(1, ...rows.map(r => r.cents || 0));
+            const yStep = maxCents / 100 > 60 ? 20 : maxCents / 100 > 20 ? 10 : 5;
+            const yMax = Math.ceil(maxCents / 100 / yStep) * yStep;
+            const xStep = limit > 200 ? 100 : limit > 100 ? 50 : (narrow ? 20 : 10);
+            const ticks = (max, step) => Array.from({ length: Math.floor(max / step) + 1 }, (_, i) => i * step);
+
+            const summary = chartSummaryText(rows);
+            const chart = svgChart({
+                width, height,
+                margin: { top: 10, right: 12, bottom: 42, left: 46 },
+                xDomain: [0, limit], yDomain: [0, yMax],
+                xTicks: ticks(limit, xStep), yTicks: ticks(yMax, yStep),
+                yFormat: v => `€ ${v}`,
+                xLabel: 'aantal nuggets →',
+                label: 'Grafiek: goedkoopste prijs per aantal nuggets',
+                title: summary
+            });
+            chartState.chart = chart;
+            const { svg, plot, x, y } = chart;
+            const base = y(0);
+            const dotR = narrow ? 2.4 : 3;
+
+            // Minstens-lijn als trap: de prijs blijft gelijk tot je een duurder aantal nodig hebt
+            const steps = [];
+            rows.forEach(r => {
+                if (r.atLeastCents === null) return;
+                const yy = y(r.atLeastCents / 100);
+                steps.push([x(r.n - 0.5), yy], [x(r.n + 0.5), yy]);
+            });
+            svgEl('path', { d: linePath(steps), fill: 'none', stroke: CHART_COLORS.atLeast, 'stroke-width': 2, 'stroke-opacity': 0.75, 'stroke-linejoin': 'round' }, plot);
+
+            // Precies-lijn: dunne verbinding tussen opeenvolgende mogelijke aantallen
+            const exactPts = rows.map(r => r.exact ? [x(r.n), y(r.cents / 100)] : null);
+            svgEl('path', { d: linePath(exactPts), fill: 'none', stroke: CHART_COLORS.exact, 'stroke-width': 1.5, 'stroke-opacity': 0.45 }, plot);
+            for (const r of rows) {
+                if (r.exact) {
+                    svgEl('circle', { cx: x(r.n), cy: y(r.cents / 100), r: dotR, fill: CHART_COLORS.exact }, plot);
+                } else {
+                    svgEl('circle', { cx: x(r.n), cy: base, r: dotR, fill: 'white', stroke: CHART_COLORS.impossible, 'stroke-width': 1.3 }, plot);
+                }
+            }
+
+            // Grootste aantal dat niet kan, apart benoemd (bij McDonald's: 43)
+            const impossible = rows.filter(r => !r.exact);
+            const lastImpossible = impossible.length ? impossible[impossible.length - 1].n : null;
+            if (lastImpossible && lastImpossible < limit) {
+                const lx = x(lastImpossible);
+                // Label naast het rondje, aan de kant waar de lijn hoger ligt (rechts)
+                const words = narrow ? 'laatste gat' : 'laatste die niet kan';
+                const approxWidth = (words.length + 6) * 6.5;
+                const right = lx + 8 + approxWidth < width - chart.margin.right;
+                const t = svgEl('text', { x: right ? lx + 8 : lx - 8, y: base - 10, 'text-anchor': right ? 'start' : 'end', style: `fill:${CHART_COLORS.impossible};font-weight:600` }, plot);
+                t.textContent = right ? `← ${lastImpossible}: ${words}` : `${lastImpossible}: ${words} →`;
+            }
+
+            // Het aantal uit het invoerveld
+            if (sel && sel >= 1 && sel <= limit) {
+                const r = rows[sel - 1];
+                const g = svgEl('g', { 'aria-hidden': 'true' }, plot);
+                const cy = r.exact ? y(r.cents / 100) : base;
+                svgEl('line', { x1: x(sel), x2: x(sel), y1: chart.margin.top, y2: base, stroke: CHART_COLORS.mark, 'stroke-width': 1, 'stroke-dasharray': '3 3' }, g);
+                svgEl('circle', { cx: x(sel), cy, r: 7, fill: 'none', stroke: CHART_COLORS.mark, 'stroke-width': 2 }, g);
+                const lbl = svgEl('text', { x: x(sel), y: chart.margin.top + 2, 'text-anchor': x(sel) > width - 60 ? 'end' : x(sel) < 100 ? 'start' : 'middle', dx: x(sel) > width - 60 ? -5 : x(sel) < 100 ? 5 : 0, dy: 10, style: 'fill:#333;font-weight:600' }, g);
+                lbl.textContent = `jouw ${sel}`;
+            }
+
+            // Hover-laag: een kruisje + ring die meeloopt, en een grote onzichtbare vang-rechthoek
+            const hover = svgEl('g', { 'aria-hidden': 'true', style: 'display:none' }, svg);
+            svgEl('line', { class: 'hl', y1: chart.margin.top, y2: base, stroke: '#999', 'stroke-width': 1 }, hover);
+            svgEl('circle', { class: 'hc', r: 6, fill: 'white', 'fill-opacity': 0.6, stroke: CHART_COLORS.mark, 'stroke-width': 2 }, hover);
+            svgEl('rect', {
+                x: chart.margin.left, y: 0, width: chart.width, height: height,
+                fill: 'transparent', style: 'cursor:pointer'
+            }, svg);
+
+            wrap.innerHTML = '';
+            wrap.appendChild(svg);
+            const tip = document.createElement('div');
+            tip.className = 'chart-tip';
+            tip.setAttribute('aria-hidden', 'true');
+            wrap.appendChild(tip);
+            chartState.hover = hover;
+            chartState.tip = tip;
+            document.getElementById('chartSummary').textContent = summary;
+            if (chartState.active) showChartPoint(chartState.active);
+        }
+
+        function showChartPoint(n) {
+            const { rows, chart, hover, tip } = chartState;
+            const r = rows[n - 1];
+            if (!r || !chart) return;
+            chartState.active = n;
+            const cx = chart.x(n);
+            const cy = r.exact ? chart.y(r.cents / 100) : chart.y(0);
+            hover.style.display = '';
+            const hl = hover.querySelector('.hl');
+            hl.setAttribute('x1', cx);
+            hl.setAttribute('x2', cx);
+            const hc = hover.querySelector('.hc');
+            hc.setAttribute('cx', cx);
+            hc.setAttribute('cy', cy);
+            hc.setAttribute('stroke', r.exact ? CHART_COLORS.mark : CHART_COLORS.impossible);
+
+            tip.innerHTML = chartTipHtml(r);
+            tip.style.display = 'block';
+            // Positie: boven het punt, binnen het vak gehouden (svg staat 4px ingesprongen)
+            const wrapW = chartState.tip.parentNode.clientWidth;
+            const tw = tip.offsetWidth;
+            const th = tip.offsetHeight;
+            const left = Math.min(Math.max(cx + 4 - tw / 2, 4), wrapW - tw - 4);
+            let top = cy + 8 - th - 14;
+            if (top < 0) top = cy + 8 + 16;
+            tip.style.left = left + 'px';
+            tip.style.top = top + 'px';
+        }
+
+        function hideChartPoint() {
+            chartState.active = null;
+            if (chartState.hover) chartState.hover.style.display = 'none';
+            if (chartState.tip) chartState.tip.style.display = 'none';
+        }
+
+        // Zet een aantal in het invoerveld en reken het uit
+        function pickChartCount(n) {
+            document.getElementById('nuggetCount').value = n;
+            checkNuggets();
+        }
+
+        // Wordt aangeroepen vanuit checkNuggets: markeer het ingevoerde aantal
+        function setChartSelection(n) {
+            const next = Number.isInteger(n) && n > 0 ? n : null;
+            if (next === chartState.selected) return;
+            chartState.selected = next;
+            renderPriceChart();
+        }
+
+        function pointerToCount(evt) {
+            const { chart, rows } = chartState;
+            if (!chart) return null;
+            const svgBox = chart.svg.getBoundingClientRect();
+            const px = (evt.clientX - svgBox.left) * (chart.svg.viewBox.baseVal.width / svgBox.width);
+            const n = Math.round(chart.x.invert(px));
+            return Math.min(Math.max(n, 1), rows.length);
+        }
+
+        (function initPriceChart() {
+            const wrap = document.getElementById('priceChart');
+            wrap.addEventListener('pointermove', evt => {
+                const n = pointerToCount(evt);
+                if (n) showChartPoint(n);
+            });
+            wrap.addEventListener('pointerleave', evt => {
+                if (evt.pointerType === 'mouse') hideChartPoint();
+            });
+            wrap.addEventListener('click', evt => {
+                const n = pointerToCount(evt);
+                if (!n) return;
+                showChartPoint(n);
+                pickChartCount(n);
+            });
+            wrap.addEventListener('keydown', evt => {
+                const max = chartState.rows.length;
+                let n = chartState.active || chartState.selected || 1;
+                if (evt.key === 'ArrowRight' || evt.key === 'ArrowUp') n = Math.min(n + 1, max);
+                else if (evt.key === 'ArrowLeft' || evt.key === 'ArrowDown') n = Math.max(n - 1, 1);
+                else if (evt.key === 'PageUp') n = Math.min(n + 10, max);
+                else if (evt.key === 'PageDown') n = Math.max(n - 10, 1);
+                else if (evt.key === 'Home') n = 1;
+                else if (evt.key === 'End') n = max;
+                else if (evt.key === 'Enter' || evt.key === ' ') {
+                    if (chartState.active) pickChartCount(chartState.active);
+                    evt.preventDefault();
+                    return;
+                } else if (evt.key === 'Escape') { hideChartPoint(); return; }
+                else return;
+                evt.preventDefault();
+                showChartPoint(n);
+                document.getElementById('chartLive').textContent = chartState.tip.textContent;
+            });
+            wrap.addEventListener('blur', hideChartPoint);
+
+            // Opnieuw tekenen als de breedte verandert (draaien van telefoon e.d.)
+            let lastWidth = 0;
+            const onResize = () => {
+                if (wrap.clientWidth !== lastWidth) {
+                    lastWidth = wrap.clientWidth;
+                    renderPriceChart();
+                }
+            };
+            if (window.ResizeObserver) new ResizeObserver(onResize).observe(wrap);
+            else window.addEventListener('resize', onResize);
+            renderPriceChart(getPrices());
+        })();
+
         function canMakeNuggets(target) {
             const packages = [6, 9, 20];
             
@@ -592,6 +1095,7 @@
                     
                     // Sla prijzen op in localStorage
                     localStorage.setItem('nuggetPrices', JSON.stringify(prices));
+                    renderPriceChart(prices);
                     
                     // Toon laatste update tijd
                     const lastUpdate = new Date(data.timestamp);
@@ -614,6 +1118,7 @@
                     });
                     
                     localStorage.setItem('nuggetPrices', JSON.stringify(defaultPrices));
+                    renderPriceChart(defaultPrices);
                 });
         }
 
