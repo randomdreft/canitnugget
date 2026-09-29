@@ -18,6 +18,9 @@ Verder:
 
 - **Deelbare link**: de adresbalk volgt je invoer (`?n=43`, met `&verspil=1` in verspillingsmodus). Met de knop *Deel dit* deel je het antwoord (op de telefoon via het deelmenu, anders naar het klembord).
 - **Alle manieren**: onder het antwoord een ingeklapte lijst van elke combinatie die precies jouw aantal maakt, op prijs gesorteerd (bij grote aantallen de 20 goedkoopste).
+- **Bestellen voor een groep**: aantal personen × nuggets per persoon; de goedkoopste bestelling voor minstens dat aantal, bestelbare aantallen vlakbij, eerlijk verdelen en het Tikkie-bedrag per persoon.
+- **Budgetmodus**: vul een bedrag in (`15`, `15,50`, `€ 15`) en zie hoeveel nuggets je er maximaal voor krijgt, met de combinatie en wat je overhoudt (tot € 1.000).
+- **Getallenrooster**: een ingeklapt spiekrooster van 1 t/m 100 (op de telefoon 60) met welke aantallen wel en niet kunnen. Staat bewust dicht: zelf ontdekken is leuker.
 - **Waarom 43?**: ingeklapte uitleg over het McNugget-getal, uitgerekend uit de doosjes die er zijn.
 - **Paaseieren** bij een paar bijzondere aantallen. Probeer 42 maar eens.
 

@@ -814,6 +814,176 @@
             color: var(--text-muted);
         }
 
+        /* ===== Rekenhulpjes: groepsbestelling en budget (ingeklapt) ===== */
+        .tool-fold {
+            background: var(--panel);
+        }
+
+        .tool-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 12px 18px;
+            margin-bottom: 16px;
+        }
+
+        .tool-form label {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.9em;
+            color: var(--text-muted);
+            text-align: left;
+        }
+
+        .tool-input {
+            font: inherit;
+            font-size: 1.15em;
+            padding: 8px 12px;
+            border: 2px solid var(--input-border);
+            border-radius: 10px;
+            width: 150px;
+            background: var(--input-bg);
+            color: var(--text);
+        }
+
+        .tool-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--focus-ring);
+        }
+
+        .tool-out {
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .tool-card {
+            background: var(--tile);
+            border-radius: 10px;
+            border-left: 5px solid var(--ok);
+            padding: 14px 18px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .tool-card.impossible {
+            border-left-color: var(--bad);
+        }
+
+        .tool-card p + p {
+            margin-top: 8px;
+        }
+
+        .tool-card .tool-sub {
+            font-size: 0.9em;
+            color: var(--text-muted);
+        }
+
+        .tool-msg {
+            text-align: center;
+            padding: 12px 16px;
+            border-radius: 10px;
+            background: var(--pending-bg);
+            color: var(--pending-text);
+        }
+
+        .tool-msg.invalid {
+            background: var(--invalid-bg);
+            color: var(--invalid-text);
+            border: 2px solid var(--invalid-border);
+        }
+
+        /* ===== Getallenrooster (spieken; ingeklapt en pas bij openen getekend) ===== */
+        .grid-fold {
+            background: var(--panel);
+        }
+
+        .grid-intro,
+        .grid-status {
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .grid-status {
+            margin: 12px 0 0;
+            min-height: 1.4em;
+            color: var(--text);
+        }
+
+        .nugget-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 6px;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        .grid-cell {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1px;
+            min-height: 44px;
+            padding: 4px 0;
+            font-size: 0.95em;
+            line-height: 1.1;
+            font-variant-numeric: tabular-nums;
+            background: var(--tile);
+            color: var(--text);
+            border: 2px solid var(--yes-border);
+            border-radius: 8px;
+            box-shadow: none;
+        }
+
+        .grid-cell .sym {
+            font-size: 0.75em;
+            font-weight: bold;
+            color: var(--ok);
+        }
+
+        /* Kan niet: andere achtergrond, stippelrand én een kruisje (niet alleen kleur) */
+        .grid-cell.no {
+            background: var(--no-bg);
+            color: var(--no-text);
+            border: 2px dashed var(--no-border);
+        }
+
+        .grid-cell.no .sym {
+            color: var(--no-text);
+        }
+
+        .grid-cell:hover {
+            transform: none;
+            box-shadow: 0 3px 8px var(--shadow-strong);
+        }
+
+        .grid-cell:focus-visible {
+            outline: 3px solid var(--heading);
+            outline-offset: 2px;
+        }
+
+        /* Jouw aantal: dikke ring + vet */
+        .grid-cell[aria-pressed="true"] {
+            font-weight: bold;
+            box-shadow: 0 0 0 3px var(--surface), 0 0 0 6px var(--accent);
+        }
+
+        .grid-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 18px;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            margin-top: 12px;
+            list-style: none;
+        }
+
         /* ===== Telefoon: compact, zodat het antwoord zonder scrollen in beeld is ===== */
         @media (max-width: 600px) {
             body {
@@ -932,6 +1102,28 @@
             .combos-fold > summary {
                 padding: 10px 12px;
             }
+
+            .tool-form {
+                gap: 10px 12px;
+            }
+
+            .tool-input {
+                width: 130px;
+            }
+
+            .tool-card {
+                padding: 12px 12px;
+            }
+
+            .nugget-grid {
+                gap: 4px;
+            }
+
+            .grid-cell {
+                min-height: 40px;
+                font-size: 0.85em;
+                border-radius: 6px;
+            }
         }
     </style>
 </head>
@@ -1006,6 +1198,40 @@
                 </div>
             </div>
 
+            <!-- Ingeklapt: bestellen voor een groep (renderGroup) -->
+            <details class="fold tool-fold" id="groupFold">
+                <summary>
+                    <span class="fold-title">👥 Bestellen voor een groep</span>
+                    <span class="fold-note">(met eerlijk verdelen en Tikkie-bedrag)</span>
+                </summary>
+                <div class="fold-body">
+                    <div class="tool-form">
+                        <label>Aantal personen
+                            <input type="text" class="tool-input" id="groupPersons" inputmode="numeric" autocomplete="off" value="4" placeholder="bijv. 4">
+                        </label>
+                        <label>Nuggets per persoon (ongeveer)
+                            <input type="text" class="tool-input" id="groupPerPerson" inputmode="numeric" autocomplete="off" value="10" placeholder="bijv. 10">
+                        </label>
+                    </div>
+                    <div class="tool-out" id="groupOut" aria-live="polite"></div>
+                </div>
+            </details>
+
+            <!-- Ingeklapt: zoveel mogelijk nuggets voor een bedrag (renderBudget) -->
+            <details class="fold tool-fold" id="budgetFold">
+                <summary>
+                    <span class="fold-title">💶 Hoeveel nuggets voor mijn budget?</span>
+                </summary>
+                <div class="fold-body">
+                    <div class="tool-form">
+                        <label>Mijn budget
+                            <input type="text" class="tool-input" id="budgetInput" inputmode="decimal" autocomplete="off" value="" placeholder="bijv. € 15,50">
+                        </label>
+                    </div>
+                    <div class="tool-out" id="budgetOut" aria-live="polite"></div>
+                </div>
+            </details>
+
             <!-- Ingeklapt: de grafiek verklapt welke aantallen niet kunnen -->
             <details class="fold chart-section" id="chartFold">
                 <summary>
@@ -1024,6 +1250,16 @@
                     <p class="visually-hidden" id="chartSummary"></p>
                     <p class="visually-hidden" id="chartLive" aria-live="polite"></p>
                 </div>
+            </details>
+
+            <!-- Ingeklapt, en BEWUST dicht: zelf ontdekken welke aantallen niet kunnen is de lol.
+                 De inhoud wordt pas bij openen getekend (renderGrid). -->
+            <details class="fold grid-fold" id="gridFold">
+                <summary>
+                    <span class="fold-title">🔍 Spieken: het getallenrooster</span>
+                    <span class="fold-note">(spoiler: verklapt welke aantallen niet kunnen)</span>
+                </summary>
+                <div class="fold-body" id="gridBody"></div>
             </details>
 
             <!-- Ingeklapt: de wiskunde erachter. Getallen worden uit de doosjes berekend (renderWhy) -->
@@ -1091,6 +1327,7 @@
             setChartSelection(check.ok ? check.n : null);
             updateShareUrl(check.ok ? check.n : null, wasteMode);
             updateCombos(check.ok ? check.n : null);
+            updateGridSelection();
 
             if (!check.ok) {
                 resultDiv.className = check.kind === 'leeg' ? 'result pending' : 'result invalid';
@@ -1996,6 +2233,337 @@
             renderPriceChart(currentPrices());
         }
 
+        // ===== Rekenwerk voor groep, budget en rooster =====
+        // Net als de rest: pure functies die een prijzen-object meekrijgen.
+
+        // Welke aantallen 0..limit kun je precies bestellen? Alleen de doosgroottes tellen.
+        function orderableUpTo(limit, prices) {
+            const sizes = boxSizes(prices);
+            const can = new Array(Math.max(0, limit) + 1).fill(false);
+            can[0] = true;
+            for (let m = 1; m <= limit; m++) can[m] = sizes.some(s => s <= m && can[m - s]);
+            return can;
+        }
+
+        // Dichtstbijzijnde bestelbare aantallen onder en boven `total` (niet total zelf).
+        // Boven bestaat altijd: tussen total en total + grootste doos zit een veelvoud ervan.
+        function nearestOrderable(total, prices) {
+            const sizes = boxSizes(prices);
+            if (sizes.length === 0) return { below: null, above: null };
+            const can = orderableUpTo(total + sizes[sizes.length - 1], prices);
+            let below = null;
+            for (let m = total - 1; m >= 1; m--) if (can[m]) { below = m; break; }
+            let above = null;
+            for (let m = total + 1; m < can.length; m++) if (can[m]) { above = m; break; }
+            return { below, above };
+        }
+
+        // Eerlijk verdelen: iedereen evenveel, de rest blijft over
+        function splitFairly(total, persons) {
+            return { each: Math.floor(total / persons), rest: total % persons };
+        }
+
+        // Tikkie-bedrag in centen, naar boven afgerond zodat de betaler er niet op toelegt.
+        // `over` = wat de betaler overhoudt door dat afronden.
+        function tikkieCents(cents, persons) {
+            const each = Math.ceil(cents / persons);
+            return { each, over: each * persons - cents };
+        }
+
+        // Heel getal in een bereik, met een vriendelijke melding als het niet klopt
+        function validateWhole(raw, min, max, what) {
+            const text = String(raw == null ? '' : raw).trim();
+            if (text === '') return { ok: false, kind: 'leeg', message: `Vul ${what} in.` };
+            if (/^-\s*\d/.test(text)) return { ok: false, kind: 'negatief', message: `🙃 Negatief? Vul ${what} van ${min} of meer in.` };
+            if (/^\d*[.,]\d+$/.test(text)) return { ok: false, kind: 'decimaal', message: `🔪 Graag een heel getal voor ${what}.` };
+            if (!/^\d+$/.test(text)) return { ok: false, kind: 'ongeldig', message: `🤔 Dat is geen getal. Vul ${what} in met cijfers.` };
+            const n = Number(text.replace(/^0+(?=\d)/, '').slice(0, 12));
+            if (n < min || n > max) return { ok: false, kind: 'bereik', message: `Kies voor ${what} iets van ${min} tot en met ${max}.` };
+            return { ok: true, n };
+        }
+
+        const MAX_PERSONS = 100;
+        const MAX_PER_PERSON = 100; // 100 × 100 = 10.000, precies ons maximum
+
+        // Alles voor een groepsbestelling. null-velden als het niet kan.
+        function groupOrder(persons, perPerson, prices) {
+            const total = persons * perPerson;
+            const exact = cheapestExact(total, prices);
+            const cheapest = cheapestAtLeast(total, prices);
+            const { below, above } = nearestOrderable(total, prices);
+            return {
+                total, exact, cheapest, below, above,
+                split: cheapest ? splitFairly(cheapest.total, persons) : null,
+                pay: cheapest ? tikkieCents(cheapest.cents, persons) : null
+            };
+        }
+
+        // "15", "15,50", "€ 15", "15.50", "€15,-", "1.000", "1.000,50", "15 euro" -> centen.
+        // Het laatste scheidingsteken is de komma voor de centen, behalve een losse punt
+        // met precies drie cijfers erachter: dat is een duizendtal (1.000).
+        const MAX_BUDGET_CENTS = 100000; // € 1.000
+
+        function parseEuro(raw) {
+            let t = String(raw == null ? '' : raw).trim().toLowerCase();
+            if (t === '') return { ok: false, kind: 'leeg', message: 'Vul een bedrag in, bijvoorbeeld 15 of 15,50.' };
+            t = t.replace(/^(€|euro?)/, '').replace(/(€|eur|euro'?s?)$/, '').trim().replace(/[.,]-$/, '');
+            if (/^-\d|^-[.,]\d/.test(t)) return { ok: false, kind: 'negatief', message: '🙃 Een negatief budget? Dan moet McDonald\'s jóu betalen. Vul een bedrag van € 0 of meer in.' };
+            if (!/^[\d.,]+$/.test(t) || !/\d/.test(t)) return { ok: false, kind: 'ongeldig', message: '🤔 Dat snappen we niet. Probeer iets als 15 of € 15,50.' };
+            const commas = (t.match(/,/g) || []).length;
+            const dots = (t.match(/\./g) || []).length;
+            let intPart = t, frac = '';
+            if (commas && dots) {
+                const dec = t.lastIndexOf(',') > t.lastIndexOf('.') ? ',' : '.';
+                const thou = dec === ',' ? '.' : ',';
+                const i = t.lastIndexOf(dec);
+                intPart = t.slice(0, i);
+                frac = t.slice(i + 1);
+                if (intPart.includes(dec) || frac.includes(thou)) return { ok: false, kind: 'ongeldig', message: '🤔 Dat bedrag heeft rare leestekens. Probeer iets als 15,50.' };
+                intPart = intPart.split(thou).join('');
+            } else if (commas || dots) {
+                const sep = commas ? ',' : '.';
+                const parts = t.split(sep);
+                const thousands = sep === '.' && parts.length > 1 && parts[0] !== '' && parts.slice(1).every(p => p.length === 3);
+                if (thousands) {
+                    intPart = parts.join('');
+                } else if (parts.length === 2) {
+                    [intPart, frac] = parts;
+                } else {
+                    return { ok: false, kind: 'ongeldig', message: '🤔 Dat bedrag heeft rare leestekens. Probeer iets als 15,50.' };
+                }
+            }
+            if (!/^\d*$/.test(intPart) || !/^\d*$/.test(frac) || (intPart === '' && frac === '')) {
+                return { ok: false, kind: 'ongeldig', message: '🤔 Dat snappen we niet. Probeer iets als 15 of € 15,50.' };
+            }
+            if (frac.length > 2) return { ok: false, kind: 'decimaal', message: '🪙 Halve centen neemt de kassa niet aan. Maximaal twee cijfers na de komma.' };
+            const euros = intPart.replace(/^0+(?=\d)/, '');
+            if (euros.length > 7) return { ok: false, kind: 'teveel', message: `💸 Rustig aan, Dagobert. Tot ${formatEuro(MAX_BUDGET_CENTS / 100, true)} rekenen we het graag voor je uit.` };
+            const cents = Number(euros || '0') * 100 + Number((frac + '00').slice(0, 2));
+            if (cents > MAX_BUDGET_CENTS) return { ok: false, kind: 'teveel', message: `💸 Rustig aan, Dagobert. Tot ${formatEuro(MAX_BUDGET_CENTS / 100, true)} rekenen we het graag voor je uit.` };
+            return { ok: true, cents };
+        }
+
+        // Zoveel mogelijk nuggets voor hooguit `budgetCents` (onbegrensde knapzak, in centen).
+        // Per exact bedrag c: het meeste aantal nuggets (en daarbij de minste doosjes).
+        // Daarna wint het meeste nuggets, en bij gelijkspel het kleinste bedrag.
+        // O(budget · doosjes): bij € 1.000 en drie doosjes 300.000 stapjes.
+        function maxNuggetsForBudget(budgetCents, prices) {
+            const sizes = boxSizes(prices);
+            const cost = sizes.map(s => Math.round(prices[s] * 100));
+            const B = Math.max(0, Math.floor(budgetCents));
+            const nug = new Int32Array(B + 1).fill(-1);
+            const boxes = new Int32Array(B + 1);
+            const last = new Int32Array(B + 1);
+            nug[0] = 0;
+            for (let c = 1; c <= B; c++) {
+                for (let i = 0; i < sizes.length; i++) {
+                    const prev = c - cost[i];
+                    if (prev < 0 || nug[prev] < 0) continue;
+                    const n = nug[prev] + sizes[i];
+                    const b = boxes[prev] + 1;
+                    if (n > nug[c] || (n === nug[c] && b < boxes[c])) {
+                        nug[c] = n;
+                        boxes[c] = b;
+                        last[c] = i;
+                    }
+                }
+            }
+            let bestC = 0;
+            for (let c = 1; c <= B; c++) if (nug[c] > nug[bestC]) bestC = c; // strikt: goedkoopste wint
+            const counts = new Array(sizes.length).fill(0);
+            for (let c = bestC; c > 0; c -= cost[last[c]]) counts[last[c]]++;
+            return {
+                total: nug[bestC],
+                cents: bestC,
+                price: bestC / 100,
+                leftoverCents: B - bestC,
+                boxes: boxes[bestC],
+                packages: sizes.map((size, i) => ({ size, count: counts[i] }))
+                    .filter(p => p.count > 0)
+                    .sort((a, b) => b.size - a.size)
+            };
+        }
+
+        // ===== Groepsbestelling tekenen =====
+        function toolMessage(check) {
+            return h('p', { className: check.kind === 'leeg' ? 'tool-msg' : 'tool-msg invalid' }, check.message);
+        }
+
+        function renderGroup() {
+            const fold = document.getElementById('groupFold');
+            const out = document.getElementById('groupOut');
+            if (!fold.open) return;
+            const p = validateWhole(document.getElementById('groupPersons').value, 1, MAX_PERSONS, 'het aantal personen');
+            if (!p.ok) { out.replaceChildren(toolMessage(p)); return; }
+            const pp = validateWhole(document.getElementById('groupPerPerson').value, 1, MAX_PER_PERSON, 'de nuggets per persoon');
+            if (!pp.ok) { out.replaceChildren(toolMessage(pp)); return; }
+
+            const persons = p.n;
+            const g = groupOrder(persons, pp.n, currentPrices());
+            if (!g.cheapest) { out.replaceChildren(h('p', { className: 'tool-msg' }, 'Geen prijzen beschikbaar.')); return; }
+            const nug = n => `${n} ${n === 1 ? 'nugget' : 'nuggets'}`;
+            const c = g.cheapest;
+            const lines = [];
+
+            lines.push(h('p', {}, `${persons} × ${pp.n} = `, h('strong', {}, nug(g.total)), g.exact
+                ? ' ✅ Kan precies!'
+                : ` ❌ Precies ${g.total} kan niet.`));
+
+            lines.push(h('p', {}, '🛒 Goedkoopste bestelling voor minstens ', g.total, ': ',
+                h('strong', {}, describePackages(c)), ` = ${nug(c.total)} voor `, h('strong', {}, formatEuro(c.price)),
+                c.extra > 0 ? ` (${c.extra} extra)` : ''));
+
+            if (g.exact && g.exact.cents > c.cents) {
+                lines.push(h('p', { className: 'tool-sub' }, `🗑️ Precies ${g.total} kost ${formatEuro(g.exact.price)}; met ${c.extra} extra ben je dus ${formatEuro((g.exact.cents - c.cents) / 100)} goedkoper uit.`));
+            }
+
+            const near = [];
+            if (g.below) near.push(`${g.below} (${g.total - g.below} minder)`);
+            if (g.above) near.push(`${g.above} (${g.above - g.total} meer)`);
+            if (near.length) {
+                lines.push(h('p', { className: 'tool-sub' }, `↕️ ${g.exact ? 'Andere bestelbare aantallen vlakbij' : 'Wel te bestellen'}: ${near.join(' of ')}`));
+            }
+
+            const { each, rest } = g.split;
+            const restText = rest === 0
+                ? 'niemand hoeft te vechten.'
+                : `er ${rest === 1 ? 'blijft er 1' : `blijven er ${rest}`} over. Steen-papier-schaar? 🪨📄✂️`;
+            lines.push(h('p', {}, '🍽️ Eerlijk verdelen: ieder krijgt ', h('strong', {}, nug(each)), `, en ${restText}`));
+
+            const pay = g.pay;
+            const payLine = h('p', {}, '💸 Tikkie-bedrag: ', h('strong', {}, formatEuro(pay.each / 100)), ' per persoon');
+            if (pay.over > 0) {
+                payLine.append(h('br'), h('span', { className: 'tool-sub' }, `(naar boven afgerond; de betaler houdt ${formatEuro(pay.over / 100)} over. Fooi voor de bezorger?)`));
+            }
+            lines.push(payLine);
+
+            if (persons === 1) {
+                lines.push(h('p', { className: 'tool-sub' }, '🧍 Een groep van één? Dat noemen we gewoon honger.'));
+            }
+
+            out.replaceChildren(h('div', { className: g.exact ? 'tool-card' : 'tool-card impossible' }, lines));
+        }
+
+        // ===== Budgetmodus tekenen =====
+        function renderBudget() {
+            const fold = document.getElementById('budgetFold');
+            const out = document.getElementById('budgetOut');
+            if (!fold.open) return;
+            const check = parseEuro(document.getElementById('budgetInput').value);
+            if (!check.ok) { out.replaceChildren(toolMessage(check)); return; }
+
+            const prices = currentPrices();
+            const budget = check.cents;
+            const plan = maxNuggetsForBudget(budget, prices);
+            const budgetText = formatEuro(budget / 100);
+            if (plan.total === 0) {
+                const sizes = boxSizes(prices);
+                const cheapestBox = sizes.reduce((a, s) => (a === null || prices[s] < prices[a] ? s : a), null);
+                const text = budget === 0
+                    ? '🫥 Met € 0 krijg je 0 nuggets. Wel gratis zout, als je lief lacht.'
+                    : `😔 Voor ${budgetText} zit er nog geen doosje in.` + (cheapestBox ? ` Het goedkoopste (${cheapestBox} stuks) kost ${formatEuro(prices[cheapestBox])}. Even sparen!` : '');
+                out.replaceChildren(h('div', { className: 'tool-card impossible' }, h('p', {}, text)));
+                return;
+            }
+            const lines = [
+                h('p', {}, `🍗 Voor ${budgetText} krijg je maximaal `, h('strong', {}, `${plan.total} nuggets`), '.'),
+                h('p', {}, '🛒 Bestel: ', h('strong', {}, describePackages(plan)), ` voor ${formatEuro(plan.price)}`),
+                h('p', {}, plan.leftoverCents === 0
+                    ? '🎯 Precies op, geen cent over!'
+                    : `🪙 Over: ${formatEuro(plan.leftoverCents / 100)}${plan.leftoverCents < 100 ? ' (genoeg voor… eh, niets)' : ''}`),
+                h('p', { className: 'tool-sub' }, `Dat is ${formatPerNugget(plan)} per nugget.`)
+            ];
+            out.replaceChildren(h('div', { className: 'tool-card' }, lines));
+        }
+
+        // ===== Getallenrooster tekenen (alleen als het open is) =====
+        const GRID_NARROW = '(max-width: 600px)';
+
+        function gridLimit() {
+            return window.matchMedia && window.matchMedia(GRID_NARROW).matches ? 60 : 100;
+        }
+
+        // Het aantal in het grote invoerveld, of null
+        function enteredCount() {
+            const check = validateCount(document.getElementById('nuggetCount').value);
+            return check.ok && check.n > 0 ? check.n : null;
+        }
+
+        function renderGrid() {
+            const fold = document.getElementById('gridFold');
+            const body = document.getElementById('gridBody');
+            if (!fold.open) return;
+            const limit = gridLimit();
+            const can = orderableUpTo(limit, currentPrices());
+            const impossible = [];
+            for (let n = 1; n <= limit; n++) if (!can[n]) impossible.push(n);
+            const lastNo = impossible.length ? impossible[impossible.length - 1] : 0;
+
+            let intro = `Van 1 tot en met ${limit} kunnen er ${impossible.length} niet.`;
+            if (lastNo < limit) intro += ` Vanaf ${lastNo + 1} lukt alles.`;
+            else intro += ' En zelfs daarna zitten er nog gaten in.';
+
+            const cells = [];
+            for (let n = 1; n <= limit; n++) {
+                cells.push(h('button', {
+                    type: 'button',
+                    className: can[n] ? 'grid-cell' : 'grid-cell no',
+                    'data-n': n,
+                    'aria-pressed': 'false',
+                    'aria-label': `${n}: ${can[n] ? 'kan' : 'kan niet'}`
+                }, h('span', {}, n), h('span', { className: 'sym', 'aria-hidden': 'true' }, can[n] ? '✓' : '✗')));
+            }
+            body.replaceChildren(
+                h('p', { className: 'grid-intro' }, intro, ' Tik een getal om het uit te rekenen.'),
+                h('div', { className: 'nugget-grid', role: 'group', 'aria-label': `Getallenrooster 1 tot en met ${limit}` }, cells),
+                h('ul', { className: 'grid-legend', 'aria-hidden': 'true' },
+                    h('li', {}, '✓ kan'), h('li', {}, '✗ kan niet (stippelrand)'), h('li', {}, '◎ dikke ring: jouw aantal')),
+                h('p', { className: 'grid-status', id: 'gridStatus', 'aria-live': 'polite' })
+            );
+            body.dataset.limit = limit;
+            updateGridSelection();
+        }
+
+        // Markeer het ingevoerde aantal zonder het rooster opnieuw te tekenen (focus blijft staan)
+        function updateGridSelection() {
+            const body = document.getElementById('gridBody');
+            if (!document.getElementById('gridFold').open || !body.dataset.limit) return;
+            const sel = enteredCount();
+            for (const cell of body.querySelectorAll('.grid-cell')) {
+                cell.setAttribute('aria-pressed', Number(cell.dataset.n) === sel ? 'true' : 'false');
+            }
+            const status = document.getElementById('gridStatus');
+            if (!status) return;
+            if (sel === null) { status.textContent = ''; return; }
+            const ok = cheapestExact(sel, currentPrices()) !== null;
+            const off = sel > Number(body.dataset.limit) ? ' (staat niet in het rooster)' : '';
+            status.textContent = `Jouw ${sel}${off}: ${ok ? '✓ kan!' : '✗ kan niet.'} Het hele antwoord staat bovenaan.`;
+        }
+
+        function initTools() {
+            onFoldOpen('groupFold', renderGroup);
+            onFoldOpen('budgetFold', renderBudget);
+            onFoldOpen('gridFold', renderGrid);
+            for (const id of ['groupPersons', 'groupPerPerson']) {
+                document.getElementById(id).addEventListener('input', renderGroup);
+            }
+            document.getElementById('budgetInput').addEventListener('input', renderBudget);
+            document.getElementById('gridBody').addEventListener('click', evt => {
+                const cell = evt.target.closest('.grid-cell');
+                if (cell) setCount(Number(cell.dataset.n));
+            });
+            // Telefoon gedraaid: ander aantal vakjes
+            const narrow = window.matchMedia && window.matchMedia(GRID_NARROW);
+            if (narrow && narrow.addEventListener) narrow.addEventListener('change', renderGrid);
+        }
+
+        // Nieuwe prijzen: alles wat open staat opnieuw uitrekenen
+        function renderTools() {
+            renderGroup();
+            renderBudget();
+            renderGrid();
+        }
+
         // ===== Prijzen =====
         // Eén bron van waarheid: /prices.json. Lukt ophalen niet, dan de laatst
         // bekende goede prijzen uit localStorage, en anders de ingebouwde reserve.
@@ -2123,6 +2691,7 @@
             renderPriceInfo();
             renderPriceChart(data.prices);
             renderWhy();
+            renderTools();
             if (document.getElementById('nuggetCount').value !== '') checkNuggets();
         }
 
@@ -2206,6 +2775,7 @@
         renderWhy();
         initPriceChart();
         initInput();
+        initTools();
         loadPrices();
     </script>
 </body>
