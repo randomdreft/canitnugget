@@ -238,6 +238,66 @@
             text-decoration: underline;
         }
 
+        .waste-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+            color: #555;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .waste-toggle input {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+        }
+
+        .waste-toggle .switch {
+            position: relative;
+            width: 42px;
+            height: 24px;
+            background: #ddd;
+            border-radius: 12px;
+            transition: background 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .waste-toggle .switch::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 18px;
+            height: 18px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .waste-toggle input:checked + .switch {
+            background: #ff8e53;
+        }
+
+        .waste-toggle input:checked + .switch::after {
+            transform: translateX(18px);
+        }
+
+        .waste-toggle input:focus-visible + .switch {
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.4);
+        }
+
+        .waste-tip {
+            display: block;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed rgba(0,0,0,0.2);
+        }
+
         @media (max-width: 600px) {
             .header h1 {
                 font-size: 2em;
@@ -267,6 +327,12 @@
                     <input type="number" id="nuggetCount" placeholder="0" min="0" max="1000">
                     <label for="nuggetCount">nuggets bestellen</label>
                 </div>
+                <label class="waste-toggle" title="Meer nuggets bestellen dan je wilt als dat goedkoper (of even duur) is">
+                    <input type="checkbox" id="wasteMode">
+                    <span class="switch"></span>
+                    <span>🗑️ Verspillingsmodus: liever méér als dat goedkoper is</span>
+                </label>
+                <br>
                 <button onclick="checkNuggets()">Check of het kan! 🍗</button>
             </div>
 
@@ -340,16 +406,127 @@
                 return;
             }
 
-            const result = findCheapestCombination(count);
-            
-            if (result.possible) {
+            const prices = getPrices();
+            const wasteMode = document.getElementById('wasteMode').checked;
+            const exact = cheapestExact(count, prices);
+            const atLeast = cheapestAtLeast(count, prices);
+            const main = wasteMode ? atLeast : exact;
+
+            if (main) {
                 resultDiv.className = 'result yes';
-                const packages = result.packages.map(pkg => `${pkg.count}x ${pkg.size} nuggets`).join(' + ');
-                resultDiv.innerHTML = `🎉 <strong>JA!</strong> Je kunt ${count} nuggets bestellen!<br><small>Goedkoopste combinatie: ${packages}<br>💰 Totaalprijs: €${result.totalPrice.toFixed(2)}</small>`;
+                let html;
+                if (main.extra > 0) {
+                    html = `🗑️ <strong>JA, met ${main.extra} extra!</strong> Bestel ${main.total} nuggets voor minstens ${count}.<br><small>Goedkoopste combinatie: ${describePackages(main)}<br>💰 Totaalprijs: ${formatEuro(main.price)}`;
+                    if (exact) {
+                        html += `<br>Precies ${count} kost ${formatEuro(exact.price)}, dus je bespaart ${formatEuro(exact.price - main.price)}.`;
+                    }
+                    html += '</small>';
+                } else {
+                    html = `🎉 <strong>JA!</strong> Je kunt ${count} nuggets bestellen!<br><small>Goedkoopste combinatie: ${describePackages(main)}<br>💰 Totaalprijs: ${formatEuro(main.price)}</small>`;
+                }
+                html += wasteTip(count, main, prices);
+                resultDiv.innerHTML = `<div>${html}</div>`;
             } else {
                 resultDiv.className = 'result no';
-                resultDiv.innerHTML = `😔 <strong>NEE!</strong> ${count} nuggets is helaas niet mogelijk.<br><small>Geen combinatie van verpakkingen maakt dit aantal.</small>`;
+                let html = `😔 <strong>NEE!</strong> ${count} nuggets is helaas niet mogelijk.<br><small>Geen combinatie van verpakkingen maakt dit aantal.</small>`;
+                if (atLeast) {
+                    html += `<small class="waste-tip">💡 Tip: de goedkoopste manier om er minstens ${count} te krijgen is ${atLeast.total} nuggets (${atLeast.extra} extra): ${describePackages(atLeast)} voor ${formatEuro(atLeast.price)}</small>`;
+                }
+                resultDiv.innerHTML = `<div>${html}</div>`;
             }
+        }
+
+        // ===== Verspillingsmodus: meer nuggets bestellen als dat goedkoper is =====
+        // Alle functies krijgen een prijzen-object mee ({"6": 3.55, "9": 4.80, ...}),
+        // zodat een andere prijsset (bijv. veggie) er zo in kan.
+
+        function formatEuro(amount) {
+            return '€ ' + amount.toFixed(2).replace('.', ',');
+        }
+
+        function describePackages(plan) {
+            return plan.packages.map(pkg => `${pkg.count}x ${pkg.size}`).join(' + ');
+        }
+
+        // Tip als je voor hetzelfde geld of minder méér nuggets krijgt dan het huidige antwoord
+        function wasteTip(count, plan, prices) {
+            const bigger = cheapestAtLeast(count, prices, plan.total + 1);
+            if (!bigger || bigger.price > plan.price + 0.001) return '';
+            const extra = bigger.total - count;
+            const deal = bigger.price < plan.price - 0.001
+                ? `voor ${formatEuro(plan.price - bigger.price)} minder`
+                : 'voor hetzelfde geld';
+            return `<small class="waste-tip">💡 Tip: ${deal} krijg je ${bigger.total} nuggets (${extra} extra): ${describePackages(bigger)}</small>`;
+        }
+
+        // Verpakkingen uit een prijzen-object halen: {"6": 3.55, ...} -> [6, 9, 20]
+        function boxSizes(prices) {
+            return Object.keys(prices)
+                .map(Number)
+                .filter(size => size > 0 && Number.isFinite(Number(prices[size])) && prices[size] > 0)
+                .sort((a, b) => a - b);
+        }
+
+        // Goedkoopste combinatie voor elk aantal 0..limit (in centen, tegen afrondingsfouten).
+        // Bij gelijke prijs wint de combinatie met de minste doosjes.
+        function nuggetTable(limit, prices) {
+            const sizes = boxSizes(prices);
+            const best = new Array(limit + 1).fill(null);
+            best[0] = { cents: 0, boxes: 0, counts: {} };
+            for (let m = 1; m <= limit; m++) {
+                for (const size of sizes) {
+                    const prev = m >= size ? best[m - size] : null;
+                    if (!prev) continue;
+                    const cents = prev.cents + Math.round(prices[size] * 100);
+                    const boxes = prev.boxes + 1;
+                    const cur = best[m];
+                    if (!cur || cents < cur.cents || (cents === cur.cents && boxes < cur.boxes)) {
+                        best[m] = { cents, boxes, counts: { ...prev.counts, [size]: (prev.counts[size] || 0) + 1 } };
+                    }
+                }
+            }
+            return best;
+        }
+
+        function makePlan(total, entry, wanted) {
+            return {
+                total,
+                extra: total - wanted,
+                price: entry.cents / 100,
+                boxes: entry.boxes,
+                packages: Object.keys(entry.counts)
+                    .map(Number)
+                    .sort((a, b) => b - a)
+                    .map(size => ({ size, count: entry.counts[size] }))
+            };
+        }
+
+        // Precies n nuggets, zo goedkoop mogelijk. null als het niet kan.
+        function cheapestExact(n, prices) {
+            const best = nuggetTable(n, prices)[n];
+            return best ? makePlan(n, best, n) : null;
+        }
+
+        // Goedkoopste manier om MINSTENS n nuggets te krijgen (verspillingsmodus).
+        // Zoeken tot n + grootste doos - 1 is genoeg: haal je uit een bestelling
+        // van n + grootste doos of meer één doosje weg, dan heb je nog steeds
+        // minstens n nuggets en betaal je minder. Zo'n bestelling is dus nooit optimaal.
+        // Met `from` kun je alleen naar aantallen vanaf `from` kijken (voor de tip).
+        // Volgorde: laagste prijs, dan minste verspilling, dan minste doosjes.
+        function cheapestAtLeast(n, prices, from = n) {
+            const sizes = boxSizes(prices);
+            if (sizes.length === 0) return null;
+            const limit = n + sizes[sizes.length - 1] - 1;
+            const table = nuggetTable(limit, prices);
+            // Oplopend zoeken met strikt '<': bij gelijke prijs blijft het kleinere
+            // aantal (minder verspilling) staan; de tabel koos per aantal al de
+            // combinatie met de minste doosjes.
+            let bestPlan = null;
+            for (let m = Math.max(from, 0); m <= limit; m++) {
+                const e = table[m];
+                if (e && (!bestPlan || e.cents < bestPlan.entry.cents)) bestPlan = { m, entry: e };
+            }
+            return bestPlan ? makePlan(bestPlan.m, bestPlan.entry, n) : null;
         }
 
         function canMakeNuggets(target) {
@@ -371,58 +548,12 @@
             return dp[target];
         }
 
-        function findCheapestCombination(target) {
-            const packages = [6, 9, 20];
-            const prices = getPrices();
-            
-            // Dynamische programmering om de goedkoopste combinatie te vinden
-            const dp = new Array(target + 1).fill(null);
-            dp[0] = { packages: [], totalPrice: 0 };
-            
-            for (let i = 1; i <= target; i++) {
-                let bestCombination = null;
-                let bestPrice = Infinity;
-                
-                for (const pkg of packages) {
-                    if (i >= pkg && dp[i - pkg] !== null) {
-                        const newPrice = dp[i - pkg].totalPrice + prices[pkg];
-                        if (newPrice < bestPrice) {
-                            bestPrice = newPrice;
-                            bestCombination = {
-                                packages: [...dp[i - pkg].packages, { size: pkg, count: 1 }],
-                                totalPrice: newPrice
-                            };
-                        }
-                    }
-                }
-                
-                dp[i] = bestCombination;
-            }
-            
-            if (dp[target] === null) {
+        function findCheapestCombination(target, prices = getPrices()) {
+            const plan = cheapestExact(target, prices);
+            if (!plan) {
                 return { possible: false, packages: [], totalPrice: 0 };
             }
-            
-            // Tel gelijke pakketten bij elkaar op
-            const packageCounts = {};
-            dp[target].packages.forEach(pkg => {
-                if (packageCounts[pkg.size]) {
-                    packageCounts[pkg.size] += pkg.count;
-                } else {
-                    packageCounts[pkg.size] = pkg.count;
-                }
-            });
-            
-            const optimizedPackages = Object.entries(packageCounts).map(([size, count]) => ({
-                size: parseInt(size),
-                count: count
-            }));
-            
-            return {
-                possible: true,
-                packages: optimizedPackages,
-                totalPrice: dp[target].totalPrice
-            };
+            return { possible: true, packages: plan.packages, totalPrice: plan.price };
         }
 
         function getPrices() {
@@ -470,7 +601,6 @@
                     console.log('Kon prijzen niet laden van server, gebruik standaard prijzen');
                     // Gebruik standaard prijzen
                     const defaultPrices = {
-                        4: 3.50,
                         6: 4.50,
                         9: 6.50,
                         20: 12.00
@@ -493,6 +623,22 @@
                 checkNuggets();
             }
         });
+
+        // Verspillingsmodus onthouden en direct opnieuw rekenen bij omzetten
+        (function () {
+            const toggle = document.getElementById('wasteMode');
+            try {
+                toggle.checked = localStorage.getItem('wasteMode') === '1';
+            } catch (e) { /* geen opslag beschikbaar */ }
+            toggle.addEventListener('change', function () {
+                try {
+                    localStorage.setItem('wasteMode', toggle.checked ? '1' : '0');
+                } catch (e) { /* geen opslag beschikbaar */ }
+                if (document.getElementById('nuggetCount').value !== '') {
+                    checkNuggets();
+                }
+            });
+        })();
 
         // Focus op input veld bij laden en laad prijzen
         window.addEventListener('load', function() {
