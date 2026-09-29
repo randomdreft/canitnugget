@@ -984,6 +984,208 @@
             list-style: none;
         }
 
+        /* ===== Batch E: extra's, uitdaging en speeltuin (allemaal ingeklapt) ===== */
+        /* Kleine rustige knopjes (presets, sausjes, plus/min) */
+        .pill-btn {
+            background: var(--tile);
+            color: var(--text);
+            border: 2px solid var(--input-border);
+            padding: 6px 12px;
+            font-size: 0.9em;
+            border-radius: 999px;
+            box-shadow: none;
+        }
+
+        .pill-btn:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: var(--accent);
+        }
+
+        .pill-btn:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .pill-btn[aria-pressed="true"] {
+            border-color: var(--accent);
+            font-weight: bold;
+        }
+
+        .pill-btn:disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+
+        .pill-btn.big {
+            font-size: 1em;
+            padding: 9px 18px;
+            font-weight: bold;
+        }
+
+        .tool-out.extras-out {
+            max-width: 720px;
+        }
+
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .extras-grid .tool-card {
+            border-left-color: var(--accent);
+        }
+
+        .extras-grid h4 {
+            color: var(--heading);
+            margin-bottom: 4px;
+        }
+
+        .footnote {
+            font-size: 0.8em;
+            color: var(--text-muted);
+            margin-top: 12px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .footnote a,
+        .tool-card a {
+            color: var(--link);
+        }
+
+        .mini-fold > summary {
+            cursor: pointer;
+            font-size: 0.85em;
+            color: var(--link);
+            margin-top: 6px;
+        }
+
+        .sauce-edit {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 14px;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
+        .sauce-edit label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sauce-edit input {
+            font: inherit;
+            width: 3.2em;
+            padding: 3px 6px;
+            border: 2px solid var(--input-border);
+            border-radius: 8px;
+            background: var(--input-bg);
+            color: var(--text);
+        }
+
+        .preset-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .play-input {
+            width: 220px;
+        }
+
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 3px;
+            max-width: 380px;
+            margin: 12px auto 4px;
+            font-size: 0.78em;
+            font-variant-numeric: tabular-nums;
+            list-style: none;
+        }
+
+        .mini-cell {
+            text-align: center;
+            padding: 3px 0;
+            border: 1px solid var(--yes-border);
+            border-radius: 4px;
+            background: var(--tile);
+            color: var(--text);
+        }
+
+        /* Kan niet: kleur, stippelrand én doorgestreept */
+        .mini-cell.no {
+            background: var(--no-bg);
+            color: var(--no-text);
+            border-style: dashed;
+            border-color: var(--no-border);
+            text-decoration: line-through;
+        }
+
+        .stepper-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 18px;
+            margin: 12px 0;
+        }
+
+        .stepper {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .stepper .pill-btn {
+            width: 34px;
+            height: 34px;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        .stepper output {
+            min-width: 1.6em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .challenge-q {
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 4px;
+        }
+
+        .challenge-sum {
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--text-muted);
+            min-height: 1.4em;
+        }
+
+        .challenge-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .share-text {
+            white-space: pre-line;
+            font-family: ui-monospace, Consolas, monospace;
+            background: var(--panel);
+            border-radius: 8px;
+            padding: 8px 10px;
+            margin-top: 8px;
+            font-size: 0.9em;
+        }
+
         /* ===== Telefoon: compact, zodat het antwoord zonder scrollen in beeld is ===== */
         @media (max-width: 600px) {
             body {
@@ -1124,6 +1326,19 @@
                 font-size: 0.85em;
                 border-radius: 6px;
             }
+
+            .play-input {
+                width: 200px;
+            }
+
+            .mini-grid {
+                gap: 2px;
+                font-size: 0.72em;
+            }
+
+            .stepper-row {
+                gap: 8px 12px;
+            }
         }
     </style>
 </head>
@@ -1232,6 +1447,28 @@
                 </div>
             </details>
 
+            <!-- Ingeklapt: sausjes, calorieën en de nugget-index bij het ingevoerde aantal (renderExtras) -->
+            <details class="fold tool-fold" id="extrasFold">
+                <summary>
+                    <span class="fold-title">🧾 Sausjes, calorieën en Big Macs</span>
+                    <span class="fold-note">(bij jouw bestelling)</span>
+                </summary>
+                <div class="fold-body">
+                    <div class="tool-out extras-out" id="extrasOut" aria-live="polite"></div>
+                </div>
+            </details>
+
+            <!-- Ingeklapt: elke dag één aantal om te raden. Verklapt pas iets na je antwoord (renderChallenge) -->
+            <details class="fold tool-fold" id="challengeFold">
+                <summary>
+                    <span class="fold-title">🎯 Uitdaging van de dag</span>
+                    <span class="fold-note" id="challengeNote">(elke dag een nieuw aantal)</span>
+                </summary>
+                <div class="fold-body">
+                    <div class="tool-out" id="challengeOut"></div>
+                </div>
+            </details>
+
             <!-- Ingeklapt: de grafiek verklapt welke aantallen niet kunnen -->
             <details class="fold chart-section" id="chartFold">
                 <summary>
@@ -1260,6 +1497,23 @@
                     <span class="fold-note">(spoiler: verklapt welke aantallen niet kunnen)</span>
                 </summary>
                 <div class="fold-body" id="gridBody"></div>
+            </details>
+
+            <!-- Ingeklapt: zelf doosjesmaten verzinnen en zien welke aantallen dan nooit kunnen (renderPlayground) -->
+            <details class="fold tool-fold" id="playFold">
+                <summary>
+                    <span class="fold-title">🧪 Doosjesspeeltuin</span>
+                    <span class="fold-note">(verzin je eigen doosjes)</span>
+                </summary>
+                <div class="fold-body">
+                    <div class="preset-row" id="playPresets" role="group" aria-label="Voorbeeldsets"></div>
+                    <div class="tool-form">
+                        <label>Doosjes (1 t/m 100, max. 6, met komma's)
+                            <input type="text" class="tool-input play-input" id="playInput" inputmode="numeric" autocomplete="off" value="6, 9, 20" placeholder="bijv. 6, 9, 20">
+                        </label>
+                    </div>
+                    <div class="tool-out" id="playOut" aria-live="polite"></div>
+                </div>
             </details>
 
             <!-- Ingeklapt: de wiskunde erachter. Getallen worden uit de doosjes berekend (renderWhy) -->
@@ -1328,6 +1582,7 @@
             updateShareUrl(check.ok ? check.n : null, wasteMode);
             updateCombos(check.ok ? check.n : null);
             updateGridSelection();
+            renderExtras();
 
             if (!check.ok) {
                 resultDiv.className = check.kind === 'leeg' ? 'result pending' : 'result invalid';
@@ -2544,6 +2799,11 @@
             onFoldOpen('groupFold', renderGroup);
             onFoldOpen('budgetFold', renderBudget);
             onFoldOpen('gridFold', renderGrid);
+            onFoldOpen('extrasFold', renderExtras);
+            onFoldOpen('challengeFold', renderChallenge);
+            onFoldOpen('playFold', renderPlayground);
+            document.getElementById('playInput').addEventListener('input', renderPlayground);
+            renderChallenge(); // alleen het nummer in de titel; de inhoud pas bij openen
             for (const id of ['groupPersons', 'groupPerPerson']) {
                 document.getElementById(id).addEventListener('input', renderGroup);
             }
@@ -2562,12 +2822,480 @@
             renderGroup();
             renderBudget();
             renderGrid();
+            renderExtras();
+            renderChallenge();
+            renderPlayground();
+        }
+
+        // Getal in Nederlandse notatie met hooguit `dec` decimalen: 1234,5 -> "1.234,5"
+        function formatNum(x, dec = 0) {
+            return x.toLocaleString('nl-NL', { minimumFractionDigits: 0, maximumFractionDigits: dec });
+        }
+
+        // localStorage met vangnet: kan ontbreken of gooien (privévenster e.d.)
+        function readJson(key) {
+            try {
+                const raw = localStorage.getItem(key);
+                return raw ? JSON.parse(raw) : null;
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function writeJson(key, value) {
+            try {
+                localStorage.setItem(key, JSON.stringify(value));
+            } catch (e) { /* geen opslag beschikbaar */ }
+        }
+
+        // ===== Sauzenteller =====
+        // NIET officieel bevestigd: McDonald's NL zet het aantal sausjes niet op de
+        // productpagina's. Dit is onze aanname; bezoekers kunnen het zelf aanpassen.
+        const SAUCE_DEFAULTS = { 4: 1, 6: 1, 9: 2, 20: 3 };
+        const SAUCE_KEY = 'canitnugget.sausjes.v1';
+
+        function defaultSauces(size) {
+            return size in SAUCE_DEFAULTS ? SAUCE_DEFAULTS[size] : Math.max(1, Math.round(size / 7));
+        }
+
+        // Per doosmaat het aantal sausjes: eigen instelling (0..9) of onze aanname
+        function saucesPerBox(sizes, custom = readJson(SAUCE_KEY) || {}) {
+            const out = {};
+            for (const s of sizes) {
+                const v = custom[s];
+                out[s] = Number.isInteger(v) && v >= 0 && v <= 9 ? v : defaultSauces(s);
+            }
+            return out;
+        }
+
+        function countSauces(plan, perBox) {
+            return plan.packages.reduce((sum, p) => sum + p.count * (perBox[p.size] || 0), 0);
+        }
+
+        // ===== Voedingswaarde (Chicken McNuggets NL) =====
+        // Bron: mcdonalds.com/nl, productpagina 20 stuks (gecontroleerd 29-09-2026):
+        // 882 kcal, 43 g vet, 4,1 g zout per 20 stuks (362 g). 6 en 9 stuks komen op hetzelfde uit.
+        // Zonder saus. Beweegminuten: grove MET-schatting voor iemand van 70 kg.
+        const NUTRITION = Object.freeze({
+            kcal: 44.1, fat: 2.15, salt: 0.205,
+            source: 'https://www.mcdonalds.com/nl/nl-nl/product/chicken-mcnuggets-20-stuks.html',
+            checked: 'september 2026'
+        });
+        const KCAL_PER_MIN = Object.freeze({ fietsen: 7, wandelen: 4 });
+        const KCAL_PER_DAY = 2000;   // referentie-inname volwassene
+        const SALT_PER_DAY = 6;      // referentie-inname zout (g)
+
+        function nutritionFor(nuggets) {
+            const kcal = nuggets * NUTRITION.kcal;
+            return {
+                kcal,
+                fat: nuggets * NUTRITION.fat,
+                salt: nuggets * NUTRITION.salt,
+                bikeMin: kcal / KCAL_PER_MIN.fietsen,
+                walkMin: kcal / KCAL_PER_MIN.wandelen
+            };
+        }
+
+        // 45 -> "45 min", 135 -> "2 uur en 15 min", 3000 -> "50 uur"
+        function formatMinutes(min) {
+            const m = Math.max(1, Math.round(min));
+            if (m < 60) return `${m} min`;
+            const hrs = Math.floor(m / 60), rest = m % 60;
+            if (hrs >= 10 || rest === 0) return `${formatNum(Math.round(m / 60))} uur`;
+            return `${hrs} uur en ${rest} min`;
+        }
+
+        function kcalQuip(kcal) {
+            if (kcal <= 300) return 'Een tussendoortje. Je lichaam haalt zijn schouders op.';
+            if (kcal <= 900) return 'Een stevige maaltijd. Niks mis mee.';
+            if (kcal <= KCAL_PER_DAY) return 'Een flinke hap uit je dag (± 2.000 kcal voor een volwassene).';
+            if (kcal <= 5 * KCAL_PER_DAY) return 'Meer dan een hele dag aan energie. Je deelt toch wel? 🙏';
+            return 'Dat is geen maaltijd meer, dat is een wintervoorraad. 🐻';
+        }
+
+        // ===== Nugget-index: wat had je nog meer kunnen kopen? =====
+        // Big Mac: prices.json "bigmac" als die er is, anders The Economist Big Mac Index
+        // (Nederland, juli 2026). Netflix: help.netflix.com, Nederland, september 2026.
+        const BIGMAC_FALLBACK = Object.freeze({ price: 6.26, label: 'The Economist Big Mac Index, Nederland, juli 2026' });
+        const NETFLIX_BASIS = Object.freeze({ price: 9.99, label: 'Netflix Basis, september 2026' });
+
+        function bigMacPrice(state = priceState) {
+            const bm = state && state.bigmac;
+            if (typeof bm === 'number' && bm > 0 && bm < 100) {
+                const d = parsePriceDate(state.timestamp);
+                return { price: bm, label: `mediaan uit onze prijzen${d ? ` van ${formatPriceDate(d)}` : ''}`, own: true };
+            }
+            return { ...BIGMAC_FALLBACK, own: false };
+        }
+
+        function equivalents(price, bigmac) {
+            return {
+                bigmacs: price / bigmac.price,
+                netflix: price / NETFLIX_BASIS.price
+            };
+        }
+
+        // Het plan waar de extra's over gaan: hetzelfde als het antwoord bovenaan.
+        // Kan het precies niet (en staat verspillen uit), dan de tip: minstens n.
+        function extrasPlan(n, prices, waste) {
+            const exact = cheapestExact(n, prices);
+            const atLeast = cheapestAtLeast(n, prices);
+            if (waste) return { plan: atLeast, viaTip: false };
+            return exact ? { plan: exact, viaTip: false } : { plan: atLeast, viaTip: Boolean(atLeast) };
+        }
+
+        function renderExtras() {
+            const fold = document.getElementById('extrasFold');
+            const out = document.getElementById('extrasOut');
+            if (!fold.open) return;
+            const n = enteredCount();
+            if (n === null) {
+                out.replaceChildren(h('p', { className: 'tool-msg' }, '☝️ Vul bovenaan een aantal in, dan rekenen we hier de sausjes, calorieën en Big Macs uit.'));
+                return;
+            }
+            const prices = currentPrices();
+            const { plan, viaTip } = extrasPlan(n, prices, document.getElementById('wasteMode').checked);
+            if (!plan) { out.replaceChildren(h('p', { className: 'tool-msg' }, 'Geen prijzen beschikbaar.')); return; }
+            const nug = plan.total;
+            const intro = viaTip
+                ? h('p', { className: 'combo-note' }, `Precies ${n} kan niet, dus we gaan uit van de tip: ${nug} nuggets (${describePackages(plan)}).`)
+                : h('p', { className: 'combo-note' }, `Voor ${formatNum(nug)} nuggets: ${describePackages(plan)}.`);
+
+            // Sausjes
+            const sizes = boxSizes(prices);
+            const perBox = saucesPerBox(sizes);
+            const sauces = countSauces(plan, perBox);
+            const ratio = sauces > 0 ? nug / sauces : Infinity;
+            const edit = h('div', { className: 'sauce-edit' }, sizes.map(s => {
+                const inp = h('input', { type: 'number', min: '0', max: '9', step: '1', inputmode: 'numeric', value: String(perBox[s]), 'data-size': s, 'aria-label': `Sausjes bij een doos van ${s}` });
+                return h('label', {}, `doos van ${s}:`, inp);
+            }));
+            const sauceCard = h('div', { className: 'tool-card' },
+                h('h4', {}, '🥫 Sausjes'),
+                h('p', {}, 'Je krijgt er ', h('strong', {}, `${sauces} ${sauces === 1 ? 'sausje' : 'sausjes'}`), ' bij.'),
+                h('p', { className: 'tool-sub' }, sauces === 0
+                    ? 'Droog dippen. Stoer, maar waarom?'
+                    : `Eén sausje per ${formatNum(ratio, 1)} nuggets. ${ratio > 8 ? 'Zuinig dippen dus!' : 'Dippen zonder zorgen.'}`),
+                h('details', { className: 'mini-fold' },
+                    h('summary', {}, `Volgens ons: ${sizes.map(s => `${s} → ${defaultSauces(s)}`).join(', ')}. Klopt dit bij jouw McDonald's?`),
+                    edit));
+            edit.addEventListener('input', evt => {
+                const inp = evt.target;
+                const v = Number(inp.value);
+                if (!Number.isInteger(v) || v < 0 || v > 9) return;
+                const custom = readJson(SAUCE_KEY) || {};
+                custom[inp.dataset.size] = v;
+                writeJson(SAUCE_KEY, custom);
+                const p = extrasPlan(n, currentPrices(), document.getElementById('wasteMode').checked).plan;
+                const count = countSauces(p, saucesPerBox(sizes));
+                const r = count > 0 ? p.total / count : Infinity;
+                sauceCard.querySelector('strong').textContent = `${count} ${count === 1 ? 'sausje' : 'sausjes'}`;
+                sauceCard.querySelector('.tool-sub').textContent = count === 0
+                    ? 'Droog dippen. Stoer, maar waarom?'
+                    : `Eén sausje per ${formatNum(r, 1)} nuggets. ${r > 8 ? 'Zuinig dippen dus!' : 'Dippen zonder zorgen.'}`;
+            });
+
+            // Voedingswaarde
+            const nut = nutritionFor(nug);
+            const saltPct = Math.round(nut.salt / SALT_PER_DAY * 100);
+            const nutCard = h('div', { className: 'tool-card' },
+                h('h4', {}, '🔥 Schaamtemeter'),
+                h('p', {}, h('strong', {}, `± ${formatNum(Math.round(nut.kcal))} kcal`), ` · ${formatNum(nut.fat, 1)} g vet · ${formatNum(nut.salt, 1)} g zout`,
+                    saltPct >= 100 ? ` (${formatNum(saltPct)}% van je dagelijkse zout 🧂)` : ''),
+                h('p', {}, `🚲 ± ${formatMinutes(nut.bikeMin)} fietsen of 🚶 ± ${formatMinutes(nut.walkMin)} wandelen om het eraf te trappen.`),
+                h('p', { className: 'tool-sub' }, kcalQuip(nut.kcal)));
+
+            // Nugget-index
+            const bm = bigMacPrice();
+            const eq = equivalents(plan.price, bm);
+            const indexCard = h('div', { className: 'tool-card' },
+                h('h4', {}, '💸 Nugget-index'),
+                h('p', {}, `Voor ${formatEuro(plan.price)} had je ook kunnen hebben:`),
+                h('p', {}, '🍔 ', h('strong', {}, `${formatNum(eq.bigmacs, 1)} Big ${formatNum(eq.bigmacs, 1) === '1' ? 'Mac' : 'Macs'}`), h('br'),
+                    '📺 ', h('strong', {}, `${formatNum(eq.netflix, 1)} ${formatNum(eq.netflix, 1) === '1' ? 'maand' : 'maanden'} Netflix`)),
+                h('p', { className: 'tool-sub' }, eq.bigmacs < 1 ? 'Nog niet eens een hele Big Mac. Nuggets winnen.' : eq.bigmacs >= 10 ? 'Een hele stapel hamburgers. Je hebt gekozen. 🍗' : 'Kip of rund? Jij kiest.'));
+
+            const kind = priceState && priceState.kind === 'bezorgprijs' && !bm.own
+                ? ' Let op: de nuggetprijzen zijn bezorgprijzen, de Big Mac niet. Kip en rund, appels en peren.'
+                : '';
+            const foot = h('p', { className: 'footnote' },
+                '🥫 Sausjes: onze aanname, McDonald\'s zet het niet op de site. ',
+                '🔥 Voedingswaarde per nugget (zonder saus): ',
+                h('a', { href: NUTRITION.source, target: '_blank', rel: 'noopener' }, 'mcdonalds.com/nl'),
+                ` (${NUTRITION.checked}). Beweegminuten zijn een indicatie voor iemand van 70 kg (fietsen ± ${KCAL_PER_MIN.fietsen}, wandelen ± ${KCAL_PER_MIN.wandelen} kcal per minuut). `,
+                `💸 Big Mac ${formatEuro(bm.price)} (${bm.label}), ${NETFLIX_BASIS.label} ${formatEuro(NETFLIX_BASIS.price)} per maand.`, kind);
+
+            out.replaceChildren(intro, h('div', { className: 'extras-grid' }, sauceCard, nutCard, indexCard), foot);
+        }
+
+        // ===== Doosjesspeeltuin: eigen doosjesmaten =====
+        const PLAY_MAX_SIZE = 100;
+        const PLAY_MAX_BOXES = 6;
+        const PLAY_GRID = 60;
+
+        // "6, 9 20;4" -> { ok, sizes: [4, 6, 9, 20] } of een vriendelijke melding
+        function parseBoxList(raw) {
+            const text = String(raw == null ? '' : raw).trim();
+            if (text === '') return { ok: false, kind: 'leeg', message: 'Vul een paar doosmaten in, bijvoorbeeld 6, 9, 20.' };
+            const parts = text.split(/[\s,;/+]+/).filter(Boolean);
+            const sizes = [];
+            for (const p of parts) {
+                if (!/^\d+$/.test(p)) return { ok: false, kind: 'ongeldig', message: `🤔 "${p.slice(0, 12)}" is geen doosmaat. Alleen hele getallen, graag.` };
+                const n = Number(p.replace(/^0+(?=\d)/, '').slice(0, 6));
+                if (n < 1 || n > PLAY_MAX_SIZE) return { ok: false, kind: 'bereik', message: `📦 Doosjes van 1 tot en met ${PLAY_MAX_SIZE} nuggets, graag. Een doos van ${formatNum(n)} past niet door het luikje.` };
+                if (!sizes.includes(n)) sizes.push(n);
+            }
+            if (sizes.length > PLAY_MAX_BOXES) return { ok: false, kind: 'teveel', message: `🗃️ Hooguit ${PLAY_MAX_BOXES} verschillende doosjes. De kassamedewerker heeft ook maar twee handen.` };
+            return { ok: true, sizes: sizes.sort((a, b) => a - b) };
+        }
+
+        // Alles over een eigen doosjesset. Bij ggd > 1 kunnen oneindig veel aantallen
+        // nooit; dan rekenen we ook het grootste gat binnen de ggd-vouden uit.
+        function boxSetInfo(sizes, gridLimit = PLAY_GRID) {
+            const s = [...new Set(sizes)].sort((a, b) => a - b);
+            const g = s.reduce(gcd);
+            const can = new Array(gridLimit + 1).fill(false);
+            can[0] = true;
+            for (let m = 1; m <= gridLimit; m++) can[m] = s.some(x => x <= m && can[m - x]);
+            if (g === 1) {
+                const gap = largestImpossible(s);
+                return { gcd: 1, infinite: false, largest: gap.largest, count: gap.impossible.length, can };
+            }
+            const inner = largestImpossible(s.map(x => x / g)); // ggd is daar 1
+            return { gcd: g, infinite: true, largest: null, count: Infinity, largestMultiple: inner.largest * g, can };
+        }
+
+        function playPresets() {
+            const nl = boxSizes(currentPrices());
+            const withHm = [...new Set([HAPPY_MEAL_BOX, ...nl])].sort((a, b) => a - b);
+            return [
+                { label: `🇳🇱 NL nu (${nl.join('/')})`, sizes: nl },
+                { label: `🎈 Met Happy Meal (${withHm.join('/')})`, sizes: withHm },
+                { label: '🇺🇸 Ouderwets VS (6/9/20)', sizes: [6, 9, 20] },
+                { label: '🤷 Alleen 6 en 20', sizes: [6, 20] }
+            ];
+        }
+
+        function renderPlayground() {
+            const fold = document.getElementById('playFold');
+            if (!fold.open) return;
+            const input = document.getElementById('playInput');
+            const check = parseBoxList(input.value);
+            const current = check.ok ? check.sizes.join() : '';
+            document.getElementById('playPresets').replaceChildren(...playPresets().map(p => {
+                const b = h('button', { type: 'button', className: 'pill-btn', 'aria-pressed': p.sizes.join() === current ? 'true' : 'false' }, p.label);
+                b.addEventListener('click', () => { input.value = p.sizes.join(', '); renderPlayground(); });
+                return b;
+            }));
+            const out = document.getElementById('playOut');
+            if (!check.ok) { out.replaceChildren(toolMessage(check)); return; }
+
+            const info = boxSetInfo(check.sizes);
+            const list = check.sizes.join(', ').replace(/, (\d+)$/, ' en $1');
+            const lines = [];
+            if (info.infinite) {
+                lines.push(h('p', {}, '♾️ ', h('strong', {}, 'Oneindig veel aantallen kunnen nooit.')));
+                lines.push(h('p', { className: 'tool-sub' }, `Al je doosjes (${list}) zijn deelbaar door ${info.gcd}, dus elke bestelling ook. Een aantal dat niet deelbaar is door ${info.gcd} (zoals ${info.gcd + 1}) lukt dus nooit, hoe groot je honger ook is.`));
+                if (info.largestMultiple > 0) {
+                    lines.push(h('p', { className: 'tool-sub' }, `Binnen de ${info.gcd}-vouden is ${info.largestMultiple} het grootste dat niet kan; daarboven lukt elk ${info.gcd}-voud.`));
+                }
+            } else if (info.largest === 0) {
+                lines.push(h('p', {}, '🎉 ', h('strong', {}, 'Alles kan!'), check.sizes.includes(1) ? ' Met een doosje van 1 is dat niet zo gek. Saai, maar efficiënt.' : ' Geen enkel gat.'));
+            } else {
+                lines.push(h('p', {}, '🕳️ Grootste aantal dat nooit kan: ', h('strong', {}, formatNum(info.largest))));
+                lines.push(h('p', {}, '❌ Zoveel aantallen kunnen nooit: ', h('strong', {}, formatNum(info.count)),
+                    h('span', { className: 'tool-sub' }, ` · vanaf ${formatNum(info.largest + 1)} lukt alles`)));
+            }
+            const cells = [];
+            for (let m = 1; m <= PLAY_GRID; m++) {
+                cells.push(h('li', { className: info.can[m] ? 'mini-cell' : 'mini-cell no', 'aria-label': `${m}: ${info.can[m] ? 'kan' : 'kan niet'}` }, m));
+            }
+            out.replaceChildren(h('div', { className: info.infinite || info.largest > 0 ? 'tool-card impossible' : 'tool-card' }, lines,
+                h('ul', { className: 'mini-grid', 'aria-label': `Welke aantallen van 1 tot en met ${PLAY_GRID} kunnen` }, cells),
+                h('p', { className: 'tool-sub', style: 'text-align:center' }, `1 t/m ${PLAY_GRID}; doorgestreept = kan niet`)));
+        }
+
+        // ===== Uitdaging van de dag =====
+        // Het getal komt alleen uit de datum (lokale dag van de bezoeker), nooit uit het invoerveld.
+        const CHALLENGE_START = '2026-09-29'; // uitdaging #1
+        const CHALLENGE_KEY = 'canitnugget.uitdaging.v1';
+
+        function dayString(date = new Date()) {
+            const p = n => String(n).padStart(2, '0');
+            return `${date.getFullYear()}-${p(date.getMonth() + 1)}-${p(date.getDate())}`;
+        }
+
+        // Dagnummer (UTC, dus geen gedoe met zomertijd) voor "2026-09-29"
+        function dayNumber(day) {
+            const [y, m, d] = day.split('-').map(Number);
+            return Math.round(Date.UTC(y, m - 1, d) / 86400000);
+        }
+
+        function challengeIndex(day) {
+            return dayNumber(day) - dayNumber(CHALLENGE_START) + 1;
+        }
+
+        // FNV-1a over de datum -> 1..100. Deterministisch: iedereen krijgt hetzelfde getal.
+        function dailyNumber(day) {
+            let hash = 0x811c9dc5;
+            for (const ch of `canitnugget:${day}`) {
+                hash ^= ch.charCodeAt(0);
+                hash = Math.imul(hash, 0x01000193) >>> 0;
+            }
+            return 1 + (hash % 100);
+        }
+
+        // Reeks bijhouden: alleen goede antwoorden op opeenvolgende dagen tellen
+        function updateStreak(state, day, correct) {
+            const s = { streak: 0, best: 0, lastWin: null, ...(state || {}) };
+            if (correct) {
+                s.streak = s.lastWin && dayNumber(day) - dayNumber(s.lastWin) === 1 ? s.streak + 1 : (s.lastWin === day ? s.streak : 1);
+                s.lastWin = day;
+                s.best = Math.max(s.best, s.streak);
+            } else {
+                s.streak = 0;
+            }
+            return s;
+        }
+
+        // Huidige reeks: vervalt als je gisteren niet goed speelde
+        function currentStreak(state, day) {
+            if (!state || !state.lastWin) return 0;
+            return dayNumber(day) - dayNumber(state.lastWin) <= 1 ? state.streak : 0;
+        }
+
+        // Wordle-stijl, zonder het getal te verklappen
+        function challengeShareText({ index, correct, crown, streak }) {
+            return `Can It Nugget #${index} 🍗 ${correct ? '✅' : '❌'}${crown ? '👑' : ''}${streak > 0 ? ` 🔥${streak}` : ''}\ncanitnugget.nl`;
+        }
+
+        // Antwoord beoordelen. combo = { maat: aantal }; leeg = alleen "ja".
+        function judgeChallenge(n, prices, answer, combo) {
+            const best = cheapestExact(n, prices);
+            const possible = Boolean(best);
+            const correct = (answer === 'ja') === possible;
+            const sizes = boxSizes(prices);
+            const given = sizes.filter(s => (combo[s] || 0) > 0);
+            const total = given.reduce((t, s) => t + s * combo[s], 0);
+            const cents = given.reduce((t, s) => t + combo[s] * Math.round(prices[s] * 100), 0);
+            const gaveCombo = answer === 'ja' && given.length > 0 && total === n;
+            return { possible, correct, best, gaveCombo, comboCents: cents, crown: correct && gaveCombo && best && cents === best.cents };
+        }
+
+        const challengeState = { day: null, combo: {} };
+
+        function readChallenge() {
+            const s = readJson(CHALLENGE_KEY);
+            return s && typeof s === 'object' ? s : {};
+        }
+
+        function renderChallenge() {
+            const fold = document.getElementById('challengeFold');
+            const day = dayString();
+            const index = challengeIndex(day);
+            document.getElementById('challengeNote').textContent = `(#${index} · elke dag een nieuw aantal)`;
+            if (!fold.open) return;
+            if (challengeState.day !== day) { challengeState.day = day; challengeState.combo = {}; }
+            const n = dailyNumber(day);
+            const prices = currentPrices();
+            const sizes = boxSizes(prices);
+            const saved = readChallenge();
+            const out = document.getElementById('challengeOut');
+            const question = h('p', { className: 'challenge-q' }, 'Vandaag: ', h('strong', {}, `${n} nuggets`), '. Kan dat? En wat is de goedkoopste combinatie?');
+
+            if (saved.played && saved.played.day === day) {
+                out.replaceChildren(question, challengeResult(n, index, day, saved));
+                return;
+            }
+
+            const combo = challengeState.combo;
+            const sum = h('p', { className: 'challenge-sum', 'aria-live': 'polite' });
+            const msg = h('p', { className: 'challenge-sum' });
+            const updateSum = () => {
+                const total = sizes.reduce((t, s) => t + s * (combo[s] || 0), 0);
+                const cents = sizes.reduce((t, s) => t + (combo[s] || 0) * Math.round(prices[s] * 100), 0);
+                sum.textContent = total === 0
+                    ? 'Denk je dat het kan? Stel dan (als je durft) je combinatie samen.'
+                    : `Jouw combinatie: ${total} nuggets voor ${formatEuro(cents / 100)}${total === n ? ' 🎯' : ''}`;
+                msg.textContent = '';
+            };
+            const steppers = sizes.map(s => {
+                const val = h('output', {}, combo[s] || 0);
+                const step = d => () => {
+                    combo[s] = Math.min(Math.max((combo[s] || 0) + d, 0), 99);
+                    val.textContent = combo[s];
+                    updateSum();
+                };
+                const minus = h('button', { type: 'button', className: 'pill-btn', 'aria-label': `Een doos van ${s} minder` }, '−');
+                const plus = h('button', { type: 'button', className: 'pill-btn', 'aria-label': `Een doos van ${s} erbij` }, '+');
+                minus.addEventListener('click', step(-1));
+                plus.addEventListener('click', step(1));
+                return h('span', { className: 'stepper' }, minus, val, plus, `× ${s}`);
+            });
+            const no = h('button', { type: 'button', className: 'pill-btn big' }, '❌ Kan niet');
+            const yes = h('button', { type: 'button', className: 'pill-btn big' }, '✅ Kan wel!');
+            const submit = answer => {
+                const total = sizes.reduce((t, s) => t + s * (combo[s] || 0), 0);
+                if (answer === 'ja' && total > 0 && total !== n) {
+                    msg.textContent = `🤏 Je combinatie maakt ${total}, niet ${n}. Pas hem aan, of zet alles op 0 om alleen "ja" te zeggen.`;
+                    return;
+                }
+                const verdict = judgeChallenge(n, prices, answer, answer === 'ja' ? combo : {});
+                const state = updateStreak(saved.streak, day, verdict.correct);
+                writeJson(CHALLENGE_KEY, {
+                    streak: state,
+                    played: { day, answer, combo: answer === 'ja' ? { ...combo } : {}, correct: verdict.correct, crown: Boolean(verdict.crown) }
+                });
+                renderChallenge();
+                const shareBtn = document.querySelector('#challengeOut .share-row button');
+                if (shareBtn) shareBtn.focus();
+            };
+            no.addEventListener('click', () => submit('nee'));
+            yes.addEventListener('click', () => submit('ja'));
+            updateSum();
+            out.replaceChildren(question,
+                h('div', { className: 'stepper-row', role: 'group', 'aria-label': 'Jouw combinatie (mag leeg blijven)' }, steppers),
+                sum,
+                h('div', { className: 'challenge-actions' }, no, yes),
+                msg);
+        }
+
+        function challengeResult(n, index, day, saved) {
+            const prices = currentPrices();
+            const played = saved.played;
+            const verdict = judgeChallenge(n, prices, played.answer, played.combo || {});
+            const streak = currentStreak(saved.streak, day);
+            const lines = [];
+            lines.push(h('p', {}, verdict.correct ? '🎉 ' : '😬 ', h('strong', {}, verdict.correct ? 'Goed!' : 'Helaas!'),
+                ` ${n} nuggets ${verdict.possible ? 'kan wél' : 'kan níet'}.`));
+            if (verdict.possible) {
+                lines.push(h('p', {}, '👑 Goedkoopst: ', h('strong', {}, describePackages(verdict.best)), ` voor ${formatEuro(verdict.best.price)}`));
+                if (verdict.gaveCombo) {
+                    lines.push(h('p', { className: 'tool-sub' }, verdict.crown
+                        ? 'En jouw combinatie is precies de goedkoopste. Nuggetmeester! 👑'
+                        : `Jouw combinatie kost ${formatEuro(verdict.comboCents / 100)}, dat is ${formatEuro((verdict.comboCents - verdict.best.cents) / 100)} duurder. Bijna!`));
+                }
+            } else {
+                lines.push(h('p', { className: 'tool-sub' }, 'Geen enkele combinatie van doosjes komt precies uit. Sneaky, hè?'));
+            }
+            lines.push(h('p', {}, streak > 0 ? `🔥 ${streak} ${streak === 1 ? 'dag' : 'dagen'} op rij goed` : '🔥 Reeks: 0. Morgen nieuwe kansen!',
+                saved.streak && saved.streak.best > 1 ? h('span', { className: 'tool-sub' }, ` · record: ${saved.streak.best}`) : ''));
+            const text = challengeShareText({ index, correct: verdict.correct, crown: verdict.crown, streak });
+            const status = h('span', { role: 'status', className: 'share-status' });
+            const btn = h('button', { type: 'button', className: 'pill-btn' }, '📋 Deel je score');
+            btn.addEventListener('click', async () => {
+                const ok = await copyText(text);
+                status.textContent = ok ? '✅ Gekopieerd!' : 'Kopiëren lukte niet; selecteer de tekst hierboven.';
+            });
+            lines.push(h('div', { className: 'share-text' }, text), h('div', { className: 'share-row' }, btn, status));
+            lines.push(h('p', { className: 'tool-sub' }, 'Morgen een nieuw aantal. Niet verklappen in de groepsapp! 🤫'));
+            return h('div', { className: verdict.correct ? 'tool-card' : 'tool-card impossible' }, lines);
         }
 
         // ===== Prijzen =====
         // Eén bron van waarheid: /prices.json. Lukt ophalen niet, dan de laatst
         // bekende goede prijzen uit localStorage, en anders de ingebouwde reserve.
-        // De reserve wordt nooit opgeslagen. Onbekende velden in prices.json
+        // (bijv. "veggie", "stores" of "history") worden genegeerd; "bigmac" en "kind" zijn optioneel.
         // (later bijv. "veggie" of "history") worden genegeerd.
         const PRICES_URL = '/prices.json';
         const STORAGE_KEY = 'canitnugget.prijzen.v2';
@@ -2609,10 +3337,15 @@
                 }
             }
             if (Object.keys(prices).length === 0) return null;
+            // Optioneel (nieuwere prices.json): Big Mac-mediaan en soort prijs
+            const bm = typeof data.bigmac === 'number' ? data.bigmac
+                : data.bigmac && typeof data.bigmac.price === 'number' ? data.bigmac.price : null;
             return {
                 prices,
                 timestamp: typeof data.timestamp === 'string' ? data.timestamp : null,
-                source: safeUrl(data.source)
+                source: safeUrl(data.source),
+                bigmac: bm !== null && bm > 0 && bm < 100 ? bm : null,
+                kind: typeof data.kind === 'string' ? data.kind.slice(0, 40) : null
             };
         }
 
@@ -2686,7 +3419,7 @@
         }
 
         function applyPrices(data, origin) {
-            priceState = { prices: data.prices, timestamp: data.timestamp, source: data.source, origin };
+            priceState = { prices: data.prices, timestamp: data.timestamp, source: data.source, bigmac: data.bigmac || null, kind: data.kind || null, origin };
             renderPackages();
             renderPriceInfo();
             renderPriceChart(data.prices);

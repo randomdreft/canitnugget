@@ -21,6 +21,9 @@ Verder:
 - **Bestellen voor een groep**: aantal personen × nuggets per persoon; de goedkoopste bestelling voor minstens dat aantal, bestelbare aantallen vlakbij, eerlijk verdelen en het Tikkie-bedrag per persoon.
 - **Budgetmodus**: vul een bedrag in (`15`, `15,50`, `€ 15`) en zie hoeveel nuggets je er maximaal voor krijgt, met de combinatie en wat je overhoudt (tot € 1.000).
 - **Getallenrooster**: een ingeklapt spiekrooster van 1 t/m 100 (op de telefoon 60) met welke aantallen wel en niet kunnen. Staat bewust dicht: zelf ontdekken is leuker.
+- **Sausjes, calorieën en Big Macs**: bij jouw bestelling het aantal sausjes (onze aanname, zelf aan te passen), kcal/vet/zout met fiets- en wandelminuten (voedingswaarde van mcdonalds.com/nl) en de nugget-index: hoeveel Big Macs of maanden Netflix je voor hetzelfde geld had.
+- **Uitdaging van de dag**: elke dag één aantal (uit de datum, voor iedereen hetzelfde). Kan het, en wat is de goedkoopste combinatie? Met reeks 🔥 en een deeltekst zonder spoilers.
+- **Doosjesspeeltuin**: verzin je eigen doosmaten en zie het grootste aantal dat nooit kan, hoeveel er nooit kunnen en een minirooster. Met een ggd groter dan 1 kan er oneindig veel niet.
 - **Waarom 43?**: ingeklapte uitleg over het McNugget-getal, uitgerekend uit de doosjes die er zijn.
 - **Paaseieren** bij een paar bijzondere aantallen. Probeer 42 maar eens.
 
