@@ -4,7 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Can It Nugget? - McDonald's Nugget Calculator</title>
+    <meta name="description" content="Kun je precies 14 nuggets bestellen bij McDonald's? Check direct of jouw aantal kan met doosjes van 6, 9 en 20, en wat de goedkoopste combinatie kost.">
+    <link rel="canonical" href="https://canitnugget.nl/">
+    <meta name="theme-color" content="#c0392b" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1d1c22" media="(prefers-color-scheme: dark)">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Pictogrammen: SVG-nugget, met PNG/ICO als reserve -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Delen (Open Graph / Twitter) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:site_name" content="Can It Nugget?">
+    <meta property="og:url" content="https://canitnugget.nl/">
+    <meta property="og:title" content="Can It Nugget? Kan jouw aantal nuggets?">
+    <meta property="og:description" content="Niet elk aantal nuggets is te bestellen. Check of het jouwe kan, en wat de goedkoopste combinatie kost.">
+    <meta property="og:image" content="https://canitnugget.nl/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Een nugget naast de tekst: Can It Nugget? 43 kan niet.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Can It Nugget? Kan jouw aantal nuggets?">
+    <meta name="twitter:description" content="Niet elk aantal nuggets is te bestellen. Check of het jouwe kan, en wat de goedkoopste combinatie kost.">
+    <meta name="twitter:image" content="https://canitnugget.nl/og-image.png">
     <style>
+        /* ===== Kleuren en maten (tokens) =====
+           Alle kleuren staan hier; donkere modus overschrijft alleen deze tokens.
+           Tekstkleuren zijn gekozen op minimaal WCAG AA (4,5:1) tegen hun achtergrond.
+           De grafiek leest de --chart-*-tokens uit via JavaScript (chartColors). */
+        :root {
+            color-scheme: light dark;
+            --page-bg: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            --surface: #ffffff;
+            --text: #222222;
+            --text-muted: #595959;
+            --heading: #333333;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-strong: rgba(0, 0, 0, 0.2);
+
+            --header-bg: linear-gradient(135deg, #c0392b, #b8460b);
+            --header-text: #ffffff;
+
+            --accent: #c62828;
+            --focus-ring: rgba(198, 40, 40, 0.4);
+            --link: #0056b3;
+
+            --input-bg: #ffffff;
+            --input-border: #8a8a8a;
+
+            --btn-bg: linear-gradient(135deg, #1f7a70, #17665d);
+            --btn-text: #ffffff;
+
+            --panel: #f8f9fa;
+            --tile: #ffffff;
+            --examples-bg: #e3f2fd;
+            --examples-heading: #0d47a1;
+            --ok: #2e7d32;
+            --bad: #d32f2f;
+
+            --yes-bg: linear-gradient(135deg, #d4f5e4, #b3ead3);
+            --yes-text: #1e4d31;
+            --yes-border: #3d8b40;
+            --no-bg: linear-gradient(135deg, #ffe4e7, #ffc9ce);
+            --no-text: #8b1a1a;
+            --no-border: #d32f2f;
+            --pending-bg: #f5f5f5;
+            --pending-text: #555555;
+            --pending-border: #dddddd;
+            --invalid-bg: #fff8e1;
+            --invalid-text: #6b4700;
+            --invalid-border: #ffca28;
+            --stale-text: #7a4f00;
+            --stale-bg: #fff3cd;
+            --divider: rgba(0, 0, 0, 0.2);
+
+            --switch-off: #8a8a8a;
+            --switch-on: #c2410c;
+            --switch-knob: #ffffff;
+
+            --chart-section-bg: #fff8f0;
+            --chart-bg: #ffffff;
+            --chart-text: #5c5c5c;
+            --chart-grid: #eeeeee;
+            --chart-axis: #bbbbbb;
+            --chart-exact: #d9441c;
+            --chart-atleast: #1f8a7d;
+            --chart-impossible: #c62828;
+            --chart-mark: #333333;
+            --chart-hover: #999999;
+            --tip-bg: #333333;
+            --tip-text: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --page-bg: linear-gradient(135deg, #4a1c24, #123f3b);
+                --surface: #1d1c22;
+                --text: #ececf0;
+                --text-muted: #b4b4be;
+                --heading: #ececf0;
+                --shadow: rgba(0, 0, 0, 0.35);
+                --shadow-strong: rgba(0, 0, 0, 0.5);
+
+                --header-bg: linear-gradient(135deg, #8e2a1f, #8f3a0c);
+
+                --accent: #ff8a80;
+                --focus-ring: rgba(255, 138, 128, 0.45);
+                --link: #8ab4ff;
+
+                --input-bg: #2a2930;
+                --input-border: #7a7984;
+
+                --panel: #25242b;
+                --tile: #2f2e36;
+                --examples-bg: #1a2735;
+                --examples-heading: #90caf9;
+                --ok: #66bb6a;
+                --bad: #ef5350;
+
+                --yes-bg: linear-gradient(135deg, #163826, #1c4531);
+                --yes-text: #b6f0cc;
+                --yes-border: #4caf50;
+                --no-bg: linear-gradient(135deg, #3f171b, #4a1a1f);
+                --no-text: #ffc4c9;
+                --no-border: #ef5350;
+                --pending-bg: #26252c;
+                --pending-text: #c2c2ca;
+                --pending-border: #45444c;
+                --invalid-bg: #362b0f;
+                --invalid-text: #ffe08a;
+                --invalid-border: #c9a227;
+                --stale-text: #ffd27a;
+                --stale-bg: #3a2e10;
+                --divider: rgba(255, 255, 255, 0.2);
+
+                --switch-off: #6b6a73;
+                --switch-on: #e8590c;
+
+                --chart-section-bg: #2a231d;
+                --chart-bg: #1f1e24;
+                --chart-text: #b4b4be;
+                --chart-grid: #34333b;
+                --chart-axis: #5a5962;
+                --chart-exact: #ff7a52;
+                --chart-atleast: #4fd1c1;
+                --chart-impossible: #ff6b6b;
+                --chart-mark: #eeeeee;
+                --chart-hover: #8a8994;
+                --tip-bg: #f0f0f3;
+                --tip-text: #111111;
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +167,8 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            background: var(--page-bg);
+            color: var(--text);
             min-height: 100vh;
             padding: 20px;
         }
@@ -21,16 +176,16 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
+            background: var(--surface);
             border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px var(--shadow);
             overflow: hidden;
         }
 
         .header {
-            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
-            color: white;
-            padding: 40px;
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 36px 40px;
             text-align: center;
         }
 
@@ -38,11 +193,21 @@
             font-size: 2.5em;
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3em;
+        }
+
+        .header h1 .logo {
+            width: 1.1em;
+            height: 1.1em;
+            flex-shrink: 0;
+            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
         }
 
         .header p {
             font-size: 1.2em;
-            opacity: 0.9;
         }
 
         .content {
@@ -51,7 +216,7 @@
 
         .input-section {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .input-group {
@@ -66,34 +231,36 @@
         #nuggetCount {
             font-size: 1.5em;
             padding: 15px 20px;
-            border: 3px solid #e0e0e0;
+            border: 3px solid var(--input-border);
             border-radius: 15px;
             width: 150px;
             text-align: center;
+            background: var(--input-bg);
+            color: var(--text);
             transition: all 0.3s ease;
         }
 
         #nuggetCount:focus {
             outline: none;
-            border-color: #ff6b6b;
-            box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px var(--focus-ring);
         }
 
         button {
-            background: linear-gradient(135deg, #4ecdc4, #44a08d);
-            color: white;
+            background: var(--btn-bg);
+            color: var(--btn-text);
             border: none;
             padding: 15px 30px;
             font-size: 1.2em;
             border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px var(--shadow-strong);
         }
 
         button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 25px var(--shadow-strong);
         }
 
         .result {
@@ -109,32 +276,32 @@
         }
 
         .result.yes {
-            background: linear-gradient(135deg, #a8e6cf, #88d8c0);
-            color: #2d5a3d;
-            border: 3px solid #4caf50;
+            background: var(--yes-bg);
+            color: var(--yes-text);
+            border: 3px solid var(--yes-border);
         }
 
         .result.no {
-            background: linear-gradient(135deg, #ffb3ba, #ff8a95);
-            color: #d32f2f;
-            border: 3px solid #f44336;
+            background: var(--no-bg);
+            color: var(--no-text);
+            border: 3px solid var(--no-border);
         }
 
         .result.pending {
-            background: #f5f5f5;
-            color: #666;
-            border: 3px solid #ddd;
+            background: var(--pending-bg);
+            color: var(--pending-text);
+            border: 3px solid var(--pending-border);
         }
 
         /* Ongeldige invoer: vriendelijk, geen alarm */
         .result.invalid {
-            background: #fff8e1;
-            color: #7a5200;
-            border: 3px solid #ffca28;
+            background: var(--invalid-bg);
+            color: var(--invalid-text);
+            border: 3px solid var(--invalid-border);
         }
 
         .packages {
-            background: #f8f9fa;
+            background: var(--panel);
             padding: 30px;
             border-radius: 15px;
             margin-top: 30px;
@@ -143,7 +310,7 @@
         .packages h3 {
             text-align: center;
             margin-bottom: 20px;
-            color: #333;
+            color: var(--heading);
         }
 
         .package-grid {
@@ -154,40 +321,40 @@
         }
 
         .package {
-            background: white;
+            background: var(--tile);
             padding: 20px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px var(--shadow);
             border: 3px solid transparent;
             transition: all 0.3s ease;
         }
 
         .package:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px var(--shadow-strong);
         }
 
         .package-number {
             font-size: 2em;
             font-weight: bold;
-            color: #ff6b6b;
+            color: var(--accent);
             margin-bottom: 10px;
         }
 
         .package-label {
-            color: #666;
+            color: var(--text-muted);
             font-size: 0.9em;
         }
 
         .package-price {
             font-size: 0.9em;
-            color: #555;
+            color: var(--text-muted);
             margin-top: 5px;
         }
 
         .examples {
-            background: #e3f2fd;
+            background: var(--examples-bg);
             padding: 30px;
             border-radius: 15px;
             margin-top: 30px;
@@ -196,7 +363,7 @@
         .examples h3 {
             text-align: center;
             margin-bottom: 20px;
-            color: #1976d2;
+            color: var(--examples-heading);
         }
 
         .example-grid {
@@ -207,7 +374,7 @@
         }
 
         .example {
-            background: white;
+            background: var(--tile);
             color: inherit;
             font: inherit;
             width: 100%;
@@ -215,23 +382,23 @@
             border: none;
             border-radius: 10px;
             text-align: center;
-            border-left: 5px solid #4caf50;
+            border-left: 5px solid var(--ok);
             box-shadow: none;
             cursor: pointer;
         }
 
         .example:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px var(--shadow);
         }
 
         .example:focus-visible {
-            outline: 3px solid #1976d2;
+            outline: 3px solid var(--examples-heading);
             outline-offset: 2px;
         }
 
         .example.impossible {
-            border-left-color: #f44336;
+            border-left-color: var(--bad);
         }
 
         .example-number {
@@ -244,18 +411,18 @@
         .example-text {
             display: block;
             font-size: 0.9em;
-            color: #666;
+            color: var(--text-muted);
         }
 
         .price-info {
             text-align: center;
             margin-top: 20px;
             font-size: 0.8em;
-            color: #666;
+            color: var(--text-muted);
         }
 
         .price-info a {
-            color: #007bff;
+            color: var(--link);
             text-decoration: none;
         }
 
@@ -264,7 +431,7 @@
         }
 
         .price-info.stale {
-            color: #8a5a00;
+            color: var(--stale-text);
         }
 
         .price-info .stale-note {
@@ -272,8 +439,8 @@
             margin-left: 4px;
             padding: 1px 8px;
             border-radius: 10px;
-            background: #fff3cd;
-            color: #7a5200;
+            background: var(--stale-bg);
+            color: var(--stale-text);
             font-weight: 600;
         }
 
@@ -281,11 +448,11 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 20px;
             font-size: 0.95em;
-            color: #555;
+            color: var(--text-muted);
             cursor: pointer;
             user-select: none;
+            text-align: left;
         }
 
         .waste-toggle input {
@@ -299,7 +466,7 @@
             position: relative;
             width: 42px;
             height: 24px;
-            background: #ddd;
+            background: var(--switch-off);
             border-radius: 12px;
             transition: background 0.3s ease;
             flex-shrink: 0;
@@ -312,14 +479,14 @@
             left: 3px;
             width: 18px;
             height: 18px;
-            background: white;
+            background: var(--switch-knob);
             border-radius: 50%;
             box-shadow: 0 1px 3px rgba(0,0,0,0.3);
             transition: transform 0.3s ease;
         }
 
         .waste-toggle input:checked + .switch {
-            background: #ff8e53;
+            background: var(--switch-on);
         }
 
         .waste-toggle input:checked + .switch::after {
@@ -327,34 +494,89 @@
         }
 
         .waste-toggle input:focus-visible + .switch {
-            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 0 0 3px var(--focus-ring);
         }
 
         .waste-tip {
             display: block;
             margin-top: 12px;
             padding-top: 12px;
-            border-top: 1px dashed rgba(0,0,0,0.2);
+            border-top: 1px dashed var(--divider);
         }
 
-        /* ===== Grafiek: aantal vs prijs ===== */
-        .chart-section {
-            background: #fff8f0;
-            padding: 30px;
+        /* ===== Inklapbare sectie (herbruikbaar) =====
+           <details class="fold" id="…">
+             <summary><span class="fold-title">…</span> <span class="fold-note">…</span></summary>
+             <div class="fold-body">…</div>
+           </details>
+           Wat bij openen getekend moet worden: onFoldOpen('id', fn) in het script. */
+        .fold {
             border-radius: 15px;
             margin-top: 30px;
         }
 
-        .chart-section h3 {
+        .fold > summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 18px 24px;
+            border-radius: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px 10px;
             text-align: center;
-            margin-bottom: 8px;
-            color: #333;
+            user-select: none;
+        }
+
+        .fold > summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .fold > summary::before {
+            content: '▸';
+            display: inline-block;
+            color: var(--text-muted);
+            transition: transform 0.2s ease;
+        }
+
+        .fold[open] > summary::before {
+            transform: rotate(90deg);
+        }
+
+        .fold > summary:hover .fold-title {
+            text-decoration: underline;
+        }
+
+        .fold > summary:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .fold-title {
+            font-weight: bold;
+            font-size: 1.17em;
+            color: var(--heading);
+        }
+
+        .fold-note {
+            font-size: 0.85em;
+            color: var(--text-muted);
+        }
+
+        .fold-body {
+            padding: 0 30px 30px;
+        }
+
+        /* ===== Grafiek: aantal vs prijs ===== */
+        .chart-section {
+            background: var(--chart-section-bg);
         }
 
         .chart-intro {
             text-align: center;
             font-size: 0.9em;
-            color: #666;
+            color: var(--text-muted);
             margin-bottom: 16px;
         }
 
@@ -364,7 +586,7 @@
             justify-content: center;
             gap: 6px 18px;
             font-size: 0.85em;
-            color: #555;
+            color: var(--text-muted);
             margin-bottom: 10px;
             list-style: none;
         }
@@ -381,10 +603,10 @@
 
         .chart-wrap {
             position: relative;
-            background: white;
+            background: var(--chart-bg);
             border-radius: 12px;
             padding: 8px 4px 4px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            box-shadow: 0 5px 15px var(--shadow);
             touch-action: pan-y;
         }
 
@@ -393,7 +615,7 @@
         }
 
         .chart-wrap:focus-visible {
-            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.45);
+            box-shadow: 0 0 0 3px var(--focus-ring);
         }
 
         .chart-wrap svg {
@@ -406,19 +628,19 @@
         .chart-wrap text {
             font-family: inherit;
             font-size: 12px;
-            fill: #777;
+            fill: var(--chart-text);
         }
 
         .chart-tip {
             position: absolute;
             pointer-events: none;
-            background: #333;
-            color: white;
+            background: var(--tip-bg);
+            color: var(--tip-text);
             font-size: 0.85em;
             line-height: 1.4;
             padding: 8px 11px;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px var(--shadow-strong);
             max-width: 260px;
             width: max-content;
             z-index: 2;
@@ -434,7 +656,7 @@
         .chart-hint {
             text-align: center;
             font-size: 0.8em;
-            color: #888;
+            color: var(--text-muted);
             margin-top: 10px;
         }
 
@@ -450,25 +672,115 @@
             border: 0;
         }
 
+        /* ===== Telefoon: compact, zodat het antwoord zonder scrollen in beeld is ===== */
         @media (max-width: 600px) {
+            body {
+                padding: 8px;
+            }
+
+            .container {
+                border-radius: 14px;
+            }
+
+            .header {
+                padding: 12px 14px;
+            }
+
             .header h1 {
-                font-size: 2em;
+                font-size: 1.6em;
+                margin-bottom: 2px;
+            }
+
+            .header p {
+                font-size: 0.9em;
             }
 
             .content {
-                padding: 24px 16px;
+                padding: 14px 12px 20px;
             }
 
-            .chart-section {
-                padding: 20px 10px;
+            .input-section {
+                margin-bottom: 12px;
             }
-            
+
             .input-group {
-                flex-direction: column;
+                flex-wrap: nowrap;
+                gap: 8px;
+                margin-bottom: 10px;
+                font-size: 0.95em;
             }
-            
+
             #nuggetCount {
-                width: 200px;
+                width: 96px;
+                font-size: 1.35em;
+                padding: 8px 10px;
+                border-radius: 12px;
+            }
+
+            .waste-toggle {
+                font-size: 0.85em;
+                gap: 8px;
+            }
+
+            .result {
+                margin: 0 0 16px;
+                padding: 14px 12px;
+                min-height: 0;
+                font-size: 1.1em;
+            }
+
+            .packages,
+            .examples {
+                padding: 14px 10px;
+                margin-top: 16px;
+            }
+
+            .packages h3,
+            .examples h3 {
+                margin-bottom: 10px;
+            }
+
+            .package-grid {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 8px;
+                margin-top: 10px;
+            }
+
+            .package {
+                padding: 10px 6px;
+                border-radius: 12px;
+            }
+
+            .package-number {
+                font-size: 1.5em;
+                margin-bottom: 2px;
+            }
+
+            .example-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+                margin-top: 10px;
+            }
+
+            .example {
+                padding: 12px 8px;
+            }
+
+            .example-number {
+                font-size: 1.15em;
+                margin-bottom: 4px;
+            }
+
+            .fold {
+                margin-top: 16px;
+            }
+
+            .fold > summary {
+                padding: 14px 12px;
+            }
+
+            .fold-body {
+                padding: 0 10px 20px;
             }
         }
     </style>
@@ -476,7 +788,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🍗 Can It Nugget?</h1>
+            <h1><img class="logo" src="/favicon.svg" alt="" width="44" height="44">Can It Nugget?</h1>
             <p>Check of je favoriete aantal nuggets te bestellen is bij McDonald's!</p>
         </div>
 
@@ -536,19 +848,25 @@
                 </div>
             </div>
 
-            <section class="chart-section" aria-labelledby="chartTitle">
-                <h3 id="chartTitle">📈 Aantal vs. prijs</h3>
-                <p class="chart-intro">Wat kost precies zoveel nuggets? En wanneer is méér bestellen goedkoper?</p>
-                <ul class="chart-legend">
-                    <li><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="4" fill="#e4572e"/></svg>Precies zoveel</li>
-                    <li><svg width="22" height="12" aria-hidden="true"><path d="M1 9H11V3H21" fill="none" stroke="#2a9d8f" stroke-width="2"/></svg>Minstens zoveel (verspillingsmodus)</li>
-                    <li><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="3.5" fill="white" stroke="#d32f2f" stroke-width="1.5"/></svg>Kan niet</li>
-                </ul>
-                <div class="chart-wrap" id="priceChart" tabindex="0" aria-describedby="chartSummary"></div>
-                <p class="chart-hint">Wijs of tik een punt aan voor de prijs; klik om dat aantal te checken. Met het toetsenbord: pijltjes en Enter.</p>
-                <p class="visually-hidden" id="chartSummary"></p>
-                <p class="visually-hidden" id="chartLive" aria-live="polite"></p>
-            </section>
+            <!-- Ingeklapt: de grafiek verklapt welke aantallen niet kunnen -->
+            <details class="fold chart-section" id="chartFold">
+                <summary>
+                    <span class="fold-title" id="chartTitle">📈 Aantal vs. prijs</span>
+                    <span class="fold-note">(spoiler: verklapt welke aantallen niet kunnen)</span>
+                </summary>
+                <div class="fold-body">
+                    <p class="chart-intro">Wat kost precies zoveel nuggets? En wanneer is méér bestellen goedkoper?</p>
+                    <ul class="chart-legend">
+                        <li><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="4" style="fill: var(--chart-exact)"/></svg>Precies zoveel</li>
+                        <li><svg width="22" height="12" aria-hidden="true"><path d="M1 9H11V3H21" fill="none" stroke-width="2" style="stroke: var(--chart-atleast)"/></svg>Minstens zoveel (verspillingsmodus)</li>
+                        <li><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="3.5" stroke-width="1.5" style="fill: var(--chart-bg); stroke: var(--chart-impossible)"/></svg>Kan niet</li>
+                    </ul>
+                    <div class="chart-wrap" id="priceChart" tabindex="0" aria-describedby="chartSummary"></div>
+                    <p class="chart-hint">Wijs of tik een punt aan voor de prijs; klik om dat aantal te checken. Met het toetsenbord: pijltjes en Enter.</p>
+                    <p class="visually-hidden" id="chartSummary"></p>
+                    <p class="visually-hidden" id="chartLive" aria-live="polite"></p>
+                </div>
+            </details>
         </div>
     </div>
 
@@ -851,9 +1169,10 @@
         // Tekent een lege grafiek met assen en rasterlijnen en geeft de schalen terug.
         // opts: width, height, margin {top,right,bottom,left}, xDomain [min,max],
         // yDomain [min,max], xTicks [..], yTicks [..], xFormat(v), yFormat(v),
-        // xLabel, label (aria-label), title
+        // xLabel, label (aria-label), title, colors { grid, axis }
         function svgChart(opts) {
             const m = opts.margin;
+            const colors = { grid: '#eee', axis: '#bbb', ...opts.colors };
             const w = opts.width - m.left - m.right;
             const h = opts.height - m.top - m.bottom;
             const [x0, x1] = opts.xDomain;
@@ -873,12 +1192,12 @@
 
             const grid = svgEl('g', { 'aria-hidden': 'true' }, svg);
             for (const t of opts.yTicks || []) {
-                svgEl('line', { x1: m.left, x2: m.left + w, y1: y(t), y2: y(t), stroke: t === y0 ? '#bbb' : '#eee', 'stroke-width': 1 }, grid);
+                svgEl('line', { x1: m.left, x2: m.left + w, y1: y(t), y2: y(t), stroke: t === y0 ? colors.axis : colors.grid, 'stroke-width': 1 }, grid);
                 svgEl('text', { x: m.left - 8, y: y(t) + 4, 'text-anchor': 'end' }, grid)
                     .textContent = opts.yFormat ? opts.yFormat(t) : t;
             }
             for (const t of opts.xTicks || []) {
-                svgEl('line', { x1: x(t), x2: x(t), y1: m.top + h, y2: m.top + h + 5, stroke: '#bbb' }, grid);
+                svgEl('line', { x1: x(t), x2: x(t), y1: m.top + h, y2: m.top + h + 5, stroke: colors.axis }, grid);
                 svgEl('text', { x: x(t), y: m.top + h + 19, 'text-anchor': 'middle' }, grid)
                     .textContent = opts.xFormat ? opts.xFormat(t) : t;
             }
@@ -902,7 +1221,44 @@
         }
 
         // --- De nuggetgrafiek zelf ---
-        const CHART_COLORS = { exact: '#e4572e', atLeast: '#2a9d8f', impossible: '#d32f2f', mark: '#333' };
+        // Kleuren komen uit de CSS-tokens (--chart-*), zodat licht en donker
+        // allebei kloppen. Bij elke tekenbeurt opnieuw uitgelezen.
+        const CHART_COLOR_TOKENS = {
+            exact: ['--chart-exact', '#d9441c'],
+            atLeast: ['--chart-atleast', '#1f8a7d'],
+            impossible: ['--chart-impossible', '#c62828'],
+            mark: ['--chart-mark', '#333333'],
+            hover: ['--chart-hover', '#999999'],
+            hole: ['--chart-bg', '#ffffff'],
+            grid: ['--chart-grid', '#eeeeee'],
+            axis: ['--chart-axis', '#bbbbbb']
+        };
+        let CHART_COLORS = chartColors();
+
+        function chartColors() {
+            const css = getComputedStyle(document.documentElement);
+            const colors = {};
+            for (const [key, [token, fallback]] of Object.entries(CHART_COLOR_TOKENS)) {
+                colors[key] = css.getPropertyValue(token).trim() || fallback;
+            }
+            return colors;
+        }
+
+        // ===== Inklapbare secties (<details class="fold">) =====
+        // Een ingeklapte sectie heeft geen breedte, dus grafieken daarin tekenen
+        // we pas (opnieuw) als de sectie opengaat.
+        function isFoldedAway(el) {
+            const fold = el.closest('details');
+            return Boolean(fold && !fold.open);
+        }
+
+        function onFoldOpen(id, fn) {
+            const fold = document.getElementById(id);
+            if (!fold) return;
+            fold.addEventListener('toggle', () => {
+                if (fold.open) fn();
+            });
+        }
         const chartState = { prices: null, selected: null, rows: [], chart: null, active: null };
 
         function formatPackagesShort(plan) {
@@ -936,6 +1292,9 @@
             const wrap = document.getElementById(containerId);
             if (!wrap) return;
             chartState.prices = prices;
+            // Ingeklapt: niets te meten, dus niet tekenen (gebeurt bij openen)
+            if (isFoldedAway(wrap)) return;
+            CHART_COLORS = chartColors();
 
             const sel = chartState.selected;
             const limit = sel && sel > 100 ? Math.min(Math.ceil((sel + 5) / 20) * 20, 500) : 100;
@@ -960,7 +1319,8 @@
                 yFormat: v => formatEuro(v, true),
                 xLabel: 'aantal nuggets →',
                 label: 'Grafiek: goedkoopste prijs per aantal nuggets',
-                title: summary
+                title: summary,
+                colors: { grid: CHART_COLORS.grid, axis: CHART_COLORS.axis }
             });
             chartState.chart = chart;
             const { svg, plot, x, y } = chart;
@@ -983,7 +1343,7 @@
                 if (r.exact) {
                     svgEl('circle', { cx: x(r.n), cy: y(r.cents / 100), r: dotR, fill: CHART_COLORS.exact }, plot);
                 } else {
-                    svgEl('circle', { cx: x(r.n), cy: base, r: dotR, fill: 'white', stroke: CHART_COLORS.impossible, 'stroke-width': 1.3 }, plot);
+                    svgEl('circle', { cx: x(r.n), cy: base, r: dotR, fill: CHART_COLORS.hole, stroke: CHART_COLORS.impossible, 'stroke-width': 1.3 }, plot);
                 }
             }
 
@@ -1007,14 +1367,14 @@
                 const cy = r.exact ? y(r.cents / 100) : base;
                 svgEl('line', { x1: x(sel), x2: x(sel), y1: chart.margin.top, y2: base, stroke: CHART_COLORS.mark, 'stroke-width': 1, 'stroke-dasharray': '3 3' }, g);
                 svgEl('circle', { cx: x(sel), cy, r: 7, fill: 'none', stroke: CHART_COLORS.mark, 'stroke-width': 2 }, g);
-                const lbl = svgEl('text', { x: x(sel), y: chart.margin.top + 2, 'text-anchor': x(sel) > width - 60 ? 'end' : x(sel) < 100 ? 'start' : 'middle', dx: x(sel) > width - 60 ? -5 : x(sel) < 100 ? 5 : 0, dy: 10, style: 'fill:#333;font-weight:600' }, g);
+                const lbl = svgEl('text', { x: x(sel), y: chart.margin.top + 2, 'text-anchor': x(sel) > width - 60 ? 'end' : x(sel) < 100 ? 'start' : 'middle', dx: x(sel) > width - 60 ? -5 : x(sel) < 100 ? 5 : 0, dy: 10, style: `fill:${CHART_COLORS.mark};font-weight:600` }, g);
                 lbl.textContent = `jouw ${sel}`;
             }
 
             // Hover-laag: een kruisje + ring die meeloopt, en een grote onzichtbare vang-rechthoek
             const hover = svgEl('g', { 'aria-hidden': 'true', style: 'display:none' }, svg);
-            svgEl('line', { class: 'hl', y1: chart.margin.top, y2: base, stroke: '#999', 'stroke-width': 1 }, hover);
-            svgEl('circle', { class: 'hc', r: 6, fill: 'white', 'fill-opacity': 0.6, stroke: CHART_COLORS.mark, 'stroke-width': 2 }, hover);
+            svgEl('line', { class: 'hl', y1: chart.margin.top, y2: base, stroke: CHART_COLORS.hover, 'stroke-width': 1 }, hover);
+            svgEl('circle', { class: 'hc', r: 6, fill: CHART_COLORS.hole, 'fill-opacity': 0.6, stroke: CHART_COLORS.mark, 'stroke-width': 2 }, hover);
             svgEl('rect', {
                 x: chart.margin.left, y: 0, width: chart.width, height: height,
                 fill: 'transparent', style: 'cursor:pointer'
@@ -1135,6 +1495,16 @@
             };
             if (window.ResizeObserver) new ResizeObserver(onResize).observe(wrap);
             else window.addEventListener('resize', onResize);
+
+            // Openklappen: nu pas is de breedte bekend
+            onFoldOpen('chartFold', () => {
+                lastWidth = wrap.clientWidth;
+                renderPriceChart();
+            });
+
+            // Licht/donker omgezet: opnieuw tekenen met de nieuwe kleuren
+            const scheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+            if (scheme && scheme.addEventListener) scheme.addEventListener('change', () => renderPriceChart());
             renderPriceChart(currentPrices());
         }
 

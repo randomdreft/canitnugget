@@ -56,7 +56,9 @@ python3 price_scraper.py
 - **Frontend**: vanilla HTML + CSS + JavaScript, geen dependencies
 - **Algoritme**: dynamisch programmeren voor optimale combinatie
 - **Prijzen**: Python scraper met BeautifulSoup, fallback naar hardcoded prijzen
-- **Responsive**: werkt op desktop en mobiel
+- **Responsive**: werkt op desktop en mobiel; op de telefoon staat het antwoord direct onder het invoerveld
+- **Licht en donker**: volgt de systeeminstelling (`prefers-color-scheme`); alle kleuren zijn CSS-tokens op `:root`, getoetst op WCAG AA
+- **Delen**: favicon (`favicon.svg` + PNG/ICO), Open Graph-afbeelding `og-image.png` (bron: `bron/og-image.html`)
 
 ## Bijdragen
 

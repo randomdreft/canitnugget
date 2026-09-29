@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Bron van og-image.png (1200x630). Opnieuw maken:
+     google-chrome --headless=new --hide-scrollbars --window-size=1200,630 \
+       --screenshot=og-image.png file://$PWD/bron/og-image.html -->
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    font-family: 'Segoe UI', 'DejaVu Sans', Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .kaart {
+    width: 1110px; height: 540px; background: #fff; border-radius: 40px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    display: flex; align-items: center; gap: 44px; padding: 0 60px;
+  }
+  img { width: 300px; height: 300px; transform: rotate(-8deg); flex-shrink: 0; }
+  h1 { font-size: 104px; line-height: 1; color: #b8460b; letter-spacing: -2px; }
+  .nee {
+    display: inline-block; margin-top: 30px; padding: 10px 28px; border-radius: 20px;
+    background: #ffe0e3; border: 5px solid #d32f2f; color: #8b1a1a;
+    font-size: 58px; font-weight: 800;
+  }
+  p { margin-top: 26px; font-size: 31px; color: #444; white-space: nowrap; }
+  p b { color: #1f7a70; }
+</style>
+</head>
+<body>
+  <div class="kaart">
+    <img src="../favicon.svg" alt="">
+    <div>
+      <h1>Can It<br>Nugget?</h1>
+      <div class="nee">43 kan niet.</div>
+      <p>Kan jouw aantal? Doosjes van <b>6</b>, <b>9</b> en <b>20</b>.</p>
+    </div>
+  </div>
+</body>
+</html>
