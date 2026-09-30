@@ -1,0 +1,19 @@
+name: 💡 Idee of feature
+description: Iets dat de site leuker of handiger zou maken.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idee
+    attributes:
+      label: Wat is je idee?
+    validations:
+      required: true
+  - type: textarea
+    id: waarom
+    attributes:
+      label: Waarom zou dat leuk of handig zijn?
+  - type: markdown
+    attributes:
+      value: |
+        Goed om te weten: bovenaan blijft de site bewust simpel (één getal, direct antwoord).
+        Uitgebreidere dingen komen ingeklapt onder de vouw.

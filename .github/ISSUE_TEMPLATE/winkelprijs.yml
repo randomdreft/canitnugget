@@ -1,0 +1,44 @@
+name: 🧾 Winkelprijs gezien
+description: Meld wat nuggets (of een Big Mac) kosten bij een McDonald's in het echt.
+title: "Winkelprijs: "
+labels: ["prijzen"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        De site toont **bezorgprijzen** (Thuisbezorgd/Uber Eats), omdat McDonald's zelf geen prijzen publiceert.
+        Echte winkelprijzen helpen om te zien hoeveel duurder bezorgen is.
+  - type: input
+    id: filiaal
+    attributes:
+      label: Filiaal
+      placeholder: plaats + straat, bijv. Alkmaar, Laat
+    validations:
+      required: true
+  - type: input
+    id: datum
+    attributes:
+      label: Datum
+      placeholder: bijv. 30-09-2026
+    validations:
+      required: true
+  - type: input
+    id: prijzen
+    attributes:
+      label: Prijs 6 / 9 / 20 nuggets (en eventueel Big Mac)
+      placeholder: bijv. 3,45 / 4,75 / 9,95 — Big Mac 6,25
+    validations:
+      required: true
+  - type: dropdown
+    id: waar
+    attributes:
+      label: Waar zag je de prijs?
+      options:
+        - Aan de balie of op het menubord
+        - Bestelzuil
+        - McDonald's-app
+        - Anders
+  - type: textarea
+    id: bewijs
+    attributes:
+      label: Foto van bon of menubord (optioneel)

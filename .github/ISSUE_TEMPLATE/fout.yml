@@ -1,0 +1,30 @@
+name: 🐛 Er klopt iets niet
+description: Een verkeerd antwoord, iets dat stuk is of er raar uitziet.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Dank je! Hoe preciezer je beschrijft wat je deed, hoe sneller het gefixt is.
+  - type: input
+    id: link
+    attributes:
+      label: Link naar wat je zag
+      description: De adresbalk volgt je invoer, dus kopieer hem gewoon (bijvoorbeeld `https://canitnugget.nl/?n=43`).
+      placeholder: https://canitnugget.nl/?n=…
+  - type: textarea
+    id: wat
+    attributes:
+      label: Wat ging er mis?
+      description: Wat verwachtte je, en wat gebeurde er?
+    validations:
+      required: true
+  - type: input
+    id: apparaat
+    attributes:
+      label: Apparaat en browser
+      placeholder: bijv. iPhone, Safari / laptop, Firefox
+  - type: textarea
+    id: plaatje
+    attributes:
+      label: Schermafbeelding
+      description: Sleep er een plaatje in als dat helpt.

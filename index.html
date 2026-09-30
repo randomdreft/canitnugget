@@ -4332,10 +4332,8 @@
                 h('li', {}, 'Bezorgprijzen zijn doorgaans 10–35% hoger dan aan de balie. In het restaurant ben je dus meestal goedkoper uit.'),
                 h('li', {}, 'Sites met "menuprijzen" verzinnen of kopiëren hun cijfers; die gebruiken we niet.'),
                 h('li', {}, 'De scraper die dit meet is open source: ', h('a', { href: SCRAPER_URL, target: '_blank', rel: 'noopener' }, 'bekijk hem op GitHub'), '.')));
-            const issue = `${ISSUE_URL}?${new URLSearchParams({
-                title: 'Winkelprijs gezien',
-                body: 'Filiaal (plaats + straat):\nDatum:\nPrijs 6 / 9 / 20 nuggets:\nAan de balie, via de app of op het bord?\n'
-            })}`;
+            // Issue-formulier in .github/ISSUE_TEMPLATE/winkelprijs.yml
+            const issue = `${ISSUE_URL}?${new URLSearchParams({ template: 'winkelprijs.yml' })}`;
             parts.push(h('p', {}, '🧾 Zelf een prijs gezien in de winkel? ', h('a', { href: issue, target: '_blank', rel: 'noopener' }, 'Meld het via een issue'), '.'));
             out.replaceChildren(...parts);
         }
